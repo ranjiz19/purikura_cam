@@ -424,22 +424,25 @@ export default function Booth({
                   {isFilled ? (
                     <div className="slot-img-wrap">
                       <img src={capturedPhotos[i].toDataURL()} alt={`Foto ${i + 1}`} className="slot-img" />
-                      <span className="slot-badge-check">
+                      <span className="slot-badge-check" title="Foto tersimpan">
                         <span className="material-symbols-outlined">check</span>
                       </span>
-                      <span className="slot-badge-num">#{i + 1}</span>
+                      <span className="slot-badge-num">FOTO #{i + 1}</span>
                     </div>
                   ) : (
                     <div className="slot-empty">
                       {isCurrent ? (
                         <div className="slot-current-hint">
                           <span className="slot-camera-icon material-symbols-outlined">photo_camera</span>
-                          <span className="slot-pose-label">POSE {i + 1}</span>
-                          <span className="slot-pose-sub">Siap!</span>
+                          <span className="slot-pose-label">FOTO {i + 1}</span>
+                          <span className="slot-pose-sub">POSE!</span>
                         </div>
                       ) : (
                         <div className="slot-waiting">
-                          <span className="slot-waiting-num">{i + 1}</span>
+                          <div className="slot-waiting-circle">
+                            <span className="slot-waiting-num">{i + 1}</span>
+                          </div>
+                          <span className="slot-waiting-label">Foto {i + 1}</span>
                         </div>
                       )}
                     </div>

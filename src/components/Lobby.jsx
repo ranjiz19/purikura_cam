@@ -240,11 +240,11 @@ export default function Lobby({
             <div className="config-modal-header">
               <div className="modal-title-wrap">
                 <div className="modal-icon-badge">
-                  <span className="material-symbols-outlined">photo_camera_front</span>
+                  <span className="material-symbols-outlined">tune</span>
                 </div>
                 <div>
-                  <h3 className="modal-title">Pengaturan Bilik Foto</h3>
-                  <p className="modal-subtitle">Pilih format cetak strip & mode minigame sebelum mulai</p>
+                  <h3 className="config-dialog-title">Pengaturan Bilik Foto</h3>
+                  <p className="config-dialog-subtitle">Pilih format cetak strip & alur minigame sebelum mulai</p>
                 </div>
               </div>
               <button
@@ -323,7 +323,7 @@ export default function Lobby({
                         <div className="minigame-card-texts">
                           <div className="minigame-card-headline">
                             <span className="minigame-card-title">{mg.title}</span>
-                            <span className="micro-tag">{mg.tag}</span>
+                            <span className={`micro-tag-clean ${mg.id === 'puzzle' ? 'tag-primary' : 'tag-neutral'}`}>{mg.tag}</span>
                           </div>
                           <span className="minigame-card-sub">{mg.sub}</span>
                         </div>
@@ -342,7 +342,7 @@ export default function Lobby({
               <div className="config-note-box">
                 <span className="material-symbols-outlined note-icon">school</span>
                 <span>
-                  Bingkai tema sekolah Jepang (Sailor Seifuku, Academy Blazer, Kokuban, Notebook) & stiker dapat dihias di Studio Dekorasi setelah foto selesai!
+                  Bingkai tema sekolah Jepang (Sailor Seifuku, Blazer, Kokuban) & stiker dapat kamu hias di Studio Dekorasi setelah foto selesai.
                 </span>
               </div>
             </div>
@@ -351,13 +351,13 @@ export default function Lobby({
             <div className="config-modal-footer">
               <button
                 type="button"
-                className="btn-kawaii btn-secondary"
+                className="btn-modal-cancel"
                 onClick={() => {
                   sfx.playClick();
                   setModalOpen(false);
                 }}
               >
-                <span>Batal</span>
+                Batal
               </button>
               <button
                 type="button"
@@ -365,7 +365,7 @@ export default function Lobby({
                 onClick={handleConfirmStart}
               >
                 <span className="material-symbols-outlined">photo_camera</span>
-                <span>Mulai Sesi Foto 📸</span>
+                <span>Mulai Sesi Foto</span>
               </button>
             </div>
           </div>

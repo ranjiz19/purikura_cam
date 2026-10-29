@@ -56,25 +56,25 @@ export const translations = {
       startBtn: 'MASUK BILIK FOTO (START BOOTH)'
     },
     layouts: [
-      { id: 'strip_3', title: 'Classic 3-Strip', count: 3, icon: 'view_column', sub: '3 Foto Vertikal' },
-      { id: 'strip_4', title: 'Arcade 4-Strip', count: 4, icon: 'view_stream', sub: '4 Foto Vertikal' },
+      { id: 'strip_3', title: 'Classic 3-Strip', count: 3, icon: 'auto_awesome_motion', sub: '3 Foto Vertikal' },
+      { id: 'strip_4', title: 'Arcade 4-Strip', count: 4, icon: 'view_agenda', sub: '4 Foto Vertikal' },
       { id: 'grid_2x2', title: 'Purikura 2x2', count: 4, icon: 'grid_view', sub: 'Grid 4 Kuadran' },
       { id: 'polaroid_1', title: 'Solo Polaroid', count: 1, icon: 'crop_portrait', sub: '1 Foto Utama' }
     ],
     minigames: [
       {
         id: 'puzzle',
-        title: '3x3 Photo Puzzle',
+        title: '3x3 Air Puzzle',
         icon: 'extension',
-        tag: 'FITUR UTAMA',
-        sub: 'Susun Kepingan Foto (Pinch 🤏 & Fist ✊)'
+        tag: 'Rekomendasi',
+        sub: 'Susun puzzle foto di udara dengan gestur'
       },
       {
         id: 'skip',
-        title: 'Direct to Studio',
+        title: 'Direct Studio',
         icon: 'bolt',
-        tag: 'INSTAN',
-        sub: 'Langsung Hias Foto Tanpa Puzzle'
+        tag: 'Instan',
+        sub: 'Langsung menghias tanpa bermain puzzle'
       }
     ],
     showcase: {
