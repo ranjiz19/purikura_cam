@@ -86,12 +86,14 @@ export default function GestureModal({ isOpen, onClose }) {
 
         <div className="modal-footer">
           <button
-            className="btn-kawaii btn-primary"
+            type="button"
+            className="btn-kawaii btn-primary btn-modal-close-action"
             onClick={() => {
               sfx.playClick();
               onClose();
             }}
           >
+            <span className="material-symbols-outlined text-[19px]">check_circle</span>
             <span>Sudah Paham, Tutup Panduan</span>
           </button>
         </div>
