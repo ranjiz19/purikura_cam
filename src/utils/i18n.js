@@ -1,15 +1,14 @@
-// Language dictionary & auto-detection for Purikura Studio (ID / JP / EN)
+// Language dictionary & auto-detection for PUZORA (ID / EN)
 
 export const detectLanguage = () => {
   try {
-    const saved = localStorage.getItem('purikura_lang');
-    if (saved && ['id', 'jp', 'en'].includes(saved)) {
+    const saved = localStorage.getItem('puzora_lang');
+    if (saved && ['id', 'en'].includes(saved)) {
       return saved;
     }
     const navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    if (navLang.startsWith('ja')) return 'jp';
-    if (navLang.startsWith('id')) return 'id';
-    return 'id'; // Default Indonesian as requested
+    if (navLang.startsWith('en')) return 'en';
+    return 'id'; // Default Indonesian
   } catch (_) {
     return 'id';
   }
@@ -25,40 +24,40 @@ export const translations = {
       contact: 'Kontak'
     },
     header: {
-      tagline: 'Japanese High School Edition',
+      tagline: 'Interactive Photobooth & Gesture Air Puzzle',
       soundOn: 'Suara',
       soundMuted: 'Bisu',
       guide: 'Panduan',
       langSelect: 'Bahasa'
     },
     hero: {
-      badge: 'JAPANESE HIGH SCHOOL SEISHUN PHOTOBOOTH',
-      title: 'Purikura Studio',
-      titleJp: '青春フォトスタジオ (高校エディション)',
-      subtitle: 'Abadikan momen masa muda sekolah Jepang (Seishun 青春) bertema seragam navy & abu-abu, bingkai seifuku, serta sensor gestur AI',
+      badge: 'AI PHOTOBOOTH & GESTURE AIR PUZZLE',
+      title: 'PUZORA',
+      titleJp: 'Interactive Photobooth',
+      subtitle: 'Abadikan momen spesialmu dengan bilik foto interaktif bertenaga AI, pecahkan puzzle foto di udara, dan hias strip fotomu dengan berbagai pilihan bingkai estetik.',
       cta: 'MASUK BILIK FOTO',
       chips: [
-        'Tema Sekolah Jepang (Navy & Grey)',
-        'Seragam Seifuku & Blazer',
-        '3x3 Air Puzzle AI'
+        'Pure Vision AI (MediaPipe)',
+        '3x3 Air Gesture Puzzle',
+        'Kualitas Cetak HD'
       ],
-      polaroidLeft: 'Memori Sekolah',
-      polaroidRight: 'Sepulang Sekolah'
+      polaroidLeft: 'Aesthetic Strip',
+      polaroidRight: 'Air 3x3 Puzzle'
     },
     setup: {
       stepBadge: 'STEP 1 • PENGATURAN AWAL',
-      title: 'Setup Bilik Foto Sekolah',
+      title: 'Setup Bilik Foto',
       desc: 'Pilih format cetak strip foto dan alur minigame sebelum mulai sesi jepret foto.',
-      layoutLabel: '1. Format Strip Foto Khas Jepang',
+      layoutLabel: '1. Format Strip Foto',
       minigameLabel: '2. Pilihan Alur Foto (Minigame)',
       calloutTitle: 'Pemilihan Bingkai & Filter Realtime:',
-      calloutDesc: 'Tema bingkai sekolah Jepang (Sailor Seifuku, Academy Blazer, Kokuban Chalkboard, Campus Notebook, Rooftop Sky) dan filter seragam bisa kamu pilih di Studio Dekorasi!',
+      calloutDesc: 'Pilihan tema bingkai estetik (Classic Navy, Royal Gold, Slate Chalkboard, Diary Notebook, Rooftop Sky, dan Navy Silver) serta filter warna dapat kamu atur di Studio Dekorasi!',
       startBtn: 'MASUK BILIK FOTO (START BOOTH)'
     },
     layouts: [
       { id: 'strip_3', title: 'Classic 3-Strip', count: 3, icon: 'auto_awesome_motion', sub: '3 Foto Vertikal' },
       { id: 'strip_4', title: 'Arcade 4-Strip', count: 4, icon: 'view_agenda', sub: '4 Foto Vertikal' },
-      { id: 'grid_2x2', title: 'Purikura 2x2', count: 4, icon: 'grid_view', sub: 'Grid 4 Kuadran' },
+      { id: 'grid_2x2', title: 'Grid 2x2', count: 4, icon: 'grid_view', sub: 'Grid 4 Kuadran' },
       { id: 'polaroid_1', title: 'Solo Polaroid', count: 1, icon: 'crop_portrait', sub: '1 Foto Utama' }
     ],
     minigames: [
@@ -99,16 +98,16 @@ export const translations = {
         },
         {
           icon: 'palette',
-          title: 'Studio Dekorasi Kawaii',
-          desc: 'Hias strip fotomu dengan bingkai Jepang, filter warna estetik, stiker lucu, dan kuas neon.'
+          title: 'Studio Dekorasi Lengkap',
+          desc: 'Hias strip fotomu dengan bingkai estetik, filter warna menarik, stiker kreatif, dan kuas warna.'
         }
       ],
       footerBadge: 'Pure Vision AI Photobooth Experience'
     },
     howItWorks: {
       badge: 'PANDUAN LANGKAH • HOW IT WORKS',
-      heading: 'Cara Seru Bermain di Purikura Studio',
-      subheading: 'Cukup gunakan webcam laptop/HP biasa. AI cerdas mengenali gerakan tangan secara instan dan aman di browser lokal.',
+      heading: 'Cara Seru Bermain di PUZORA',
+      subheading: 'Cukup gunakan webcam laptop atau perangkat Anda. AI cerdas mengenali gerakan tangan secara instan dan aman di browser lokal.',
       steps: [
         {
           step: '01',
@@ -132,14 +131,14 @@ export const translations = {
           step: '04',
           icon: 'palette',
           title: 'Hias di Studio & Unduh HD',
-          desc: 'Kunci puzzle dengan kepalan tangan (Fist), lalu pilih bingkai Jepang, filter warna, stiker kawaii, dan unduh strip HD siap cetak.'
+          desc: 'Kunci puzzle dengan kepalan tangan (Fist), lalu pilih bingkai estetik, filter warna, stiker menarik, dan unduh strip HD siap cetak.'
         }
       ]
     },
     features: {
-      badge: 'TEKNOLOGI JEPANG • TOKYO VIBES',
+      badge: 'TEKNOLOGI AI • SMART VISION',
       heading: 'Keunikan & Fitur Unggulan',
-      subheading: 'Menghadirkan pengalaman bilik foto Jepang asli dengan sentuhan AI modern, stiker lucu, dan kualitas cetak tinggi.',
+      subheading: 'Menghadirkan pengalaman bilik foto modern dengan sentuhan AI interaktif, dekorasi kreatif, dan kualitas cetak tinggi.',
       items: [
         {
           icon: 'auto_awesome',
@@ -148,197 +147,34 @@ export const translations = {
         },
         {
           icon: 'filter_vintage',
-          title: '6 Tema Bingkai Khas Jepang',
-          desc: 'Pilihan Sakura Blossom, Sweet Ribbon, Neko Cafe, Kyoto Tea, Y2K Sparkle, hingga Clean Minimalis yang bisa diganti langsung di studio.'
+          title: '6 Pilihan Tema Bingkai Estetik',
+          desc: 'Pilihan Classic Navy, Royal Gold, Slate Chalkboard, Diary Notebook, Rooftop Sky, hingga Navy Silver yang bisa diganti langsung di studio.'
         },
         {
           icon: 'tune',
           title: 'Filter Warna Estetik Realtime',
-          desc: 'Sesuaikan tone warna sesukamu: Bihaku White, Sakura Blush, Kyoto Film, Tokyo B&W, Golden Sunset, atau Natural Glow.'
+          desc: 'Sesuaikan tone warna sesukamu: Natural Tone, Aesthetic Blue, Porcelain Glow, Warm Sunset, atau Classic Monokrom.'
         },
         {
           icon: 'ios_share',
           title: 'Unduh Strip HD Siap Cetak',
-          desc: 'Hasil strip foto beresolusi tinggi tanpa distorsi (anti gepeng), dengan tata letak strip purikura asli siap dibagikan ke medsos.'
+          desc: 'Hasil strip foto beresolusi tinggi tanpa distorsi (anti gepeng), dengan tata letak strip modern siap dibagikan ke media sosial.'
         }
       ]
     },
     contact: {
       badge: 'KONTAK & KREATOR',
       title: 'Terhubung dengan Kami',
-      desc: 'Punya pertanyaan seputar sensor AI gestur, ide stiker baru, masukan, atau ingin berkolaborasi untuk Purikura Studio? Jangan ragu untuk menyapa kami!',
+      desc: 'Punya pertanyaan seputar sensor AI gestur, ide stiker baru, masukan, atau ingin berkolaborasi untuk PUZORA? Jangan ragu untuk menyapa kami!',
       instagram: 'Instagram',
       email: 'Mail',
       github: 'GitHub Repo'
     },
     footer: {
-      logo: 'Purikura Studio',
-      tagline: 'Modern AI Japanese Kawaii Photobooth & Gesture Air Puzzle • Didesain dengan estetika modern, hangat, dan menyenangkan.',
-      copy: '© 2026 Purikura Studio (プリクラ). Hak cipta dilindungi undang-undang.',
+      logo: 'PUZORA',
+      tagline: 'Modern Interactive Photobooth & Gesture Air Puzzle • Didesain dengan estetika modern, bersih, dan menyenangkan.',
+      copy: '© 2026 PUZORA. Hak cipta dilindungi undang-undang.',
       top: 'Ke Atas'
-    }
-  },
-
-  jp: {
-    nav: {
-      home: 'ホーム',
-      howItWorks: '遊び方',
-      booth: 'プリクラブース',
-      features: 'AI機能',
-      contact: 'お問い合わせ'
-    },
-    header: {
-      tagline: 'AI Japanese Photobooth プリクラ',
-      soundOn: 'サウンド',
-      soundMuted: 'ミュート',
-      guide: 'ガイド',
-      langSelect: '言語'
-    },
-    hero: {
-      badge: 'JAPANESE KAWAII PHOTOBOOTH & AIR PUZZLE',
-      title: 'Purikura Studio',
-      titleJp: 'プリクラスタジオ',
-      subtitle: 'かわいい瞬間をキャプチャ、空中で3x3パズルを解いて、本格プリクラをデコレーション！',
-      cta: 'プリクラを始める',
-      chips: [
-        'Pure Vision AI (MediaPipe)',
-        '2026年 東京エディション',
-        '3x3 空中パズル'
-      ],
-      polaroidLeft: '大切な思い出',
-      polaroidRight: '空中パズル'
-    },
-    setup: {
-      stepBadge: 'STEP 1 • 初期設定',
-      title: 'ブースのセットアップ',
-      desc: '撮影セッションを開始する前に、プリントフォーマットとミニゲームモードを選択してください。',
-      layoutLabel: '1. プリクラシートのレイアウト',
-      minigameLabel: '2. 撮影フロー (ミニゲーム)',
-      calloutTitle: 'リアルタイムフレーム＆フィルター設定:',
-      calloutDesc: '桜ブロッサム、リボン、ネコカフェ、京都抹茶、Y2Kなどの日本風フレームとカラーフィルターは、撮影後のデコスタジオで自由に変更できます！',
-      startBtn: 'ブースに入る (START BOOTH)'
-    },
-    layouts: [
-      { id: 'strip_3', title: 'クラシック 3-Strip', count: 3, icon: 'view_column', sub: '3枚 縦型レイアウト' },
-      { id: 'strip_4', title: 'アーケード 4-Strip', count: 4, icon: 'view_stream', sub: '4枚 縦型レイアウト' },
-      { id: 'grid_2x2', title: 'プリクラ 2x2', count: 4, icon: 'grid_view', sub: '4分割 グリッド' },
-      { id: 'polaroid_1', title: 'ソロポラロイド', count: 1, icon: 'crop_portrait', sub: '1枚 メイン写真' }
-    ],
-    minigames: [
-      {
-        id: 'puzzle',
-        title: '3x3 写真パズル',
-        icon: 'extension',
-        tag: 'メイン機能',
-        sub: '空中でピース合わせ (ピンチ & 握り拳)'
-      },
-      {
-        id: 'skip',
-        title: 'ダイレクトスタジオ',
-        icon: 'bolt',
-        tag: 'インスタント',
-        sub: 'パズルなしですぐデコレーション'
-      }
-    ],
-    showcase: {
-      badge: 'ジェスチャー制御 • 空中操作',
-      title: '手のひら操作機能',
-      desc: 'マウスやキーボードに触れず、Webカメラの前で手や指を動かすだけで直感的に操作できます。',
-      items: [
-        {
-          icon: 'crop_free',
-          title: 'ハンドフレーム / ピースサイン (撮影)',
-          desc: '両手でフレームを作るか、ピースサインを構えると3秒カウントダウンで自動シャッター！'
-        },
-        {
-          icon: 'pinch',
-          title: 'ピンチ＆ドラッグ (空中パズル)',
-          desc: '親指と人差し指をつまむ (ピンチ) 動作で、空中のパズルピースを掴んで移動できます。'
-        },
-        {
-          icon: 'front_hand',
-          title: 'フィストロック (保存＆固定)',
-          desc: 'パズル完成後、拳を約1秒間握るとロックされ、スタジオへ進みます。'
-        },
-        {
-          icon: 'palette',
-          title: 'かわいいデコスタジオ',
-          desc: '和風フレーム、エステティックフィルター、可愛いスタンプ、ネオンブラシで自由に落書き。'
-        }
-      ],
-      footerBadge: 'Pure Vision AI Photobooth Experience'
-    },
-    howItWorks: {
-      badge: '遊び方ガイド • HOW IT WORKS',
-      heading: 'プリクラスタジオの楽しみ方',
-      subheading: '特別な機器は不要。通常のWebカメラだけで、ビジョンAIが手の動きを安全・瞬時に検出します。',
-      steps: [
-        {
-          step: '01',
-          icon: 'add_a_photo',
-          title: 'レイアウトを選んでブースへ',
-          desc: '3カット、4カット、グリッド、ポラロイドから好みのレイアウトを選んでブースに入ります。'
-        },
-        {
-          step: '02',
-          icon: 'pan_tool',
-          title: 'ポーズを決めて自動シャッター',
-          desc: '両手フレームやピースサインを決めると、AIが自動で3秒カウントダウンして激写！'
-        },
-        {
-          step: '03',
-          icon: 'extension',
-          title: '空中で3x3パズルに挑戦',
-          desc: '指先をつまむピンチジェスチャーで、空中に散らばった写真ピースを正しい位置へ組み立てます。'
-        },
-        {
-          step: '04',
-          icon: 'palette',
-          title: 'スタジオでデコ＆高画質保存',
-          desc: '拳を握ってロックしたら、フレーム、スタンプ、フィルターで可愛く落書きしてHD保存！'
-        }
-      ]
-    },
-    features: {
-      badge: '日本発のテクノロジー • TOKYO VIBES',
-      heading: 'プリクラスタジオの特長',
-      subheading: '本場原宿・渋谷のプリクラの楽しさに、最先端のAIジェスチャー操作を融合。',
-      items: [
-        {
-          icon: 'auto_awesome',
-          title: 'Pure Vision AI センサー',
-          desc: 'Google MediaPipe Handsを活用し、ブラウザ上で100%ローカル動作。カメラデータは外部に送信されず安心です。'
-        },
-        {
-          icon: 'filter_vintage',
-          title: '6種類の本格和風フレーム',
-          desc: '桜ブロッサム、スイートリボン、ネコカフェ、京都茶室、Y2K、クリーンミニマルから選べます。'
-        },
-        {
-          icon: 'tune',
-          title: 'リアルタイム美肌＆カラーフィルター',
-          desc: '美白ホワイト、桜ブラッシュ、京都フィルム、東京モノクロ、夕暮れなど多彩なトーン調整。'
-        },
-        {
-          icon: 'ios_share',
-          title: '高解像度プリント用シート出力',
-          desc: '画像の歪みなく高解像度で生成。印刷にもSNSシェアにもそのまま使える本格仕上がり。'
-        }
-      ]
-    },
-    contact: {
-      badge: 'GET IN TOUCH • お問い合わせ',
-      title: 'お問い合わせ・メッセージ',
-      desc: 'AIセンサーの機能要望、新しいスタンプのアイデア、ご意見など、いつでもお気軽にお知らせください！',
-      instagram: 'Instagram',
-      email: 'Mail',
-      github: 'GitHub リポジトリ'
-    },
-    footer: {
-      logo: 'Purikura Studio',
-      tagline: 'Modern AI Japanese Kawaii Photobooth & Gesture Air Puzzle • 原宿カルチャーとテクノロジーの融合。',
-      copy: '© 2026 Purikura Studio (プリクラ). All rights reserved.',
-      top: 'トップへ'
     }
   },
 
@@ -346,45 +182,45 @@ export const translations = {
     nav: {
       home: 'Home',
       howItWorks: 'How It Works',
-      booth: 'Photobooth',
+      booth: 'Photo Booth',
       features: 'AI Features',
       contact: 'Contact'
     },
     header: {
-      tagline: 'AI Japanese Photobooth プリクラ',
+      tagline: 'Interactive Photobooth & Gesture Air Puzzle',
       soundOn: 'Sound',
       soundMuted: 'Muted',
       guide: 'Guide',
       langSelect: 'Language'
     },
     hero: {
-      badge: 'JAPANESE KAWAII PHOTOBOOTH & AIR PUZZLE',
-      title: 'Purikura Studio',
-      titleJp: 'プリクラスタジオ',
-      subtitle: 'Capture memorable moments, solve 3x3 photo puzzles in the air, and decorate authentic Japanese photo strips!',
+      badge: 'AI PHOTOBOOTH & GESTURE AIR PUZZLE',
+      title: 'PUZORA',
+      titleJp: 'Interactive Photobooth',
+      subtitle: 'Capture memorable moments with interactive AI photobooth technology, solve 3x3 photo puzzles in the air, and decorate aesthetic photo strips!',
       cta: 'ENTER PHOTOBOOTH',
       chips: [
         'Pure Vision AI (MediaPipe)',
-        'Tokyo 2026 Edition',
-        '3x3 Air Gesture Puzzle'
+        '3x3 Air Gesture Puzzle',
+        'Print-Ready HD Quality'
       ],
-      polaroidLeft: 'Sweet Memories',
+      polaroidLeft: 'Aesthetic Strip',
       polaroidRight: 'Air 3x3 Puzzle'
     },
     setup: {
       stepBadge: 'STEP 1 • INITIAL SETUP',
       title: 'Photobooth Setup',
       desc: 'Choose your desired photo strip format and minigame workflow before entering the camera booth.',
-      layoutLabel: '1. Japanese Photo Strip Layout',
+      layoutLabel: '1. Photo Strip Layout',
       minigameLabel: '2. Workflow (Minigame Challenge)',
       calloutTitle: 'Realtime Frames & Aesthetic Filters:',
-      calloutDesc: 'Graphic themes (Sakura Blossom, Sweet Ribbon, Neko Cafe, Kyoto Tea, Y2K) and color filters can be freely changed in the Decorator Studio!',
+      calloutDesc: 'Graphic themes (Classic Navy, Royal Gold, Slate Chalkboard, Diary Notebook, Rooftop Sky, and Navy Silver) and color filters can be freely changed in the Decorator Studio!',
       startBtn: 'ENTER PHOTOBOOTH (START BOOTH)'
     },
     layouts: [
       { id: 'strip_3', title: 'Classic 3-Strip', count: 3, icon: 'view_column', sub: '3 Vertical Photos' },
       { id: 'strip_4', title: 'Arcade 4-Strip', count: 4, icon: 'view_stream', sub: '4 Vertical Photos' },
-      { id: 'grid_2x2', title: 'Purikura 2x2', count: 4, icon: 'grid_view', sub: '4 Quadrant Grid' },
+      { id: 'grid_2x2', title: 'Grid 2x2', count: 4, icon: 'grid_view', sub: '4 Quadrant Grid' },
       { id: 'polaroid_1', title: 'Solo Polaroid', count: 1, icon: 'crop_portrait', sub: '1 Main Portrait' }
     ],
     minigames: [
@@ -425,16 +261,16 @@ export const translations = {
         },
         {
           icon: 'palette',
-          title: 'Kawaii Decorator Studio',
-          desc: 'Personalize with Japanese frames, aesthetic color grading, cute stickers, and neon pens.'
+          title: 'Creative Decorator Studio',
+          desc: 'Personalize with aesthetic borders, color grading, creative stickers, and color pens.'
         }
       ],
       footerBadge: 'Pure Vision AI Photobooth Experience'
     },
     howItWorks: {
       badge: 'STEP-BY-STEP GUIDE • HOW IT WORKS',
-      heading: 'How to Enjoy Purikura Studio',
-      subheading: 'No hardware needed beyond your standard webcam. Smart Vision AI detects gestures instantly and privately inside your browser.',
+      heading: 'How to Enjoy PUZORA',
+      subheading: 'No extra hardware needed beyond your standard webcam. Smart Vision AI detects gestures instantly and privately inside your browser.',
       steps: [
         {
           step: '01',
@@ -458,14 +294,14 @@ export const translations = {
           step: '04',
           icon: 'palette',
           title: 'Decorate & Export HD',
-          desc: 'Lock with a fist gesture, customize with Japanese borders, kawaii stickers, and download high-res printable strips.'
+          desc: 'Lock with a fist gesture, customize with aesthetic borders, creative stickers, and download high-res printable strips.'
         }
       ]
     },
     features: {
-      badge: 'JAPANESE TECH • TOKYO VIBES',
+      badge: 'SMART TECH • MODERN VIBES',
       heading: 'Unique Highlights & Craft',
-      subheading: 'Bringing authentic Tokyo Harajuku photobooth charm together with next-gen Vision AI gesture technology.',
+      subheading: 'Bringing modern photobooth charm together with next-gen Vision AI gesture technology.',
       items: [
         {
           icon: 'auto_awesome',
@@ -474,13 +310,13 @@ export const translations = {
         },
         {
           icon: 'filter_vintage',
-          title: '6 Japanese Themed Frames',
-          desc: 'Sakura Blossom, Sweet Ribbon, Neko Cafe, Kyoto Tea, Y2K Sparkle, and Clean Minimalist styles.'
+          title: '6 Aesthetic Themed Frames',
+          desc: 'Classic Navy, Royal Gold, Slate Chalkboard, Diary Notebook, Rooftop Sky, and Navy Silver styles.'
         },
         {
           icon: 'tune',
           title: 'Realtime Aesthetic Color Grading',
-          desc: 'Bihaku White, Sakura Blush, Kyoto Film, Tokyo Monochrome, Golden Sunset, and Natural Glow tones.'
+          desc: 'Natural Tone, Aesthetic Blue, Porcelain Glow, Warm Sunset, and Classic Monokrom tones.'
         },
         {
           icon: 'ios_share',
@@ -492,15 +328,15 @@ export const translations = {
     contact: {
       badge: 'GET IN TOUCH',
       title: 'Get in Touch',
-      desc: 'Have questions, feedback, or sticker suggestions for Purikura Studio? We would love to hear from you!',
+      desc: 'Have questions, feedback, or sticker suggestions for PUZORA? We would love to hear from you!',
       instagram: 'Instagram',
       email: 'Mail',
       github: 'GitHub Repo'
     },
     footer: {
-      logo: 'Purikura Studio',
-      tagline: 'Modern AI Japanese Kawaii Photobooth & Gesture Air Puzzle • Where Tokyo street culture meets Vision AI.',
-      copy: '© 2026 Purikura Studio (プリクラ). All rights reserved.',
+      logo: 'PUZORA',
+      tagline: 'Modern Interactive Photobooth & Gesture Air Puzzle • Dressed in clean, modern aesthetics.',
+      copy: '© 2026 PUZORA. All rights reserved.',
       top: 'Back to Top'
     }
   }

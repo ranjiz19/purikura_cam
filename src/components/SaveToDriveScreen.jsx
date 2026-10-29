@@ -14,7 +14,7 @@ export default function SaveToDriveScreen({
   const [errorMessage, setErrorMessage] = useState('');
   const [webhookUrl, setWebhookUrl] = useState(() => {
     try {
-      return localStorage.getItem('purikura_drive_webhook') || '';
+      return localStorage.getItem('puzora_drive_webhook') || '';
     } catch (_) {
       return '';
     }
@@ -39,7 +39,7 @@ export default function SaveToDriveScreen({
         setUploadProgress(40);
         const payload = {
           image: finalStripDataUrl,
-          filename: `purikura-${Date.now()}.png`,
+          filename: `puzora-${Date.now()}.png`,
           mimeType: 'image/png'
         };
 
@@ -71,7 +71,7 @@ export default function SaveToDriveScreen({
       setUploadProgress(100);
 
       // Create a persistent drive link
-      const simulatedDriveUrl = `https://drive.google.com/drive/folders/purikura-${Date.now().toString(36)}`;
+      const simulatedDriveUrl = `https://drive.google.com/drive/folders/puzora-${Date.now().toString(36)}`;
       setDriveLink(simulatedDriveUrl);
       setUploadStatus('success');
       sfx.playSuccess();
@@ -87,7 +87,7 @@ export default function SaveToDriveScreen({
     sfx.playClick();
     // 1. Download file locally so user has it ready
     const link = document.createElement('a');
-    link.download = `purikura-drive-${Date.now()}.png`;
+    link.download = `puzora-drive-${Date.now()}.png`;
     link.href = finalStripDataUrl;
     link.click();
 
@@ -100,7 +100,7 @@ export default function SaveToDriveScreen({
 
   function handleSaveWebhookSetting() {
     try {
-      localStorage.setItem('purikura_drive_webhook', webhookUrl.trim());
+      localStorage.setItem('puzora_drive_webhook', webhookUrl.trim());
       sfx.playSuccess();
       setToastMessage('URL Webhook Google Drive berhasil disimpan!');
       setTimeout(() => setToastMessage(''), 3000);
@@ -131,10 +131,10 @@ export default function SaveToDriveScreen({
           <div className="drive-preview-card kawaii-card">
             <div className="drive-card-tag">
               <span className="material-symbols-outlined text-sm align-middle mr-1">photo_camera</span>
-              <span>Preview Foto Purikura</span>
+              <span>Preview Foto PUZORA</span>
             </div>
             <div className="drive-img-wrap">
-              <img src={finalStripDataUrl} alt="Purikura Strip" className="drive-strip-preview" />
+              <img src={finalStripDataUrl} alt="PUZORA Strip" className="drive-strip-preview" />
             </div>
           </div>
 

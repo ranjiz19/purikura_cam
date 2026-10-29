@@ -49,7 +49,7 @@ export default function GestureModal({ isOpen, onClose }) {
                 <div className="gesture-tag">ALTERNATIF • SATU TANGAN</div>
                 <h3 className="gesture-title">Pose Peace Sign (V)</h3>
                 <p className="gesture-desc">
-                  Pose foto klasik khas sekolah Jepang! Cukup angkat tanda dua jari (Peace) di depan kamera untuk memicu hitung mundur foto otomatis.
+                  Pose foto klasik favorit! Cukup angkat tanda dua jari (Peace) di depan kamera untuk memicu hitung mundur foto otomatis.
                 </p>
               </div>
             </div>

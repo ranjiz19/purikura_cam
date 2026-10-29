@@ -26,14 +26,14 @@ export default function Lobby({
 
   return (
     <div className="lobby-page-wrapper">
-      {/* 1. Hero Banner with Japanese High School Aesthetic */}
+      {/* 1. Hero Banner with Modern Aesthetic */}
       <section className="lobby-hero-banner" id="hero">
         {/* Floating polaroids decoration styled like Japanese Purikura strips */}
         <div className="hero-floating-decor">
           <div className="floating-polaroid polaroid-left">
             <div className="polaroid-photo polaroid-purikura-left">
-              <div className="purikura-sample-badge">Sailor Seifuku</div>
-              <span className="material-symbols-outlined polaroid-placeholder-icon">school</span>
+              <div className="purikura-sample-badge">Classic Navy</div>
+              <span className="material-symbols-outlined polaroid-placeholder-icon">photo_camera</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidLeft}</span>
           </div>
@@ -41,17 +41,17 @@ export default function Lobby({
           <div className="floating-polaroid polaroid-right">
             <div className="polaroid-photo polaroid-purikura-right">
               <div className="purikura-sample-badge">Air Puzzle 3x3</div>
-              <span className="material-symbols-outlined polaroid-placeholder-icon">menu_book</span>
+              <span className="material-symbols-outlined polaroid-placeholder-icon">extension</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidRight}</span>
           </div>
         </div>
 
-        {/* Central Paper Card with Modern Japanese High School Theme */}
+        {/* Central Paper Card with Modern Theme */}
         <div className="hero-paper-card">
           <div className="hero-tagline-badge">
-            <span className="material-symbols-outlined text-[15px]">school</span>
-            <span>JAPANESE HIGH SCHOOL PHOTOBOOTH</span>
+            <span className="material-symbols-outlined text-[15px]">auto_awesome</span>
+            <span>{t.hero.badge}</span>
           </div>
 
           <div className="hero-title-group">
@@ -191,11 +191,11 @@ export default function Lobby({
         <div className="footer-content">
           <div className="footer-brand">
             <span className="footer-logo">
-              <span className="material-symbols-outlined align-middle mr-1 text-sm">school</span>
-              Purikura Studio
+              <span className="material-symbols-outlined align-middle mr-1 text-sm">auto_awesome</span>
+              PUZORA
             </span>
             <p className="footer-tagline">
-              Modern AI Japanese Photobooth — Didesain dengan nuansa estetika sekolah Jepang, dominan navy dan abu-abu.
+              Modern Interactive Photobooth & Gesture Air Puzzle — Abadikan momen berhargamu dengan kendali gestur tangan canggih.
             </p>
           </div>
 
@@ -340,9 +340,9 @@ export default function Lobby({
 
               {/* Info Note */}
               <div className="config-note-box">
-                <span className="material-symbols-outlined note-icon">school</span>
+                <span className="material-symbols-outlined note-icon">palette</span>
                 <span>
-                  Bingkai tema sekolah Jepang (Sailor Seifuku, Blazer, Kokuban) & stiker dapat kamu hias di Studio Dekorasi setelah foto selesai.
+                  Bingkai tema estetik & stiker kreatif dapat kamu pilih dan hias di Studio Dekorasi setelah sesi foto selesai.
                 </span>
               </div>
             </div>

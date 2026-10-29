@@ -1,11 +1,11 @@
 /* ====================================================================
-   PURIKURA STUDIO ★ JAPANESE HIGH SCHOOL THEME (SEISHUN 青春)
-   DOMINANT NAVY & SLATE GREY DESIGN SYSTEM
+   PUZORA ★ INTERACTIVE AI PHOTOBOOTH & GESTURE AIR PUZZLE
+   DOMINANT NAVY & SLATE GREY MODERN DESIGN SYSTEM
    ==================================================================== */
 
 :root {
-  /* ================= JAPANESE HIGH SCHOOL PALETTE ================= */
-  --background: #F1F5F9; /* School Uniform Slate Grey */
+  /* ================= PUZORA AESTHETIC PALETTE ================= */
+  --background: #F1F5F9; /* Clean Slate Grey */
   --surface: #FFFFFF;
   --surface-container-low: #F8FAFC;
   --surface-container: #F1F5F9;
@@ -39,9 +39,9 @@
   --grey-text: #64748B;
   --grey-dark: #334155;
 
-  /* Japanese School Highlights */
-  --accent-gold: #F59E0B;      /* Academy Crest Emblem */
-  --accent-crimson: #DC2626;   /* Sailor Scarf / Tie Ribbon */
+  /* Accent Highlights */
+  --accent-gold: #F59E0B;      /* Gold Emblem */
+  --accent-crimson: #DC2626;   /* Crimson Ribbon */
 
   /* Aliases for Full Backward Compatibility */
   --sakura-pink: #1E3A5F;

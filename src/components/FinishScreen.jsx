@@ -22,7 +22,7 @@ export default function FinishScreen({
   function handleDownload() {
     sfx.playSuccess();
     const link = document.createElement('a');
-    link.download = `purikura-seishun-${Date.now()}.png`;
+    link.download = `puzora-${Date.now()}.png`;
     link.href = finalStripDataUrl;
     link.click();
   }
@@ -48,9 +48,9 @@ export default function FinishScreen({
     <section className="finish-section">
       <div className="finish-card kawaii-card">
         <div className="finish-header">
-          <span className="kawaii-badge">STRIP FOTO SELESAI • SEISHUN HIGH SCHOOL</span>
-          <h2 className="finish-title">Foto Purikura Siap Diunduh</h2>
-          <p className="finish-desc">Hasil foto dan dekorasi sekolah Jepangmu telah selesai diproses.</p>
+          <span className="kawaii-badge">STRIP FOTO SELESAI • PUZORA STUDIO</span>
+          <h2 className="finish-title">Foto Strip Siap Diunduh</h2>
+          <p className="finish-desc">Hasil foto dan dekorasi kreasi Anda telah selesai diproses.</p>
         </div>
 
         {/* Cloud Storage Status Banner if Saved */}
@@ -70,7 +70,7 @@ export default function FinishScreen({
         )}
 
         <div className="finish-preview-box">
-          <img src={finalStripDataUrl} alt="Hasil Purikura Strip" className="finish-strip-img" />
+          <img src={finalStripDataUrl} alt="Hasil Foto PUZORA Strip" className="finish-strip-img" />
         </div>
 
         {/* Copy Image Toast Notification */}

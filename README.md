@@ -1,55 +1,68 @@
-# プリクラ ★ Purikura Studio — Japanese Kawaii Cam (React + Vite)
+# PUZORA — Interactive AI Photobooth & Gesture Air Puzzle
 
-Aplikasi bilik foto (*photobooth*) interaktif berbasis **React.js + Vite** dengan estetika **Clean Modern Japanese Kawaii (プリクラ・スタジオ)** — meninggalkan gaya gelap/neon cyberpunk dan beralih ke nuansa pastel sakura yang lembut, bersih, manis, dan elegan, dikendalikan secara nirkabel dengan gestur tangan AI (**Google MediaPipe Hands**).
+[![React](https://img.shields.io/badge/React-19.3-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-Tasks_Vision-0097A7?style=flat-square&logo=google&logoColor=white)](https://developers.google.com/mediapipe)
+[![HTML5 Canvas](https://img.shields.io/badge/HTML5-Canvas_2D-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/)
+[![Web Audio API](https://img.shields.io/badge/Audio-Web_Audio_Synth-orange?style=flat-square)](https://developer.mozilla.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
----
-
-## 🔬 PENDEKATAN KONSEP A.T.M (AMATI - TIRU - MODIFIKASI)
-
-| Aspek | 1. AMATI (`puzzle_cam`) | 2. TIRU (Fondasi) | 3. MODIFIKASI (`purikura_cam` React) |
-| :--- | :--- | :--- | :--- |
-| **Framework & Arsitektur** | Vanilla HTML/JS modul statis. | Logika webcam canvas dan tracking tangan real-time. | **React 19 + Vite**: Struktur komponen modular (`Header`, `Lobby`, `Booth`, `Minigame`, `DecoratorStudio`, `FinishScreen`) dengan *state management* reaktif dan *Hot Module Replacement (HMR)* super cepat. |
-| **Tema & Gaya Visual** | Nuansa kertas cokelat scrapbook (*paper & tape*). | Format strip foto vertikal dan grid kuadran. | **Clean Modern Japanese Kawaii**: Menggunakan palet lembut *Sakura Pink* (#FF7597), *Warm Milk Cream* (#FFFDF9), *Matcha Green* (#7EBD75), tipografi bulat Jepang (*Zen Maru Gothic*), floating sakura petals, dan kartu glassmorphism modern. |
-| **Kontrol Gestur AI (Google MediaPipe)** | Gestur **Frame** (🫶) untuk foto, **Pinch** (🤏) untuk geser kepingan puzzle, dan **Fist** (✊) untuk mengunci foto. | **Disamakan Persis!** Menggunakan **Google MediaPipe Hands** murni: gestur **Frame** (🫶) untuk foto, **Pinch** (🤏) untuk mengambil & menggeser kepingan puzzle, dan **Fist** (✊) untuk mengunci (*lock & save*). | Ditambahkan opsi pose **Peace Sign (✌️)** dan **Open Palm (🖐️)** sebagai alternatif cepat, serta kerangka tangan pastel *sakura beads*. |
-| **Fase Minigame Interaktif** | Wajib *3x3 Sliding Puzzle*. | Konsep permainan penyusunan kepingan pecahan foto interaktif. | **Opsi Alur Fleksibel:**<br>1. 🧩 **3x3 Photo Puzzle (ATM Utama)** (Susun kepingan foto dengan Pinch 🤏 dan kunci dengan Fist ✊).<br>2. ⚡ **Direct to Studio** (Lewati minigame langsung ke studio dekorasi). |
-| **Efek Audio (SFX)** | Hening / tanpa efek suara. | - | **Kawaii Web Audio API Synthesizer**: Suara marimba lembut, jepretan kamera manis, nada *pop*, *snap* puzzle, dan melodi selebrasi kemenangan Do-Mi-Sol-Do Jepang tanpa ketergantungan file audio eksternal. |
-| **Studio Dekorasi** | Stiker flat standar. | Manipulasi canvas drag-and-drop. | **Kawaii Japanese Sticker Studio**: Stiker SVG khas Jepang (Sakura 桜, Neko Paw 肉球, Onigiri 🍙, Dango だんご, Ribbon 🎀, Usagi 🐰, teks stempel Jepang 「だいすき♡」, 「カワイイ！」), kuas pastel lembut (*Sakura, Mint, Matcha, Butter, Lavender*), dan bingkai strip pastel. |
+**PUZORA** adalah aplikasi bilik foto (*photobooth*) interaktif berbasis **React.js + Vite** yang dikendalikan tanpa sentuhan menggunakan gestur tangan AI (**Google MediaPipe Hands**). Aplikasi ini memadukan pengalaman bilik foto modern, minigame penyusunan puzzle kepingan foto 3x3 di udara (*air gesture puzzle*), studio dekorasi stiker & filter, serta ekspor strip foto beresolusi tinggi (HD).
 
 ---
 
-## 🎮 KONTROL GESTUR TANGAN (GOOGLE MEDIAPIPE HANDS)
+## 🌟 Fitur Utama
 
-1. **Jepret Foto Otomatis (Hands-Free):**
-   - 🫶 **Pose Bingkai Dua Tangan (Hand Frame):** Bentuk bingkai kotak menggunakan telunjuk & jempol kedua tangan di depan kamera untuk memicu hitung mundur foto 3 detik.
-   - ✌️ **Pose Peace Sign (V) & 🖐️ Telapak Terbuka:** Pose foto alternatif manis khas Purikura Jepang jika hanya menggunakan satu tangan.
-2. **Minigame Interaktif:**
-   - 🤏 **Gestur Mencubit (Pinch):** Satukan ujung telunjuk dan jempol di atas kepingan pecahan puzzle fotomu, lalu geser di udara untuk memindahkannya ke slot yang diinginkan.
-   - ✊ **Gestur Kepalan Tangan (Fist):** Setelah kepingan puzzle tersusun rapi, kepalkan tanganmu dan tahan ~1 detik untuk mengunci (*lock & save*) foto.
-   - 🧩 **Tombol Selesaikan & ⏩ Lewati:** Tersedia tombol pintas untuk langsung menyelesaikan puzzle jika sedang terburu-buru.
+- 📸 **Jepret Foto Hands-Free**: Deteksi gestur tangan otomatis menggunakan AI vision lokal untuk memicu hitung mundur foto 3 detik tanpa menyentuh keyboard atau mouse.
+- 🧩 **3x3 Air Gesture Puzzle**: Kepingan foto teracak ke dalam grid 3x3. Pemain menyusun pecahan foto di udara dengan gestur mencubit (*Pinch*) lalu mengunci hasil puzzle dengan kepalan tangan (*Fist*).
+- 🎨 **Studio Dekorasi Kreatif**: Pilihan beragam tema bingkai estetik (Classic Navy, Royal Gold, Slate Chalkboard, Diary Notebook, Rooftop Sky, Navy Silver), filter warna sinematik, stiker visual, dan kuas warna.
+- 🔊 **Synthesizer Audio Prosedural**: Efek suara interaktif (*click*, *shutter*, *pop*, *snap*, *celebration chime*) disintesis langsung menggunakan Web Audio API tanpa ketergantungan file audio eksternal.
+- 💾 **Ekspor Strip Foto HD & Google Drive**: Unduh hasil foto strip berkualitas tinggi siap cetak atau integrasikan ke Google Drive via webhook.
 
 ---
 
-## 🚀 CARA MENJALANKAN SECARA LOKAL
+## 🕹️ Panduan Kontrol Gestur Tangan
 
-### 1. Jalankan Dev Server (Vite):
+1. **Pengambilan Foto (Camera Shutter):**
+   - 🫶 **Hand Frame:** Bentuk bingkai kotak menggunakan kedua tangan di depan kamera untuk memicu hitung mundur foto 3 detik.
+   - ✌️ **Peace Sign (V):** Angkat tanda dua jari untuk memicu hitung mundur satu tangan.
+2. **Minigame Puzzle (Air Gesture):**
+   - 🤏 **Pinch to Drag:** Satukan ujung telunjuk dan jempol di atas kepingan puzzle untuk mengangkat dan memindahkannya ke slot yang tepat.
+   - ✊ **Fist to Lock:** Kepalkan tangan selama ~1 detik setelah puzzle tersusun untuk mengunci dan menyimpan foto.
+   - ⚡ **Tombol Pintas:** Tersedia opsi instan untuk langsung menyelesaikan atau melewati puzzle menuju studio dekorasi.
+
+---
+
+## 🚀 Cara Menjalankan
+
+### Persyaratan
+- Node.js v18 atau lebih baru.
+- Peramban web modern (Google Chrome, Microsoft Edge, Brave) dengan akses webcam.
+
+### Instalasi & Menjalankan Dev Server
 ```bash
+# 1. Pasang dependensi
+npm install
+
+# 2. Jalankan server lokal
 npm run dev
 ```
 
-Akses di browser kesayangan Anda:
-```text
-http://localhost:5173
+Buka peramban di `http://localhost:5173` dan izinkan akses kamera webcam saat diminta.
+
+### Build Produksi
+```bash
+npm run build
 ```
+Hasil build siap deploy akan tersedia di folder `dist/`.
 
 ---
 
-## 🛠️ TEKNOLOGI
+## 🛠️ Stack Teknologi
 
-- **React 19**
-- **Vite 8**
-- **Google MediaPipe Tasks Vision (`@mediapipe/tasks-vision`)**
-- **Web Audio API Synthesizer**
-- **HTML5 Canvas 2D API**
-- **Canvas Confetti**
-- **Pure Modern CSS (Clean Modern Japanese Kawaii Design System)**
-- **Google Fonts (Zen Maru Gothic & Nunito)**
+- **Frontend Core**: React 19, Vite 8
+- **Vision AI**: `@mediapipe/tasks-vision` (Google MediaPipe Hands)
+- **Graphic Rendering**: HTML5 Canvas 2D API
+- **Audio**: Web Audio API (Synthesizer Prosedural)
+- **Effects**: Canvas Confetti
+- **Typography & Icons**: Plus Jakarta Sans, Outfit, Material Symbols

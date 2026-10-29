@@ -1,12 +1,12 @@
-// Japanese High School (Seishun 青春) & Kawaii Photobooth Stickers & Frames
+// PUZORA Aesthetic Photobooth Stickers, Frames & Filters
 
 export const STICKERS = [
   {
-    id: "sailor_tie",
-    name: "Sailor Ribbon",
-    category: "school",
+    id: "classic_ribbon",
+    name: "Classic Ribbon",
+    category: "fashion",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Sailor Ribbon Knot & Wings in School Red -->
+      <!-- Ribbon Wings in Elegant Red -->
       <path d="M50 42 C30 18 10 28 22 55 C32 66 45 52 50 48 Z" fill="#DC2626" stroke="#991B1B" stroke-width="2.5"/>
       <path d="M50 42 C70 18 90 28 78 55 C68 66 55 52 50 48 Z" fill="#DC2626" stroke="#991B1B" stroke-width="2.5"/>
       <!-- Ribbon Tails -->
@@ -18,9 +18,9 @@ export const STICKERS = [
     </svg>`
   },
   {
-    id: "school_crest",
-    name: "School Crest",
-    category: "school",
+    id: "royal_crest",
+    name: "Royal Crest",
+    category: "badge",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <!-- Shield Navy & Gold -->
       <path d="M50 15 L78 26 C78 60 50 82 50 85 C50 82 22 60 22 26 Z" fill="#0F1E36" stroke="#F59E0B" stroke-width="3"/>
@@ -30,37 +30,33 @@ export const STICKERS = [
     </svg>`
   },
   {
-    id: "hanamaru_stamp",
-    name: "Hanamaru",
-    category: "school",
+    id: "perfect_stamp",
+    name: "Perfect 100",
+    category: "badge",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Spiral Cherry Flower 100 Score Stamp -->
+      <!-- Spiral Stamp Badge -->
       <circle cx="50" cy="50" r="36" fill="none" stroke="#DC2626" stroke-width="3.5" stroke-dasharray="8 4"/>
       <circle cx="50" cy="50" r="24" fill="none" stroke="#DC2626" stroke-width="3"/>
       <circle cx="50" cy="50" r="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2.5"/>
-      <text x="50" y="55" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="14" fill="#DC2626" text-anchor="middle">たいへん</text>
-      <text x="50" y="70" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="12" fill="#DC2626" text-anchor="middle">よくできました</text>
+      <text x="50" y="54" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" fill="#DC2626" text-anchor="middle">PERFECT</text>
+      <text x="50" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="14" fill="#DC2626" text-anchor="middle">100%</text>
     </svg>`
   },
   {
-    id: "school_bag",
-    name: "School Bag",
-    category: "school",
+    id: "travel_bag",
+    name: "Travel Bag",
+    category: "fashion",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Japanese Navy School Handbag -->
       <rect x="18" y="38" width="64" height="46" rx="8" fill="#162846" stroke="#0F172A" stroke-width="3"/>
-      <!-- Straps -->
       <path d="M30 42 C30 20 70 20 70 42" fill="none" stroke="#64748B" stroke-width="4.5" stroke-linecap="round"/>
-      <!-- Pocket -->
       <rect x="26" y="52" width="48" height="26" rx="4" fill="#1E3A5F" stroke="#334155" stroke-width="2"/>
       <line x1="26" y1="56" x2="74" y2="56" stroke="#94A3B8" stroke-width="1.5"/>
-      <!-- Cute Charm -->
       <circle cx="72" cy="46" r="4" fill="#FF5C8A"/>
     </svg>`
   },
   {
     id: "sakura_blossom",
-    name: "Sakura 桜",
+    name: "Sakura Blossom",
     category: "nature",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -83,7 +79,7 @@ export const STICKERS = [
   },
   {
     id: "sparkle_star",
-    name: "Kira Kira",
+    name: "Kira Sparkle",
     category: "sparkle",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <path d="M50 10 Q50 50 90 50 Q50 50 50 90 Q50 50 10 50 Q50 50 50 10 Z" fill="#F59E0B" stroke="#D97706" stroke-width="2.5"/>
@@ -94,7 +90,7 @@ export const STICKERS = [
   },
   {
     id: "cute_onigiri",
-    name: "Bento Onigiri",
+    name: "Bento Snack",
     category: "food",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <path d="M50 15 C68 15 85 65 78 80 C70 90 30 90 22 80 C15 65 32 15 50 15 Z" fill="#FFFFFF" stroke="#1E293B" stroke-width="3.5"/>
@@ -107,85 +103,85 @@ export const STICKERS = [
     </svg>`
   },
   {
-    id: "speech_seishun",
-    name: "青春 (Seishun)",
+    id: "speech_best",
+    name: "Best Vibes",
     category: "speech",
     svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
       <rect x="5" y="5" width="130" height="46" rx="23" fill="#EFF6FF" stroke="#1E3A5F" stroke-width="3"/>
-      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="18" fill="#1E3A5F" text-anchor="middle">★ 青春 ★</text>
+      <text x="70" y="35" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="16" fill="#1E3A5F" text-anchor="middle">★ PUZORA ★</text>
     </svg>`
   },
   {
-    id: "speech_houkago",
-    name: "放課後 (Pulang)",
+    id: "speech_peace",
+    name: "Peace Sign",
     category: "speech",
     svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
       <rect x="5" y="5" width="130" height="46" rx="23" fill="#F1F5F9" stroke="#475569" stroke-width="3"/>
-      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="17" fill="#1E293B" text-anchor="middle">放課後ピース</text>
+      <text x="70" y="35" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="15" fill="#1E293B" text-anchor="middle">PEACE &amp; SMILE</text>
     </svg>`
   },
   {
-    id: "speech_jk",
-    name: "JK ✧ 高校生",
+    id: "speech_forever",
+    name: "Sparkle Badge",
     category: "speech",
     svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
       <rect x="5" y="5" width="130" height="46" rx="23" fill="#0F1E36" stroke="#94A3B8" stroke-width="2.5"/>
-      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="16" fill="#FFFFFF" text-anchor="middle">✧ JK高校生 ✧</text>
+      <text x="70" y="35" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle">✧ BEST MOMENT ✧</text>
     </svg>`
   }
 ];
 
-// Japanese High School (Seishun / Gakko) Themed Frames (Navy & Grey Dominant)
+// PUZORA Themed Aesthetic Frames (Navy & Slate Palette)
 export const FRAME_STYLES = [
   {
     id: "sailor_navy",
-    name: "Sailor Seifuku",
-    icon: "school",
+    name: "Classic Navy",
+    icon: "palette",
     bg: "#0F1E36",
     border: "#E2E8F0",
     accent: "#DC2626",
-    tag: "SEIFUKU",
-    sub: "Kerah sailor navy bergaris putih ganda & dasi merah"
+    tag: "NAVY",
+    sub: "Aksen garis ganda putih navy elegan & pita merah"
   },
   {
     id: "gakuran_blazer",
-    name: "Academy Blazer",
+    name: "Royal Gold",
     icon: "military_tech",
     bg: "#162846",
     border: "#F59E0B",
     accent: "#94A3B8",
-    tag: "BLAZER",
-    sub: "Blazer navy sekolah prestisius & lambang lencana emas"
+    tag: "GOLD",
+    sub: "Bingkai navy gelap dengan aksen lencana emas mewah"
   },
   {
     id: "blackboard_chalk",
-    name: "Kokuban Classroom",
+    name: "Slate Chalkboard",
     icon: "draw",
     bg: "#152336",
     border: "#CBD5E1",
     accent: "#FDE047",
-    tag: "KOKUBAN",
-    sub: "Papan tulis slate-navy & ornamen kapur kelulusan"
+    tag: "CHALK",
+    sub: "Papan tulis slate-navy & ornamen kapur artistik"
   },
   {
     id: "campus_notebook",
-    name: "Campus Notebook",
+    name: "Diary Notebook",
     icon: "menu_book",
     bg: "#F8FAFC",
     border: "#1E3A5F",
     accent: "#DC2626",
     tag: "NOTEBOOK",
-    sub: "Kertas bergaris sekolah abu-abu & cap hanamaru"
+    sub: "Kertas bergaris minimalis & stempel bintang"
   },
   {
     id: "rooftop_sky",
-    name: "Rooftop Seishun",
+    name: "Rooftop Sky",
     icon: "wb_sunny",
     bg: "#1A365D",
     border: "#60A5FA",
     accent: "#93C5FD",
-    tag: "SEISHUN",
-    sub: "Biru langit atap sekolah SMA & awan masa muda"
+    tag: "SKY",
+    sub: "Gradasi biru langit luas & awan lembut"
   },
   {
     id: "silver_navy_minimal",
@@ -199,41 +195,41 @@ export const FRAME_STYLES = [
   }
 ];
 
-// Color Filters (Clean & Authentic Japanese Lighting)
+// Color Filters (Clean & Aesthetic Lighting)
 export const FILTERS = [
   {
     id: "pure_natural",
-    name: "Natural Classroom",
+    name: "Natural Tone",
     icon: "wb_incandescent",
-    sub: "Warna natural jernih ruang kelas",
+    sub: "Warna natural jernih dan tajam",
     css: "none"
   },
   {
-    id: "seishun_blue",
-    name: "Seishun Blue",
+    id: "aesthetic_blue",
+    name: "Aesthetic Blue",
     icon: "water_drop",
-    sub: "Tone biru sejuk khas film sekolah Jepang",
+    sub: "Tone biru sejuk menawan",
     css: "brightness(1.08) contrast(1.1) saturate(1.15) hue-rotate(6deg)"
   },
   {
     id: "bihaku_porcelain",
-    name: "Bihaku Uniform",
+    name: "Porcelain Glow",
     icon: "face",
-    sub: "Efek kulit bersih cerah seragam",
+    sub: "Efek kulit bersih, lembut dan cerah",
     css: "brightness(1.18) contrast(1.06) saturate(0.94)"
   },
   {
     id: "afterschool_film",
-    name: "Afterschool Warm",
+    name: "Warm Sunset",
     icon: "wb_twilight",
-    sub: "Nuansa senja hangat pulang sekolah",
+    sub: "Nuansa senja hangat sinematik",
     css: "sepia(0.28) contrast(1.12) brightness(1.06) saturate(1.28)"
   },
   {
     id: "tokyo_bw",
-    name: "Graduation B&W",
+    name: "Classic Monokrom",
     icon: "filter_b_and_w",
-    sub: "Monokrom klasik buku tahunan sekolah",
+    sub: "Monokrom artistik dengan kontras elegan",
     css: "grayscale(1) contrast(1.24) brightness(1.06)"
   }
 ];

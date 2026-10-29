@@ -107,9 +107,9 @@ export default function DecoratorStudio({
 
     // 3. Footer date & watermark
     const now = new Date();
-    const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}   SEISHUN HIGH SCHOOL • 青春の思い出`;
+    const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}   PUZORA • PHOTOBOOTH MEMORIES`;
     ctx.fillStyle = currentFrame.accent || '#94A3B8';
-    ctx.font = 'bold 12px "Zen Maru Gothic", sans-serif';
+    ctx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(dateStr, totalW / 2, totalH - 24);
 
@@ -117,33 +117,33 @@ export default function DecoratorStudio({
     renderStudioCanvas();
   }
 
-  // ================= THEMED JAPANESE SCHOOL FRAME GRAPHICS =================
+  // ================= THEMED AESTHETIC FRAME GRAPHICS =================
   function drawThemedFrame(ctx, frame, w, h) {
     ctx.save();
     // 1. Background Fill
     ctx.fillStyle = frame.bg || '#0F1E36';
     ctx.fillRect(0, 0, w, h);
 
-    // 2. Specific School Theme Renderers
+    // 2. Specific Theme Renderers
     if (frame.id === 'sailor_navy') {
-      // Sailor Seifuku: Iconic double white collar stripes (二本線)
+      // Classic Navy: Double white border stripes
       ctx.strokeStyle = '#FFFFFF';
       ctx.lineWidth = 2.5;
       ctx.strokeRect(9, 9, w - 18, h - 18);
       ctx.strokeRect(15, 15, w - 30, h - 30);
 
-      // Red Sailor Ribbon knot at top
+      // Red Ribbon knot at top
       drawSailorBow(ctx, w / 2, 26, '#DC2626', '#F59E0B');
 
-      // Golden School Button in 4 corners
+      // Golden Button in 4 corners
       drawGoldSchoolButton(ctx, 24, 24);
       drawGoldSchoolButton(ctx, w - 24, 24);
       drawGoldSchoolButton(ctx, 24, h - 24);
       drawGoldSchoolButton(ctx, w - 24, h - 24);
 
-      drawHeaderBadge(ctx, w, 'SEISHUN HIGH SCHOOL • 青藍高校', '#FFFFFF');
+      drawHeaderBadge(ctx, w, 'PUZORA • CLASSIC NAVY', '#FFFFFF');
     } else if (frame.id === 'gakuran_blazer') {
-      // School Blazer: Gold & Silver Academy Borders
+      // Royal Gold: Gold & Silver Borders
       ctx.strokeStyle = '#F59E0B';
       ctx.lineWidth = 3.5;
       ctx.strokeRect(8, 8, w - 16, h - 16);
@@ -152,15 +152,15 @@ export default function DecoratorStudio({
       ctx.lineWidth = 1.5;
       ctx.strokeRect(14, 14, w - 28, h - 28);
 
-      // Golden Academy Crests in corners
+      // Golden Shields in corners
       drawAcademyShield(ctx, 24, 24);
       drawAcademyShield(ctx, w - 24, 24);
       drawAcademyShield(ctx, 24, h - 24);
       drawAcademyShield(ctx, w - 24, h - 24);
 
-      drawHeaderBadge(ctx, w, 'TOKYO ACADEMY 2026', '#F59E0B');
+      drawHeaderBadge(ctx, w, 'PUZORA • ROYAL GOLD', '#F59E0B');
     } else if (frame.id === 'blackboard_chalk') {
-      // Kokuban Classroom: Slate wooden frame & chalk lines
+      // Slate Classroom: Slate frame & chalk lines
       ctx.strokeStyle = '#64748B';
       ctx.lineWidth = 5;
       ctx.strokeRect(6, 6, w - 12, h - 12);
@@ -172,13 +172,13 @@ export default function DecoratorStudio({
       ctx.strokeRect(14, 14, w - 28, h - 28);
       ctx.setLineDash([]);
 
-      // Chalk sakura petals in corners
+      // Chalk petals in corners
       drawChalkSakura(ctx, 26, 26);
       drawChalkSakura(ctx, w - 26, 26);
       drawChalkStar(ctx, 26, h - 26);
       drawChalkStar(ctx, w - 26, h - 26);
 
-      drawHeaderBadge(ctx, w, 'CLASS OF 2026 • 放課後メモリー', '#F8FAFC');
+      drawHeaderBadge(ctx, w, 'PUZORA • CHALKBOARD MEMORIES', '#F8FAFC');
     } else if (frame.id === 'campus_notebook') {
       // Campus Notebook: Subtle graph grid with red margin rule
       drawNotebookGridBackground(ctx, w, h);
@@ -195,10 +195,10 @@ export default function DecoratorStudio({
       ctx.lineTo(22, h - 10);
       ctx.stroke();
 
-      // Hanamaru Teacher Stamp (💮) at top-right
+      // Stamp at top-right
       drawHanamaruStamp(ctx, w - 26, 26, 12);
 
-      drawHeaderBadge(ctx, w, 'AFTER SCHOOL DIARY • 1年A組', '#1E3A5F');
+      drawHeaderBadge(ctx, w, 'PUZORA • DIARY NOTEBOOK', '#1E3A5F');
     } else if (frame.id === 'rooftop_sky') {
       // Rooftop Blue Sky Gradient & Clouds
       const skyGrad = ctx.createLinearGradient(0, 0, 0, h);
@@ -212,12 +212,12 @@ export default function DecoratorStudio({
       ctx.lineWidth = 2;
       ctx.strokeRect(10, 10, w - 20, h - 20);
 
-      // Soft clouds & fence silhouettes
+      // Soft clouds & silhouettes
       drawCloudPuff(ctx, 30, 24);
       drawCloudPuff(ctx, w - 30, 24);
       drawRooftopFence(ctx, 16, h - 34, w - 32, 14);
 
-      drawHeaderBadge(ctx, w, 'ROOFTOP SEISHUN MEMORIES', '#FFFFFF');
+      drawHeaderBadge(ctx, w, 'PUZORA • ROOFTOP SKY', '#FFFFFF');
     } else {
       // Silver Navy Minimal
       ctx.strokeStyle = '#E2E8F0';
@@ -233,14 +233,14 @@ export default function DecoratorStudio({
       drawSilverStar(ctx, 24, h - 24);
       drawSilverStar(ctx, w - 24, h - 24);
 
-      drawHeaderBadge(ctx, w, '★ 青春PHOTO • SEISHUN SCHOOL PHOTOBOOTH ★', '#E2E8F0');
+      drawHeaderBadge(ctx, w, '★ PUZORA PHOTOBOOTH STUDIO ★', '#E2E8F0');
     }
     ctx.restore();
   }
 
   function drawHeaderBadge(ctx, totalW, text, color) {
     ctx.fillStyle = color;
-    ctx.font = 'bold 12.5px "Zen Maru Gothic", sans-serif';
+    ctx.font = 'bold 12.5px "Plus Jakarta Sans", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(text, totalW / 2, 36);
   }

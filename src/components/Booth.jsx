@@ -409,7 +409,7 @@ export default function Booth({
           )}
         </div>
 
-        {/* Modern Japanese High School Filmstrip Dock */}
+        {/* Modern Filmstrip Dock */}
         <aside className="filmstrip-floating-dock" aria-label="Filmstrip Photobooth">
           <div className="floating-dock-header">
             <div className="dock-title-group">

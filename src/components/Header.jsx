@@ -20,7 +20,7 @@ export default function Header({
             </div>
             <div className="brand-texts">
               <div className="brand-title-wrap">
-                <h1 className="brand-title">Purikura Studio</h1>
+                <h1 className="brand-title">PUZORA</h1>
               </div>
               <span className="brand-tagline">{t.header.tagline}</span>
             </div>
