@@ -393,28 +393,51 @@ export default function Booth({
           )}
         </div>
 
-        {/* Floating Glassmorphism Strip Dock */}
-        <aside className="filmstrip-floating-dock kawaii-card">
+        {/* Modern Japanese High School Filmstrip Dock */}
+        <aside className="filmstrip-floating-dock" aria-label="Filmstrip Photobooth">
           <div className="floating-dock-header">
-            <span className="dock-badge">🎞️ Strip</span>
-            <span className="dock-count">{capturedPhotos.length} / {targetPhotos}</span>
+            <div className="dock-title-group">
+              <span className="material-symbols-outlined dock-icon">auto_awesome_motion</span>
+              <span className="dock-title">STRIP FOTO</span>
+            </div>
+            <span className="dock-pill-count">{capturedPhotos.length} / {targetPhotos}</span>
           </div>
 
           <div className="floating-slots-list">
-            {Array.from({ length: targetPhotos }).map((_, i) => (
-              <div
-                key={i}
-                className={`floating-film-slot ${i === currentPhotoIndex ? 'slot-current' : ''} ${capturedPhotos[i] ? 'slot-filled' : ''}`}
-              >
-                {capturedPhotos[i] ? (
-                  <img src={capturedPhotos[i].toDataURL()} alt={`Foto ${i + 1}`} className="slot-img" />
-                ) : (
-                  <div className="slot-empty">
-                    <span className="slot-num">{i + 1}</span>
-                  </div>
-                )}
-              </div>
-            ))}
+            {Array.from({ length: targetPhotos }).map((_, i) => {
+              const isFilled = Boolean(capturedPhotos[i]);
+              const isCurrent = i === currentPhotoIndex;
+              return (
+                <div
+                  key={i}
+                  className={`floating-film-slot ${isCurrent ? 'slot-current' : ''} ${isFilled ? 'slot-filled' : ''}`}
+                >
+                  {isFilled ? (
+                    <div className="slot-img-wrap">
+                      <img src={capturedPhotos[i].toDataURL()} alt={`Foto ${i + 1}`} className="slot-img" />
+                      <span className="slot-badge-check">
+                        <span className="material-symbols-outlined">check</span>
+                      </span>
+                      <span className="slot-badge-num">#{i + 1}</span>
+                    </div>
+                  ) : (
+                    <div className="slot-empty">
+                      {isCurrent ? (
+                        <div className="slot-current-hint">
+                          <span className="slot-camera-icon material-symbols-outlined">photo_camera</span>
+                          <span className="slot-pose-label">POSE {i + 1}</span>
+                          <span className="slot-pose-sub">Siap!</span>
+                        </div>
+                      ) : (
+                        <div className="slot-waiting">
+                          <span className="slot-waiting-num">{i + 1}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </aside>
       </div>

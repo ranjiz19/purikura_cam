@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { sfx } from '../utils/audio';
 import { translations } from '../utils/i18n';
 
@@ -8,19 +8,31 @@ export default function Lobby({
   minigameMode,
   setMinigameMode,
   onStart,
-  lang = 'id'
+  lang = 'id',
+  isConfigModalOpen,
+  setIsConfigModalOpen
 }) {
   const t = translations[lang] || translations.id;
+  // Local state fallback if not controlled by parent
+  const [localModalOpen, setLocalModalOpen] = useState(false);
+  const modalOpen = isConfigModalOpen !== undefined ? isConfigModalOpen : localModalOpen;
+  const setModalOpen = setIsConfigModalOpen || setLocalModalOpen;
+
+  function handleConfirmStart() {
+    sfx.playSuccess();
+    setModalOpen(false);
+    onStart();
+  }
 
   return (
     <div className="lobby-page-wrapper">
-      {/* 1. Hero Introduction with Japanese Purikura Theme & Floating Polaroids */}
+      {/* 1. Hero Banner with Japanese High School Aesthetic */}
       <section className="lobby-hero-banner" id="hero">
         {/* Floating polaroids decoration styled like Japanese Purikura strips */}
         <div className="hero-floating-decor">
           <div className="floating-polaroid polaroid-left">
             <div className="polaroid-photo polaroid-purikura-left">
-              <div className="purikura-sample-badge">セーラー服 🏫</div>
+              <div className="purikura-sample-badge">Sailor Seifuku 🏫</div>
               <span className="material-symbols-outlined polaroid-placeholder-icon">school</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidLeft}</span>
@@ -28,25 +40,24 @@ export default function Lobby({
 
           <div className="floating-polaroid polaroid-right">
             <div className="polaroid-photo polaroid-purikura-right">
-              <div className="purikura-sample-badge">放課後 3x3 🎓</div>
+              <div className="purikura-sample-badge">Air Puzzle 3x3 🎓</div>
               <span className="material-symbols-outlined polaroid-placeholder-icon">menu_book</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidRight}</span>
           </div>
         </div>
 
-        {/* Central Paper Card with Japanese Kawaii Flare */}
+        {/* Central Paper Card with Modern Japanese High School Theme */}
         <div className="hero-paper-card">
           <div className="hero-tagline-badge">
             <span className="material-symbols-outlined text-[15px]">school</span>
-            <span>{t.hero.badge}</span>
+            <span>JAPANESE HIGH SCHOOL PHOTOBOOTH</span>
           </div>
 
           <div className="hero-title-group">
             <h1 className="hero-main-title">
               {t.hero.title}
             </h1>
-            <span className="hero-kanji-sub">{t.hero.titleJp}</span>
           </div>
 
           <div className="hero-divider-wrap">
@@ -55,12 +66,13 @@ export default function Lobby({
             <span className="hero-line"></span>
           </div>
 
+          {/* Primary CTA: Opens Setup Modal */}
           <button
             id="landingStartBtn"
             className="hero-start-cta btn-primary-gradient"
             onClick={() => {
-              sfx.playSuccess();
-              onStart();
+              sfx.playClick();
+              setModalOpen(true);
             }}
           >
             <span className="btn-cta-text">{t.hero.cta}</span>
@@ -71,7 +83,7 @@ export default function Lobby({
             {t.hero.chips.map((chip, idx) => (
               <div key={idx} className="meta-chip">
                 <span className="material-symbols-outlined text-sm">
-                  {idx === 0 ? 'auto_awesome' : idx === 1 ? 'local_florist' : 'extension'}
+                  {idx === 0 ? 'auto_awesome' : idx === 1 ? 'school' : 'extension'}
                 </span>
                 <span>{chip}</span>
               </div>
@@ -80,129 +92,7 @@ export default function Lobby({
         </div>
       </section>
 
-      {/* 2. Setup Photobooth Section */}
-      <section className="lobby-section" id="setup">
-        <div className="lobby-grid">
-          {/* Left: Setup Configuration */}
-          <div className="paper-card setup-card">
-            <div className="card-header">
-              <span className="card-badge">{t.setup.stepBadge}</span>
-              <h2 className="card-title">{t.setup.title}</h2>
-              <p className="card-desc">{t.setup.desc}</p>
-            </div>
-
-            {/* Layout Selection */}
-            <div className="form-group">
-              <label className="group-label">
-                <span className="material-symbols-outlined text-[16px] align-middle mr-1">view_day</span>
-                {t.setup.layoutLabel}
-              </label>
-              <div className="options-grid">
-                {t.layouts.map(item => (
-                  <button
-                    key={item.id}
-                    className={`option-chip ${layout === item.id ? 'active' : ''}`}
-                    onClick={() => {
-                      sfx.playClick();
-                      setLayout(item.id);
-                    }}
-                  >
-                    <span className="chip-icon-box">
-                      <span className="material-symbols-outlined">{item.icon}</span>
-                    </span>
-                    <div className="chip-texts">
-                      <span className="chip-title">{item.title}</span>
-                      <span className="chip-sub">{item.sub}</span>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Minigame Selection */}
-            <div className="form-group">
-              <label className="group-label">
-                <span className="material-symbols-outlined text-[16px] align-middle mr-1">sports_esports</span>
-                {t.setup.minigameLabel}
-              </label>
-              <div className="options-grid minigame-grid">
-                {t.minigames.map(mg => (
-                  <button
-                    key={mg.id}
-                    className={`option-chip ${minigameMode === mg.id ? 'active' : ''}`}
-                    onClick={() => {
-                      sfx.playClick();
-                      setMinigameMode(mg.id);
-                    }}
-                  >
-                    <span className="chip-icon-box">
-                      <span className="material-symbols-outlined">{mg.icon}</span>
-                    </span>
-                    <div className="chip-texts">
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span className="chip-title">{mg.title}</span>
-                        <span className="micro-tag">{mg.tag}</span>
-                      </div>
-                      <span className="chip-sub">{mg.sub}</span>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Info Callout */}
-            <div className="lobby-info-callout">
-              <span className="material-symbols-outlined callout-icon">flare</span>
-              <div className="callout-text">
-                <strong>{t.setup.calloutTitle}</strong>
-                <p>{t.setup.calloutDesc}</p>
-              </div>
-            </div>
-
-            {/* Start CTA */}
-            <button
-              className="hero-start-cta btn-primary-gradient w-full-btn"
-              onClick={() => {
-                sfx.playSuccess();
-                onStart();
-              }}
-            >
-              <span className="btn-cta-text">{t.setup.startBtn}</span>
-              <span className="material-symbols-outlined btn-cta-icon">photo_camera_front</span>
-            </button>
-          </div>
-
-          {/* Right: Japanese ATM Gesture Showcase */}
-          <div className="paper-card showcase-card">
-            <div className="card-header">
-              <span className="card-badge">{t.showcase.badge}</span>
-              <h2 className="card-title">{t.showcase.title}</h2>
-              <p className="card-desc">{t.showcase.desc}</p>
-            </div>
-
-            <div className="features-vertical-list">
-              {t.showcase.items.map((item, idx) => (
-                <div key={idx} className="feature-item">
-                  <span className="feature-icon-box">
-                    <span className="material-symbols-outlined">{item.icon}</span>
-                  </span>
-                  <div className="feature-info">
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="showcase-decor-box">
-              <span className="material-symbols-outlined text-sm align-middle mr-1">local_florist</span>
-              <span>{t.showcase.footerBadge}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. How It Works Section */}
+      {/* 2. How It Works Section */}
       <section className="lobby-content-section" id="how-it-works">
         <div className="section-title-wrap">
           <span className="section-badge">{t.howItWorks.badge}</span>
@@ -228,7 +118,7 @@ export default function Lobby({
         </div>
       </section>
 
-      {/* 4. Key Features Section */}
+      {/* 3. Key Features Section */}
       <section className="lobby-content-section" id="features">
         <div className="section-title-wrap">
           <span className="section-badge">{t.features.badge}</span>
@@ -251,7 +141,7 @@ export default function Lobby({
         </div>
       </section>
 
-      {/* 5. Contact Section */}
+      {/* 4. Contact Section */}
       <section className="lobby-content-section contact-section" id="contact">
         <div className="contact-card-container">
           <div className="contact-paper-card paper-card">
@@ -293,23 +183,31 @@ export default function Lobby({
         </div>
       </section>
 
-      {/* 6. Website Footer */}
+      {/* 5. Website Footer */}
       <footer className="lobby-footer">
         <div className="footer-content">
           <div className="footer-brand">
             <span className="footer-logo">
-              <span className="material-symbols-outlined align-middle mr-1 text-sm">local_florist</span>
-              {t.footer.logo}
+              <span className="material-symbols-outlined align-middle mr-1 text-sm">school</span>
+              Purikura Studio
             </span>
             <p className="footer-tagline">
-              {t.footer.tagline}
+              Modern AI Japanese Photobooth — Didesain dengan nuansa estetika sekolah Jepang, dominan navy dan abu-abu.
             </p>
           </div>
 
           <div className="footer-nav">
             <a href="#hero">{t.nav.home}</a>
             <a href="#how-it-works">{t.nav.howItWorks}</a>
-            <a href="#setup">{t.nav.booth}</a>
+            <button
+              className="footer-nav-btn"
+              onClick={() => {
+                sfx.playClick();
+                setModalOpen(true);
+              }}
+            >
+              Bilik Foto
+            </button>
             <a href="#features">{t.nav.features}</a>
             <a href="#contact">{t.nav.contact}</a>
             <button
@@ -325,6 +223,151 @@ export default function Lobby({
           <span>{t.footer.copy}</span>
         </div>
       </footer>
+
+      {/* ================= POPUP / MODAL PENGATURAN BILIK FOTO ================= */}
+      {modalOpen && (
+        <div className="config-modal-overlay" onClick={() => setModalOpen(false)}>
+          <div
+            className="config-modal-card kawaii-card"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+          >
+            {/* Modal Header */}
+            <div className="config-modal-header">
+              <div className="modal-title-wrap">
+                <div className="modal-icon-badge">
+                  <span className="material-symbols-outlined">photo_camera_front</span>
+                </div>
+                <div>
+                  <h3 className="modal-title">Pengaturan Bilik Foto</h3>
+                  <p className="modal-subtitle">Pilih format cetak strip & mode minigame sebelum mulai</p>
+                </div>
+              </div>
+              <button
+                className="btn-modal-close"
+                onClick={() => {
+                  sfx.playClick();
+                  setModalOpen(false);
+                }}
+                aria-label="Tutup"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="config-modal-body">
+              {/* Option 1: Format Strip Foto */}
+              <div className="config-group">
+                <div className="config-group-header">
+                  <span className="config-step-num">1</span>
+                  <label className="config-label">Pilih Format Strip Foto</label>
+                </div>
+                <div className="config-layout-grid">
+                  {t.layouts.map((item) => {
+                    const isSelected = layout === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        className={`config-layout-card ${isSelected ? 'active' : ''}`}
+                        onClick={() => {
+                          sfx.playClick();
+                          setLayout(item.id);
+                        }}
+                      >
+                        <div className="layout-card-icon-wrap">
+                          <span className="material-symbols-outlined">{item.icon}</span>
+                        </div>
+                        <div className="layout-card-texts">
+                          <span className="layout-card-title">{item.title}</span>
+                          <span className="layout-card-sub">{item.sub}</span>
+                        </div>
+                        <div className="layout-card-check">
+                          <span className="material-symbols-outlined">
+                            {isSelected ? 'check_circle' : 'radio_button_unchecked'}
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Option 2: Minigame Mode */}
+              <div className="config-group">
+                <div className="config-group-header">
+                  <span className="config-step-num">2</span>
+                  <label className="config-label">Pilihan Alur (Minigame)</label>
+                </div>
+                <div className="config-minigame-grid">
+                  {t.minigames.map((mg) => {
+                    const isSelected = minigameMode === mg.id;
+                    return (
+                      <button
+                        key={mg.id}
+                        type="button"
+                        className={`config-minigame-card ${isSelected ? 'active' : ''}`}
+                        onClick={() => {
+                          sfx.playClick();
+                          setMinigameMode(mg.id);
+                        }}
+                      >
+                        <div className="minigame-card-icon-wrap">
+                          <span className="material-symbols-outlined">{mg.icon}</span>
+                        </div>
+                        <div className="minigame-card-texts">
+                          <div className="minigame-card-headline">
+                            <span className="minigame-card-title">{mg.title}</span>
+                            <span className="micro-tag">{mg.tag}</span>
+                          </div>
+                          <span className="minigame-card-sub">{mg.sub}</span>
+                        </div>
+                        <div className="minigame-card-check">
+                          <span className="material-symbols-outlined">
+                            {isSelected ? 'check_circle' : 'radio_button_unchecked'}
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Info Note */}
+              <div className="config-note-box">
+                <span className="material-symbols-outlined note-icon">school</span>
+                <span>
+                  Bingkai tema sekolah Jepang (Sailor Seifuku, Academy Blazer, Kokuban, Notebook) & stiker dapat dihias di Studio Dekorasi setelah foto selesai!
+                </span>
+              </div>
+            </div>
+
+            {/* Modal Footer CTA */}
+            <div className="config-modal-footer">
+              <button
+                type="button"
+                className="btn-kawaii btn-secondary"
+                onClick={() => {
+                  sfx.playClick();
+                  setModalOpen(false);
+                }}
+              >
+                <span>Batal</span>
+              </button>
+              <button
+                type="button"
+                className="btn-kawaii btn-primary btn-modal-start"
+                onClick={handleConfirmStart}
+              >
+                <span className="material-symbols-outlined">photo_camera</span>
+                <span>Mulai Sesi Foto 📸</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

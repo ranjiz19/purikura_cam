@@ -25,7 +25,7 @@ export const translations = {
       contact: 'Kontak'
     },
     header: {
-      tagline: 'Japanese High School Edition 青春の思い出',
+      tagline: 'Japanese High School Edition',
       soundOn: 'Suara',
       soundMuted: 'Bisu',
       guide: 'Panduan',

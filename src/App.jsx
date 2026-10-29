@@ -18,14 +18,15 @@ export default function App() {
   const [filter, setFilter] = useState('pure_natural');
   const [frameStyle, setFrameStyle] = useState('sailor_navy');
   const [minigameMode, setMinigameMode] = useState('puzzle'); // puzzle | skip
-  const [lang, setLang] = useState(detectLanguage); // id | jp | en (auto-detect)
+  const [lang] = useState(detectLanguage); // id | jp | en (auto-detect)
+  const [isConfigModalOpen, setIsConfigModalOpen] = useState(false);
 
   const [capturedPhotos, setCapturedPhotos] = useState([]);
   const [currentSnap, setCurrentSnap] = useState(null);
   const [finalStripDataUrl, setFinalStripDataUrl] = useState(null);
   const [driveLink, setDriveLink] = useState(null);
 
-  const [aiStatus, setAiStatus] = useState({ type: 'loading', text: 'Memuat AI Sensor...' });
+  const [, setAiStatus] = useState({ type: 'loading', text: 'Memuat AI Sensor...' });
   const [handLandmarker, setHandLandmarker] = useState(null);
   const [isMuted, setIsMuted] = useState(false);
   const [isGuideOpen, setIsGuideOpen] = useState(false);
@@ -193,17 +194,11 @@ export default function App() {
       {/* Modern Japanese Header (Hidden during camera booth for true fullscreen) */}
       {screen !== 'booth' && (
         <Header
-          aiStatus={aiStatus}
           isMuted={isMuted}
           onToggleMute={toggleMute}
           onOpenGuide={() => setIsGuideOpen(true)}
+          onOpenSetup={screen === 'lobby' ? () => setIsConfigModalOpen(true) : null}
           lang={lang}
-          onSetLang={(newLang) => {
-            setLang(newLang);
-            try {
-              localStorage.setItem('purikura_lang', newLang);
-            } catch (_) {}
-          }}
         />
       )}
 
@@ -217,6 +212,8 @@ export default function App() {
             setMinigameMode={setMinigameMode}
             onStart={handleStartBooth}
             lang={lang}
+            isConfigModalOpen={isConfigModalOpen}
+            setIsConfigModalOpen={setIsConfigModalOpen}
           />
         )}
 
