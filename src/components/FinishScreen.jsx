@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { sfx } from '../utils/audio';
 import confetti from 'canvas-confetti';
 
@@ -8,11 +8,13 @@ export default function FinishScreen({
   driveLink,
   onOpenDrive
 }) {
+  const [copiedToast, setCopiedToast] = useState(false);
+
   useEffect(() => {
     sfx.playSuccess();
     confetti({
-      particleCount: 80,
-      spread: 80,
+      particleCount: 90,
+      spread: 85,
       origin: { y: 0.5 }
     });
   }, []);
@@ -20,18 +22,35 @@ export default function FinishScreen({
   function handleDownload() {
     sfx.playSuccess();
     const link = document.createElement('a');
-    link.download = `purikura-kawaii-${Date.now()}.png`;
+    link.download = `purikura-seishun-${Date.now()}.png`;
     link.href = finalStripDataUrl;
     link.click();
+  }
+
+  async function handleCopyImage() {
+    sfx.playClick();
+    try {
+      const response = await fetch(finalStripDataUrl);
+      const blob = await response.blob();
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blob })
+      ]);
+      setCopiedToast(true);
+      sfx.playSuccess();
+      setTimeout(() => setCopiedToast(false), 2500);
+    } catch {
+      // Fallback: download if clipboard API is restricted
+      handleDownload();
+    }
   }
 
   return (
     <section className="finish-section">
       <div className="finish-card kawaii-card">
         <div className="finish-header">
-          <span className="kawaii-badge">プリクラ完成 • MASTERPIECE READY</span>
-          <h2 className="finish-title">Foto Purikura Siap Diunduh! 🌸</h2>
-          <p className="finish-desc">Hasil jepretan dan dekorasi fotomu telah berhasil dicetak.</p>
+          <span className="kawaii-badge">STRIP FOTO SELESAI • SEISHUN HIGH SCHOOL</span>
+          <h2 className="finish-title">Foto Purikura Siap Diunduh! 📸</h2>
+          <p className="finish-desc">Hasil foto dan dekorasi sekolah Jepangmu telah selesai diproses.</p>
         </div>
 
         {/* Cloud Storage Status Banner if Saved */}
@@ -45,7 +64,7 @@ export default function FinishScreen({
               rel="noopener noreferrer"
               className="finish-drive-link"
             >
-              Lihat di Drive ↗
+              Buka di Drive ↗
             </a>
           </div>
         )}
@@ -54,9 +73,23 @@ export default function FinishScreen({
           <img src={finalStripDataUrl} alt="Hasil Purikura Strip" className="finish-strip-img" />
         </div>
 
+        {/* Copy Image Toast Notification */}
+        {copiedToast && (
+          <div className="finish-toast-pill">
+            <span className="material-symbols-outlined text-emerald-600 text-sm">check_circle</span>
+            <span>Gambar berhasil disalin ke clipboard! Siap di-paste ke chat / medsos.</span>
+          </div>
+        )}
+
         <div className="finish-actions-row">
-          <button className="btn-kawaii btn-primary btn-lg" onClick={handleDownload}>
-            <span>📥 Download Foto HD (PNG)</span>
+          <button className="btn-kawaii btn-primary btn-lg" onClick={handleDownload} title="Download format PNG resolusi tinggi">
+            <span className="material-symbols-outlined">download</span>
+            <span>Download Foto HD (PNG)</span>
+          </button>
+
+          <button className="btn-kawaii btn-secondary btn-lg" onClick={handleCopyImage} title="Salin gambar langsung ke clipboard">
+            <span className="material-symbols-outlined">content_copy</span>
+            <span>Salin Gambar</span>
           </button>
 
           {onOpenDrive && (
@@ -66,13 +99,16 @@ export default function FinishScreen({
                 sfx.playClick();
                 onOpenDrive();
               }}
+              title="Simpan foto ke Google Drive"
             >
-              <span>☁️ {driveLink ? 'Pengaturan Drive' : 'Simpan ke Drive'}</span>
+              <span className="material-symbols-outlined">cloud_upload</span>
+              <span>{driveLink ? 'Kelola Drive' : 'Simpan ke Drive'}</span>
             </button>
           )}
 
-          <button className="btn-kawaii btn-secondary btn-lg" onClick={onRestart}>
-            <span>🔄 Ambil Foto Baru (Restart)</span>
+          <button className="btn-kawaii btn-secondary btn-lg btn-restart-booth" onClick={onRestart} title="Mulai sesi foto baru dari awal">
+            <span className="material-symbols-outlined">replay</span>
+            <span>Sesi Baru</span>
           </button>
         </div>
       </div>

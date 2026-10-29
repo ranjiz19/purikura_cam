@@ -60,6 +60,14 @@ export default function Booth({
     }
     document.addEventListener('fullscreenchange', onFullscreenChange);
 
+    function onKeyDown(e) {
+      if ((e.code === 'Space' || e.key === 'Enter') && !countdownActiveRef.current) {
+        e.preventDefault();
+        startPhotoCountdown();
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+
     function renderLoop() {
       const video = videoRef?.current;
       const canvas = canvasRef.current;
@@ -130,6 +138,7 @@ export default function Booth({
     return () => {
       if (animId) cancelAnimationFrame(animId);
       document.removeEventListener('fullscreenchange', onFullscreenChange);
+      window.removeEventListener('keydown', onKeyDown);
     };
   }, [handLandmarker, filter, videoRef, ensureCameraStarted]);
 
@@ -366,7 +375,7 @@ export default function Booth({
                   startPhotoCountdown();
                 }}
               >
-                <span>📸 Jepret Sekarang (Klik / Gestur 🫶 / ✌️)</span>
+                <span>📸 Jepret Sekarang (Klik / Spasi / Gestur 🫶 / ✌️)</span>
               </button>
             </div>
           </div>

@@ -882,7 +882,7 @@ export default function DecoratorStudio({
           {/* Finish & Save Button */}
           <div className="studio-footer-cta">
             <button className="btn-kawaii btn-primary btn-finish-strip" onClick={finishAndSave}>
-              <span>Selesai & Simpan Foto 🌸</span>
+              <span>Selesai & Lanjut Simpan 📸</span>
             </button>
           </div>
         </aside>

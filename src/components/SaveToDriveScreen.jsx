@@ -21,6 +21,7 @@ export default function SaveToDriveScreen({
   });
   const [showConfig, setShowConfig] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
 
   // Default simulated drive link or custom webhook result
   const currentLink = driveLink || 'https://drive.google.com/drive/u/0/my-drive';
@@ -101,7 +102,8 @@ export default function SaveToDriveScreen({
     try {
       localStorage.setItem('purikura_drive_webhook', webhookUrl.trim());
       sfx.playSuccess();
-      alert('URL Webhook Google Drive berhasil disimpan!');
+      setToastMessage('URL Webhook Google Drive berhasil disimpan!');
+      setTimeout(() => setToastMessage(''), 3000);
     } catch (_) {}
   }
 
@@ -172,7 +174,7 @@ export default function SaveToDriveScreen({
             {/* Status: UPLOADING */}
             {uploadStatus === 'uploading' && (
               <div className="drive-state-uploading">
-                <div className="loading-spinner text-3xl">🌸</div>
+                <div className="loading-spinner text-3xl">☁️</div>
                 <h3 className="drive-box-title">Sedang Mengunggah ke Google Drive...</h3>
                 <p className="drive-box-desc">Menyimpan foto strip beresolusi tinggi ke cloud storage Anda.</p>
 
@@ -277,6 +279,12 @@ export default function SaveToDriveScreen({
                       Simpan
                     </button>
                   </div>
+                  {toastMessage && (
+                    <div className="webhook-toast-pill">
+                      <span className="material-symbols-outlined text-xs">check_circle</span>
+                      <span>{toastMessage}</span>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
