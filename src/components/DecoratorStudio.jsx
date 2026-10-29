@@ -141,7 +141,7 @@ export default function DecoratorStudio({
       drawGoldSchoolButton(ctx, 24, h - 24);
       drawGoldSchoolButton(ctx, w - 24, h - 24);
 
-      drawHeaderBadge(ctx, w, '🏫 青春セーラー • SEISHUN HIGH SCHOOL • 青藍高校', '#FFFFFF');
+      drawHeaderBadge(ctx, w, 'SEISHUN HIGH SCHOOL • 青藍高校', '#FFFFFF');
     } else if (frame.id === 'gakuran_blazer') {
       // School Blazer: Gold & Silver Academy Borders
       ctx.strokeStyle = '#F59E0B';
@@ -158,7 +158,7 @@ export default function DecoratorStudio({
       drawAcademyShield(ctx, 24, h - 24);
       drawAcademyShield(ctx, w - 24, h - 24);
 
-      drawHeaderBadge(ctx, w, '🎓 私立青藍学園 • TOKYO ACADEMY 2026 🎓', '#F59E0B');
+      drawHeaderBadge(ctx, w, 'TOKYO ACADEMY 2026', '#F59E0B');
     } else if (frame.id === 'blackboard_chalk') {
       // Kokuban Classroom: Slate wooden frame & chalk lines
       ctx.strokeStyle = '#64748B';
@@ -178,7 +178,7 @@ export default function DecoratorStudio({
       drawChalkStar(ctx, 26, h - 26);
       drawChalkStar(ctx, w - 26, h - 26);
 
-      drawHeaderBadge(ctx, w, '🌸 卒業記念 • CLASS OF 2026 • 放課後メモリー 🌸', '#F8FAFC');
+      drawHeaderBadge(ctx, w, 'CLASS OF 2026 • 放課後メモリー', '#F8FAFC');
     } else if (frame.id === 'campus_notebook') {
       // Campus Notebook: Subtle graph grid with red margin rule
       drawNotebookGridBackground(ctx, w, h);
@@ -198,7 +198,7 @@ export default function DecoratorStudio({
       // Hanamaru Teacher Stamp (💮) at top-right
       drawHanamaruStamp(ctx, w - 26, 26, 12);
 
-      drawHeaderBadge(ctx, w, '✏️ 放課後ノート • AFTER SCHOOL DIARY • 1年A組 ✏️', '#1E3A5F');
+      drawHeaderBadge(ctx, w, 'AFTER SCHOOL DIARY • 1年A組', '#1E3A5F');
     } else if (frame.id === 'rooftop_sky') {
       // Rooftop Blue Sky Gradient & Clouds
       const skyGrad = ctx.createLinearGradient(0, 0, 0, h);
@@ -217,7 +217,7 @@ export default function DecoratorStudio({
       drawCloudPuff(ctx, w - 30, 24);
       drawRooftopFence(ctx, 16, h - 34, w - 32, 14);
 
-      drawHeaderBadge(ctx, w, '🌤️ 青空と放課後 • ROOFTOP SEISHUN MEMORIES 🌤️', '#FFFFFF');
+      drawHeaderBadge(ctx, w, 'ROOFTOP SEISHUN MEMORIES', '#FFFFFF');
     } else {
       // Silver Navy Minimal
       ctx.strokeStyle = '#E2E8F0';
@@ -720,7 +720,7 @@ export default function DecoratorStudio({
                 setActiveTab('stickers');
               }}
             >
-              🌸 Stiker
+              Stiker
             </button>
             <button
               className={`tab-btn ${activeTab === 'pen' ? 'active' : ''}`}
@@ -729,7 +729,7 @@ export default function DecoratorStudio({
                 setActiveTab('pen');
               }}
             >
-              ✏️ Kuas
+              Kuas
             </button>
             <button
               className={`tab-btn ${activeTab === 'frames' ? 'active' : ''}`}
@@ -738,7 +738,7 @@ export default function DecoratorStudio({
                 setActiveTab('frames');
               }}
             >
-              🖼️ Bingkai
+              Bingkai
             </button>
             <button
               className={`tab-btn ${activeTab === 'filters' ? 'active' : ''}`}
@@ -747,7 +747,7 @@ export default function DecoratorStudio({
                 setActiveTab('filters');
               }}
             >
-              🎨 Filter
+              Filter
             </button>
           </div>
 
@@ -824,7 +824,8 @@ export default function DecoratorStudio({
               </div>
 
               <button className="btn-kawaii btn-secondary btn-sm" onClick={clearAllDecorations} style={{ marginTop: '12px' }}>
-                <span>Hapus Semua Coretan & Stiker 🗑️</span>
+                <span className="material-symbols-outlined text-sm align-middle mr-1">delete</span>
+                <span>Hapus Semua Coretan & Stiker</span>
               </button>
             </div>
           )}
@@ -843,7 +844,7 @@ export default function DecoratorStudio({
                       setFrameStyle(fr.id);
                     }}
                   >
-                    <span className="frame-icon-badge">{fr.icon}</span>
+                    <span className="material-symbols-outlined frame-icon-badge">{fr.icon}</span>
                     <div className="frame-meta">
                       <strong>{fr.name}</strong>
                       <small>{fr.sub}</small>
@@ -868,7 +869,7 @@ export default function DecoratorStudio({
                       setFilter(f.id);
                     }}
                   >
-                    <span className="frame-icon-badge">{f.icon}</span>
+                    <span className="material-symbols-outlined frame-icon-badge">{f.icon}</span>
                     <div className="frame-meta">
                       <strong>{f.name}</strong>
                       <small>{f.sub}</small>
@@ -882,7 +883,8 @@ export default function DecoratorStudio({
           {/* Finish & Save Button */}
           <div className="studio-footer-cta">
             <button className="btn-kawaii btn-primary btn-finish-strip" onClick={finishAndSave}>
-              <span>Selesai & Lanjut Simpan 📸</span>
+              <span className="material-symbols-outlined text-[17px] align-middle mr-1.5">check_circle</span>
+              <span>Selesai & Lanjut Simpan</span>
             </button>
           </div>
         </aside>

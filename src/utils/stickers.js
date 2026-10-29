@@ -3,7 +3,7 @@
 export const STICKERS = [
   {
     id: "sailor_tie",
-    name: "Sailor Ribbon 🎀",
+    name: "Sailor Ribbon",
     category: "school",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <!-- Sailor Ribbon Knot & Wings in School Red -->
@@ -19,7 +19,7 @@ export const STICKERS = [
   },
   {
     id: "school_crest",
-    name: "School Crest 🏅",
+    name: "School Crest",
     category: "school",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <!-- Shield Navy & Gold -->
@@ -31,7 +31,7 @@ export const STICKERS = [
   },
   {
     id: "hanamaru_stamp",
-    name: "Hanamaru 💮",
+    name: "Hanamaru",
     category: "school",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <!-- Spiral Cherry Flower 100 Score Stamp -->
@@ -44,7 +44,7 @@ export const STICKERS = [
   },
   {
     id: "school_bag",
-    name: "School Bag 🎒",
+    name: "School Bag",
     category: "school",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <!-- Japanese Navy School Handbag -->
@@ -83,7 +83,7 @@ export const STICKERS = [
   },
   {
     id: "sparkle_star",
-    name: "Kira Kira ✨",
+    name: "Kira Kira",
     category: "sparkle",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <path d="M50 10 Q50 50 90 50 Q50 50 50 90 Q50 50 10 50 Q50 50 50 10 Z" fill="#F59E0B" stroke="#D97706" stroke-width="2.5"/>
@@ -94,7 +94,7 @@ export const STICKERS = [
   },
   {
     id: "cute_onigiri",
-    name: "Bento Onigiri 🍙",
+    name: "Bento Onigiri",
     category: "food",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <path d="M50 15 C68 15 85 65 78 80 C70 90 30 90 22 80 C15 65 32 15 50 15 Z" fill="#FFFFFF" stroke="#1E293B" stroke-width="3.5"/>
@@ -121,7 +121,7 @@ export const STICKERS = [
     category: "speech",
     svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
       <rect x="5" y="5" width="130" height="46" rx="23" fill="#F1F5F9" stroke="#475569" stroke-width="3"/>
-      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="17" fill="#1E293B" text-anchor="middle">放課後ピース✌️</text>
+      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="17" fill="#1E293B" text-anchor="middle">放課後ピース</text>
     </svg>`
   },
   {
@@ -139,8 +139,8 @@ export const STICKERS = [
 export const FRAME_STYLES = [
   {
     id: "sailor_navy",
-    name: "Sailor Seifuku 🏫",
-    icon: "🏫",
+    name: "Sailor Seifuku",
+    icon: "school",
     bg: "#0F1E36",
     border: "#E2E8F0",
     accent: "#DC2626",
@@ -149,8 +149,8 @@ export const FRAME_STYLES = [
   },
   {
     id: "gakuran_blazer",
-    name: "Academy Blazer 🎓",
-    icon: "🎓",
+    name: "Academy Blazer",
+    icon: "military_tech",
     bg: "#162846",
     border: "#F59E0B",
     accent: "#94A3B8",
@@ -159,8 +159,8 @@ export const FRAME_STYLES = [
   },
   {
     id: "blackboard_chalk",
-    name: "Kokuban Classroom 📝",
-    icon: "📝",
+    name: "Kokuban Classroom",
+    icon: "draw",
     bg: "#152336",
     border: "#CBD5E1",
     accent: "#FDE047",
@@ -169,18 +169,18 @@ export const FRAME_STYLES = [
   },
   {
     id: "campus_notebook",
-    name: "Campus Notebook ✏️",
-    icon: "✏️",
+    name: "Campus Notebook",
+    icon: "menu_book",
     bg: "#F8FAFC",
     border: "#1E3A5F",
     accent: "#DC2626",
     tag: "NOTEBOOK",
-    sub: "Kertas bergaris sekolah abu-abu & cap hanamaru 💮"
+    sub: "Kertas bergaris sekolah abu-abu & cap hanamaru"
   },
   {
     id: "rooftop_sky",
-    name: "Rooftop Seishun 🌤️",
-    icon: "🌤️",
+    name: "Rooftop Seishun",
+    icon: "wb_sunny",
     bg: "#1A365D",
     border: "#60A5FA",
     accent: "#93C5FD",
@@ -189,8 +189,8 @@ export const FRAME_STYLES = [
   },
   {
     id: "silver_navy_minimal",
-    name: "Navy & Silver 🥈",
-    icon: "🥈",
+    name: "Navy & Silver",
+    icon: "star",
     bg: "#0B132B",
     border: "#94A3B8",
     accent: "#F8FAFC",
@@ -203,36 +203,36 @@ export const FRAME_STYLES = [
 export const FILTERS = [
   {
     id: "pure_natural",
-    name: "Natural Classroom ✨",
-    icon: "✨",
+    name: "Natural Classroom",
+    icon: "wb_incandescent",
     sub: "Warna natural jernih ruang kelas",
     css: "none"
   },
   {
     id: "seishun_blue",
-    name: "Seishun Blue 💙",
-    icon: "🌊",
+    name: "Seishun Blue",
+    icon: "water_drop",
     sub: "Tone biru sejuk khas film sekolah Jepang",
     css: "brightness(1.08) contrast(1.1) saturate(1.15) hue-rotate(6deg)"
   },
   {
     id: "bihaku_porcelain",
-    name: "Bihaku Uniform 🥛",
-    icon: "🥛",
+    name: "Bihaku Uniform",
+    icon: "face",
     sub: "Efek kulit bersih cerah seragam",
     css: "brightness(1.18) contrast(1.06) saturate(0.94)"
   },
   {
     id: "afterschool_film",
-    name: "Afterschool Warm 🌇",
-    icon: "🌇",
+    name: "Afterschool Warm",
+    icon: "wb_twilight",
     sub: "Nuansa senja hangat pulang sekolah",
     css: "sepia(0.28) contrast(1.12) brightness(1.06) saturate(1.28)"
   },
   {
     id: "tokyo_bw",
-    name: "Graduation B&W 🖤",
-    icon: "🎞️",
+    name: "Graduation B&W",
+    icon: "filter_b_and_w",
     sub: "Monokrom klasik buku tahunan sekolah",
     css: "grayscale(1) contrast(1.24) brightness(1.06)"
   }

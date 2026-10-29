@@ -13,7 +13,7 @@ export default function Minigame({
   const miniCamRef = useRef(null);
 
   const [scoreText, setScoreText] = useState('PUZZLE: 0 / 9 COCOK');
-  const [comboText, setComboText] = useState('Susun Kepingan Puzzle! 🧩 Cubit (🤏) untuk Tarik');
+  const [comboText, setComboText] = useState('Susun Kepingan Puzzle — Cubit untuk Tarik');
   const [gestureState, setGestureState] = useState({ icon: '🖐️', name: 'Tangan Terbuka' });
   const [fistProgress, setFistProgress] = useState(0);
 
@@ -182,9 +182,9 @@ export default function Minigame({
 
     setScoreText(`PUZZLE: ${matched} / 9 COCOK`);
     if (p.isSolved) {
-      setComboText('★ TERSUSUN SEMPURNA! KEPALKAN TANGAN (✊) UNTUK SIMPAN ★');
+      setComboText('TERSUSUN SEMPURNA — KEPALKAN TANGAN UNTUK SIMPAN');
     } else {
-      setComboText(`Susun Kepingan Puzzle (${matched}/9) 🧩 Cubit (🤏) untuk Tarik`);
+      setComboText(`Susun Kepingan Puzzle (${matched}/9) — Cubit untuk Tarik`);
     }
   }
 
@@ -483,10 +483,12 @@ export default function Minigame({
 
           <div className="hud-actions-group">
             <button className="btn-kawaii btn-secondary btn-sm" onClick={handleAutoSolve}>
-              <span>🧩 Selesaikan</span>
+              <span className="material-symbols-outlined text-[15px]">auto_fix_high</span>
+              <span>Selesaikan</span>
             </button>
             <button className="btn-kawaii btn-secondary btn-sm" onClick={onFinish}>
-              <span>Lewati ⏩</span>
+              <span className="material-symbols-outlined text-[15px]">skip_next</span>
+              <span>Lewati</span>
             </button>
           </div>
         </div>

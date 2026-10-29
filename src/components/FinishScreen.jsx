@@ -49,7 +49,7 @@ export default function FinishScreen({
       <div className="finish-card kawaii-card">
         <div className="finish-header">
           <span className="kawaii-badge">STRIP FOTO SELESAI • SEISHUN HIGH SCHOOL</span>
-          <h2 className="finish-title">Foto Purikura Siap Diunduh! 📸</h2>
+          <h2 className="finish-title">Foto Purikura Siap Diunduh</h2>
           <p className="finish-desc">Hasil foto dan dekorasi sekolah Jepangmu telah selesai diproses.</p>
         </div>
 

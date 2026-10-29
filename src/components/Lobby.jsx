@@ -32,7 +32,7 @@ export default function Lobby({
         <div className="hero-floating-decor">
           <div className="floating-polaroid polaroid-left">
             <div className="polaroid-photo polaroid-purikura-left">
-              <div className="purikura-sample-badge">Sailor Seifuku 🏫</div>
+              <div className="purikura-sample-badge">Sailor Seifuku</div>
               <span className="material-symbols-outlined polaroid-placeholder-icon">school</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidLeft}</span>
@@ -40,7 +40,7 @@ export default function Lobby({
 
           <div className="floating-polaroid polaroid-right">
             <div className="polaroid-photo polaroid-purikura-right">
-              <div className="purikura-sample-badge">Air Puzzle 3x3 🎓</div>
+              <div className="purikura-sample-badge">Air Puzzle 3x3</div>
               <span className="material-symbols-outlined polaroid-placeholder-icon">menu_book</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidRight}</span>

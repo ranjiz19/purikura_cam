@@ -197,7 +197,6 @@ export default function App() {
           isMuted={isMuted}
           onToggleMute={toggleMute}
           onOpenGuide={() => setIsGuideOpen(true)}
-          onOpenSetup={screen === 'lobby' ? () => setIsConfigModalOpen(true) : null}
           lang={lang}
         />
       )}

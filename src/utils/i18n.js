@@ -32,22 +32,22 @@ export const translations = {
       langSelect: 'Bahasa'
     },
     hero: {
-      badge: '🏫 青春プリクラ — JAPANESE HIGH SCHOOL SEISHUN PHOTOBOOTH',
+      badge: 'JAPANESE HIGH SCHOOL SEISHUN PHOTOBOOTH',
       title: 'Purikura Studio',
       titleJp: '青春フォトスタジオ (高校エディション)',
-      subtitle: 'Abadikan momen masa muda sekolah Jepang (Seishun 青春) bertema seragam navy & abu-abu, bingkai seifuku, serta sensor gestur AI ✨',
+      subtitle: 'Abadikan momen masa muda sekolah Jepang (Seishun 青春) bertema seragam navy & abu-abu, bingkai seifuku, serta sensor gestur AI',
       cta: 'MASUK BILIK FOTO',
       chips: [
         'Tema Sekolah Jepang (Navy & Grey)',
         'Seragam Seifuku & Blazer',
         '3x3 Air Puzzle AI'
       ],
-      polaroidLeft: 'Memori Sekolah 🏫',
-      polaroidRight: 'Sepulang Sekolah ✌️'
+      polaroidLeft: 'Memori Sekolah',
+      polaroidRight: 'Sepulang Sekolah'
     },
     setup: {
       stepBadge: 'STEP 1 • PENGATURAN AWAL',
-      title: 'Setup Bilik Foto Sekolah 🏫',
+      title: 'Setup Bilik Foto Sekolah',
       desc: 'Pilih format cetak strip foto dan alur minigame sebelum mulai sesi jepret foto.',
       layoutLabel: '1. Format Strip Foto Khas Jepang',
       minigameLabel: '2. Pilihan Alur Foto (Minigame)',
@@ -79,13 +79,13 @@ export const translations = {
     ],
     showcase: {
       badge: 'SENSOR GESTUR • KONTROL UDARA',
-      title: 'Fitur & Kontrol Tangan 🎀',
+      title: 'Fitur & Kontrol Tangan',
       desc: 'Kendalikan kamera dan puzzle tanpa menyentuh mouse atau keyboard, murni gestur webcam.',
       items: [
         {
           icon: 'crop_free',
           title: 'Hand Frame / Peace (Bilik Foto)',
-          desc: 'Bentuk bingkai kedua tangan (Hand Frame) atau pose Peace ✌️ untuk shutter otomatis 3 detik.'
+          desc: 'Bentuk bingkai kedua tangan (Hand Frame) atau pose Peace untuk shutter otomatis 3 detik.'
         },
         {
           icon: 'pinch',
@@ -103,11 +103,11 @@ export const translations = {
           desc: 'Hias strip fotomu dengan bingkai Jepang, filter warna estetik, stiker lucu, dan kuas neon.'
         }
       ],
-      footerBadge: '🌸 プリクラ — Pure Vision AI Photobooth Experience'
+      footerBadge: 'Pure Vision AI Photobooth Experience'
     },
     howItWorks: {
       badge: 'PANDUAN LANGKAH • HOW IT WORKS',
-      heading: 'Cara Seru Bermain di Purikura Studio 🌸',
+      heading: 'Cara Seru Bermain di Purikura Studio',
       subheading: 'Cukup gunakan webcam laptop/HP biasa. AI cerdas mengenali gerakan tangan secara instan dan aman di browser lokal.',
       steps: [
         {
@@ -138,7 +138,7 @@ export const translations = {
     },
     features: {
       badge: 'TEKNOLOGI JEPANG • TOKYO VIBES',
-      heading: 'Keunikan & Fitur Unggulan プリクラ ✨',
+      heading: 'Keunikan & Fitur Unggulan',
       subheading: 'Menghadirkan pengalaman bilik foto Jepang asli dengan sentuhan AI modern, stiker lucu, dan kualitas cetak tinggi.',
       items: [
         {
@@ -165,14 +165,14 @@ export const translations = {
     },
     contact: {
       badge: 'KONTAK & KREATOR',
-      title: 'Terhubung dengan Kami ✉️',
+      title: 'Terhubung dengan Kami',
       desc: 'Punya pertanyaan seputar sensor AI gestur, ide stiker baru, masukan, atau ingin berkolaborasi untuk Purikura Studio? Jangan ragu untuk menyapa kami!',
-      instagram: '@rafinurajiz',
-      email: 'rafinurajiz19@gmail.com',
+      instagram: 'Instagram',
+      email: 'Mail',
       github: 'GitHub Repo'
     },
     footer: {
-      logo: '🌸 プリクラ Purikura Studio',
+      logo: 'Purikura Studio',
       tagline: 'Modern AI Japanese Kawaii Photobooth & Gesture Air Puzzle • Didesain dengan estetika modern, hangat, dan menyenangkan.',
       copy: '© 2026 Purikura Studio (プリクラ). Hak cipta dilindungi undang-undang.',
       top: 'Ke Atas'
@@ -195,22 +195,22 @@ export const translations = {
       langSelect: '言語'
     },
     hero: {
-      badge: '🌸 プリクラ — JAPANESE KAWAII PHOTOBOOTH & AIR PUZZLE',
+      badge: 'JAPANESE KAWAII PHOTOBOOTH & AIR PUZZLE',
       title: 'Purikura Studio',
       titleJp: 'プリクラスタジオ',
-      subtitle: 'かわいい瞬間をキャプチャ、空中で3x3パズルを解いて、本格プリクラをデコレーション！ ✨',
+      subtitle: 'かわいい瞬間をキャプチャ、空中で3x3パズルを解いて、本格プリクラをデコレーション！',
       cta: 'プリクラを始める',
       chips: [
         'Pure Vision AI (MediaPipe)',
         '2026年 東京エディション',
         '3x3 空中パズル'
       ],
-      polaroidLeft: '大切な思い出 🌸',
-      polaroidRight: '空中パズル 🧩'
+      polaroidLeft: '大切な思い出',
+      polaroidRight: '空中パズル'
     },
     setup: {
       stepBadge: 'STEP 1 • 初期設定',
-      title: 'ブースのセットアップ 🌸',
+      title: 'ブースのセットアップ',
       desc: '撮影セッションを開始する前に、プリントフォーマットとミニゲームモードを選択してください。',
       layoutLabel: '1. プリクラシートのレイアウト',
       minigameLabel: '2. 撮影フロー (ミニゲーム)',
@@ -230,7 +230,7 @@ export const translations = {
         title: '3x3 写真パズル',
         icon: 'extension',
         tag: 'メイン機能',
-        sub: '空中でピース合わせ (ピンチ 🤏 & 握り拳 ✊)'
+        sub: '空中でピース合わせ (ピンチ & 握り拳)'
       },
       {
         id: 'skip',
@@ -242,23 +242,23 @@ export const translations = {
     ],
     showcase: {
       badge: 'ジェスチャー制御 • 空中操作',
-      title: '手のひら操作機能 🎀',
+      title: '手のひら操作機能',
       desc: 'マウスやキーボードに触れず、Webカメラの前で手や指を動かすだけで直感的に操作できます。',
       items: [
         {
           icon: 'crop_free',
           title: 'ハンドフレーム / ピースサイン (撮影)',
-          desc: '両手でフレームを作るか、ピースサイン ✌️ を構えると3秒カウントダウンで自動シャッター！'
+          desc: '両手でフレームを作るか、ピースサインを構えると3秒カウントダウンで自動シャッター！'
         },
         {
           icon: 'pinch',
           title: 'ピンチ＆ドラッグ (空中パズル)',
-          desc: '親指と人差し指をつまむ (ピンチ 🤏) 動作で、空中のパズルピースを掴んで移動できます。'
+          desc: '親指と人差し指をつまむ (ピンチ) 動作で、空中のパズルピースを掴んで移動できます。'
         },
         {
           icon: 'front_hand',
           title: 'フィストロック (保存＆固定)',
-          desc: 'パズル完成後、拳を約1秒間握る (✊) とロックされ、スタジオへ進みます。'
+          desc: 'パズル完成後、拳を約1秒間握るとロックされ、スタジオへ進みます。'
         },
         {
           icon: 'palette',
@@ -266,11 +266,11 @@ export const translations = {
           desc: '和風フレーム、エステティックフィルター、可愛いスタンプ、ネオンブラシで自由に落書き。'
         }
       ],
-      footerBadge: '🌸 プリクラ — Pure Vision AI Photobooth Experience'
+      footerBadge: 'Pure Vision AI Photobooth Experience'
     },
     howItWorks: {
       badge: '遊び方ガイド • HOW IT WORKS',
-      heading: 'プリクラスタジオの楽しみ方 🌸',
+      heading: 'プリクラスタジオの楽しみ方',
       subheading: '特別な機器は不要。通常のWebカメラだけで、ビジョンAIが手の動きを安全・瞬時に検出します。',
       steps: [
         {
@@ -301,7 +301,7 @@ export const translations = {
     },
     features: {
       badge: '日本発のテクノロジー • TOKYO VIBES',
-      heading: 'プリクラスタジオの特長 ✨',
+      heading: 'プリクラスタジオの特長',
       subheading: '本場原宿・渋谷のプリクラの楽しさに、最先端のAIジェスチャー操作を融合。',
       items: [
         {
@@ -328,14 +328,14 @@ export const translations = {
     },
     contact: {
       badge: 'GET IN TOUCH • お問い合わせ',
-      title: 'お問い合わせ・メッセージ 🌸',
+      title: 'お問い合わせ・メッセージ',
       desc: 'AIセンサーの機能要望、新しいスタンプのアイデア、ご意見など、いつでもお気軽にお知らせください！',
-      instagram: '@rafinurajiz',
-      email: 'rafinurajiz19@gmail.com',
+      instagram: 'Instagram',
+      email: 'Mail',
       github: 'GitHub リポジトリ'
     },
     footer: {
-      logo: '🌸 プリクラ Purikura Studio',
+      logo: 'Purikura Studio',
       tagline: 'Modern AI Japanese Kawaii Photobooth & Gesture Air Puzzle • 原宿カルチャーとテクノロジーの融合。',
       copy: '© 2026 Purikura Studio (プリクラ). All rights reserved.',
       top: 'トップへ'
@@ -358,22 +358,22 @@ export const translations = {
       langSelect: 'Language'
     },
     hero: {
-      badge: '🌸 プリクラ — JAPANESE KAWAII PHOTOBOOTH & AIR PUZZLE',
+      badge: 'JAPANESE KAWAII PHOTOBOOTH & AIR PUZZLE',
       title: 'Purikura Studio',
       titleJp: 'プリクラスタジオ',
-      subtitle: 'Capture kawaii moments, solve 3x3 photo puzzles in the air, and decorate authentic Japanese photo strips! ✨',
+      subtitle: 'Capture memorable moments, solve 3x3 photo puzzles in the air, and decorate authentic Japanese photo strips!',
       cta: 'ENTER PHOTOBOOTH',
       chips: [
         'Pure Vision AI (MediaPipe)',
         'Tokyo 2026 Edition',
         '3x3 Air Gesture Puzzle'
       ],
-      polaroidLeft: 'Sweet Memories 🌸',
-      polaroidRight: 'Air 3x3 Puzzle 🧩'
+      polaroidLeft: 'Sweet Memories',
+      polaroidRight: 'Air 3x3 Puzzle'
     },
     setup: {
       stepBadge: 'STEP 1 • INITIAL SETUP',
-      title: 'Photobooth Setup 🌸',
+      title: 'Photobooth Setup',
       desc: 'Choose your desired photo strip format and minigame workflow before entering the camera booth.',
       layoutLabel: '1. Japanese Photo Strip Layout',
       minigameLabel: '2. Workflow (Minigame Challenge)',
@@ -393,7 +393,7 @@ export const translations = {
         title: '3x3 Photo Puzzle',
         icon: 'extension',
         tag: 'MAIN FEATURE',
-        sub: 'Solve puzzle in the air (Pinch 🤏 & Fist ✊)'
+        sub: 'Solve puzzle in the air (Pinch & Fist)'
       },
       {
         id: 'skip',
@@ -405,23 +405,23 @@ export const translations = {
     ],
     showcase: {
       badge: 'VISION AI • AIR GESTURE CONTROL',
-      title: 'Gesture Control Suite 🎀',
+      title: 'Gesture Control Suite',
       desc: 'Control the camera booth and air puzzle completely hands-free using your webcam.',
       items: [
         {
           icon: 'crop_free',
           title: 'Hand Frame / Peace (Camera Shutter)',
-          desc: 'Form a hand frame with both hands or pose with a peace sign ✌️ for an automatic 3s shutter.'
+          desc: 'Form a hand frame with both hands or pose with a peace sign for an automatic 3s shutter.'
         },
         {
           icon: 'pinch',
           title: 'Pinch & Drag (Air Puzzle)',
-          desc: 'Pinch your thumb and index finger together (🤏) to pick up and snap 3x3 puzzle pieces.'
+          desc: 'Pinch your thumb and index finger together to pick up and snap 3x3 puzzle pieces.'
         },
         {
           icon: 'front_hand',
           title: 'Fist Lock (Lock & Save)',
-          desc: 'Hold a closed fist (✊) for 1 second after solving to lock and advance to the studio.'
+          desc: 'Hold a closed fist for 1 second after solving to lock and advance to the studio.'
         },
         {
           icon: 'palette',
@@ -429,11 +429,11 @@ export const translations = {
           desc: 'Personalize with Japanese frames, aesthetic color grading, cute stickers, and neon pens.'
         }
       ],
-      footerBadge: '🌸 プリクラ — Pure Vision AI Photobooth Experience'
+      footerBadge: 'Pure Vision AI Photobooth Experience'
     },
     howItWorks: {
       badge: 'STEP-BY-STEP GUIDE • HOW IT WORKS',
-      heading: 'How to Enjoy Purikura Studio 🌸',
+      heading: 'How to Enjoy Purikura Studio',
       subheading: 'No hardware needed beyond your standard webcam. Smart Vision AI detects gestures instantly and privately inside your browser.',
       steps: [
         {
@@ -464,7 +464,7 @@ export const translations = {
     },
     features: {
       badge: 'JAPANESE TECH • TOKYO VIBES',
-      heading: 'Unique Highlights & Craft プリクラ ✨',
+      heading: 'Unique Highlights & Craft',
       subheading: 'Bringing authentic Tokyo Harajuku photobooth charm together with next-gen Vision AI gesture technology.',
       items: [
         {
@@ -491,14 +491,14 @@ export const translations = {
     },
     contact: {
       badge: 'GET IN TOUCH',
-      title: 'Get in Touch 🌸',
+      title: 'Get in Touch',
       desc: 'Have questions, feedback, or sticker suggestions for Purikura Studio? We would love to hear from you!',
-      instagram: '@rafinurajiz',
-      email: 'rafinurajiz19@gmail.com',
+      instagram: 'Instagram',
+      email: 'Mail',
       github: 'GitHub Repo'
     },
     footer: {
-      logo: '🌸 プリクラ Purikura Studio',
+      logo: 'Purikura Studio',
       tagline: 'Modern AI Japanese Kawaii Photobooth & Gesture Air Puzzle • Where Tokyo street culture meets Vision AI.',
       copy: '© 2026 Purikura Studio (プリクラ). All rights reserved.',
       top: 'Back to Top'

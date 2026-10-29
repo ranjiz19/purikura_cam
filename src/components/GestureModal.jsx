@@ -20,7 +20,7 @@ export default function GestureModal({ isOpen, onClose }) {
             }}
             aria-label="Tutup Panduan"
           >
-            ✕
+            <span className="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
 
@@ -92,7 +92,7 @@ export default function GestureModal({ isOpen, onClose }) {
               onClose();
             }}
           >
-            <span>Sudah Paham, Tutup Panduan ✨</span>
+            <span>Sudah Paham, Tutup Panduan</span>
           </button>
         </div>
       </div>

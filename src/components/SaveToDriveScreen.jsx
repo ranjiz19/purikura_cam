@@ -120,7 +120,7 @@ export default function SaveToDriveScreen({
         {/* Header Title */}
         <div className="drive-header-box">
           <span className="kawaii-badge">STEP 4 • GOOGLE CLOUD STORAGE</span>
-          <h2 className="drive-main-title">Simpan Foto ke Google Drive ☁️</h2>
+          <h2 className="drive-main-title">Simpan Foto ke Google Drive</h2>
           <p className="drive-subtitle">
             Simpan hasil fotomu ke cloud Google Drive agar mudah diunduh di smartphone atau dibagikan ke teman-teman!
           </p>
@@ -157,7 +157,7 @@ export default function SaveToDriveScreen({
                     onClick={handleUploadToDrive}
                   >
                     <span className="material-symbols-outlined">cloud_upload</span>
-                    <span>Unggah ke Google Drive ☁️</span>
+                    <span>Unggah ke Google Drive</span>
                   </button>
 
                   <button
@@ -165,7 +165,7 @@ export default function SaveToDriveScreen({
                     onClick={handleDirectOpenDrive}
                   >
                     <span className="material-symbols-outlined">drive_folder_upload</span>
-                    <span>Download & Buka Google Drive 📂</span>
+                    <span>Download & Buka Google Drive</span>
                   </button>
                 </div>
               </div>
@@ -174,7 +174,7 @@ export default function SaveToDriveScreen({
             {/* Status: UPLOADING */}
             {uploadStatus === 'uploading' && (
               <div className="drive-state-uploading">
-                <div className="loading-spinner text-3xl">☁️</div>
+                <span className="material-symbols-outlined animate-spin text-4xl text-primary mb-2">sync</span>
                 <h3 className="drive-box-title">Sedang Mengunggah ke Google Drive...</h3>
                 <p className="drive-box-desc">Menyimpan foto strip beresolusi tinggi ke cloud storage Anda.</p>
 
@@ -196,7 +196,7 @@ export default function SaveToDriveScreen({
                   <span>Berhasil Tersimpan di Google Drive!</span>
                 </div>
 
-                <h3 className="drive-box-title">Foto Siap Diakses di Cloud ☁️</h3>
+                <h3 className="drive-box-title">Foto Siap Diakses di Cloud</h3>
 
                 {/* QR Code for Mobile Scanning */}
                 <div className="drive-qr-box">
@@ -238,10 +238,10 @@ export default function SaveToDriveScreen({
                 <p className="drive-box-desc">{errorMessage}</p>
                 <div className="drive-btn-group">
                   <button className="btn-kawaii btn-primary w-full-btn" onClick={handleUploadToDrive}>
-                    Coba Lagi 🔄
+                    Coba Lagi
                   </button>
                   <button className="btn-kawaii btn-secondary w-full-btn" onClick={handleDirectOpenDrive}>
-                    Buka Google Drive Manual 📂
+                    Buka Google Drive Manual
                   </button>
                 </div>
               </div>
@@ -253,7 +253,10 @@ export default function SaveToDriveScreen({
                 className="btn-accordion-toggle"
                 onClick={() => setShowConfig(!showConfig)}
               >
-                <span>⚙️ Pengaturan Webhook Google Drive (Opsional)</span>
+                <span>
+                  <span className="material-symbols-outlined text-sm align-middle mr-1.5">settings</span>
+                  Pengaturan Webhook Google Drive (Opsional)
+                </span>
                 <span className="material-symbols-outlined text-sm">
                   {showConfig ? 'expand_less' : 'expand_more'}
                 </span>
@@ -298,7 +301,7 @@ export default function SaveToDriveScreen({
                   onContinue();
                 }}
               >
-                <span>Lanjut ke Menu Download & Cetak ➡️</span>
+                <span>Lanjut ke Menu Download & Cetak</span>
               </button>
 
               <div className="drive-sub-actions">
@@ -318,7 +321,7 @@ export default function SaveToDriveScreen({
                     onContinue();
                   }}
                 >
-                  Lewati Langkah Ini ⏩
+                  Lewati Langkah Ini
                 </button>
               </div>
             </div>

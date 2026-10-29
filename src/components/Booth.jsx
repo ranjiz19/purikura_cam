@@ -17,7 +17,7 @@ export default function Booth({
   const canvasRef = useRef(null);
   const [countdown, setCountdown] = useState(null);
   const [isFlashing, setIsFlashing] = useState(false);
-  const [gestureFeedback, setGestureFeedback] = useState('Tunjukkan Frame (🫶) atau Peace (✌️)');
+  const [gestureFeedback, setGestureFeedback] = useState('Tunjukkan Frame atau Pose Peace');
   const [gestureHoldProgress, setGestureHoldProgress] = useState(0);
   const [cameraError, setCameraError] = useState(null);
   const [isCameraReady, setIsCameraReady] = useState(false);
@@ -120,7 +120,7 @@ export default function Booth({
             } else {
               resetGestureHold();
               if (!countdownActiveRef.current) {
-                setGestureFeedback('Tunjukkan Frame (🫶) atau Peace (✌️)');
+                setGestureFeedback('Tunjukkan Frame atau Pose Peace');
               }
             }
           } catch (e) {
@@ -156,7 +156,7 @@ export default function Booth({
 
     if (analysis.isFrame) {
       activeType = 'frame';
-      feedbackText = '🫶 BINGKAI TANGAN TERDETEKSI!';
+      feedbackText = 'BINGKAI TANGAN TERDETEKSI!';
 
       // Draw cute animated viewfinder box over hand frame
       if (analysis.frameBox) {
@@ -206,10 +206,10 @@ export default function Booth({
       }
     } else if (analysis.isPeace) {
       activeType = 'peace';
-      feedbackText = '✌️ POSE PEACE TERDETEKSI!';
+      feedbackText = 'POSE PEACE TERDETEKSI!';
     } else if (analysis.isPalm) {
       activeType = 'palm';
-      feedbackText = '🖐️ LAMBAIAN TANGAN TERDETEKSI!';
+      feedbackText = 'LAMBAIAN TANGAN TERDETEKSI!';
     }
 
     if (activeType) {
@@ -230,7 +230,7 @@ export default function Booth({
       }
     } else {
       resetGestureHold();
-      setGestureFeedback('Tunjukkan Frame (🫶) atau Peace (✌️)');
+      setGestureFeedback('Tunjukkan Frame atau Pose Peace');
     }
   }
 
@@ -303,7 +303,7 @@ export default function Booth({
           {/* Camera Connecting Loading Pill */}
           {!isCameraReady && !cameraError && (
             <div className="camera-loading-overlay">
-              <span className="loading-spinner">🌸</span>
+              <span className="material-symbols-outlined animate-spin text-lg">sync</span>
               <span>Menghubungkan Kamera...</span>
             </div>
           )}
@@ -320,7 +320,7 @@ export default function Booth({
             <div className="hud-top">
               <div className="hud-status-group">
                 <div className="kawaii-badge shot-badge">
-                  <span>📸 FOTO {currentPhotoIndex + 1} / {targetPhotos}</span>
+                  <span>FOTO {currentPhotoIndex + 1} / {targetPhotos}</span>
                 </div>
                 <div className="gesture-hint-pill">
                   <span
@@ -342,7 +342,8 @@ export default function Booth({
                     onClick={onOpenGuide}
                     title="Panduan Gestur"
                   >
-                    <span>✨ Panduan</span>
+                    <span className="material-symbols-outlined text-[15px]">help_outline</span>
+                    <span>Panduan</span>
                   </button>
                 )}
                 <button
@@ -350,7 +351,10 @@ export default function Booth({
                   onClick={toggleBrowserFullscreen}
                   title="Toggle Fullscreen"
                 >
-                  <span>{isFullscreen ? '🗗 Normal' : '⛶ Layar Penuh'}</span>
+                  <span className="material-symbols-outlined text-[15px]">
+                    {isFullscreen ? 'fullscreen_exit' : 'fullscreen'}
+                  </span>
+                  <span>{isFullscreen ? 'Normal' : 'Layar Penuh'}</span>
                 </button>
                 {onExit && (
                   <button
@@ -361,7 +365,8 @@ export default function Booth({
                     }}
                     title="Keluar ke Menu Awal"
                   >
-                    <span>✕ Keluar</span>
+                    <span className="material-symbols-outlined text-[15px]">close</span>
+                    <span>Keluar</span>
                   </button>
                 )}
               </div>
@@ -375,14 +380,16 @@ export default function Booth({
                   startPhotoCountdown();
                 }}
               >
-                <span>📸 Jepret Sekarang (Klik / Spasi / Gestur 🫶 / ✌️)</span>
+                <span className="material-symbols-outlined text-[18px]">photo_camera</span>
+                <span>Jepret Sekarang (Klik / Spasi / Gestur)</span>
               </button>
             </div>
           </div>
 
           {cameraError && (
             <div className="camera-error-banner">
-              <span>⚠️ {cameraError}</span>
+              <span className="material-symbols-outlined text-sm align-middle mr-1">warning</span>
+              <span>{cameraError}</span>
               <button
                 className="btn-kawaii btn-secondary btn-sm"
                 onClick={async () => {
@@ -396,7 +403,7 @@ export default function Booth({
                 }}
                 style={{ marginTop: '8px' }}
               >
-                Coba Akses Kamera Lagi 🔄
+                Coba Akses Kamera Lagi
               </button>
             </div>
           )}

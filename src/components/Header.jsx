@@ -6,7 +6,6 @@ export default function Header({
   isMuted,
   onToggleMute,
   onOpenGuide,
-  onOpenSetup,
   lang = 'id'
 }) {
   const t = translations[lang] || translations.id;
@@ -45,21 +44,6 @@ export default function Header({
         </nav>
 
         <div className="header-actions">
-          {/* Quick Start Photobooth CTA in header */}
-          {onOpenSetup && (
-            <button
-              className="btn-header btn-header-cta"
-              onClick={() => {
-                sfx.playClick();
-                onOpenSetup();
-              }}
-              title="Mulai Sesi Foto"
-            >
-              <span className="material-symbols-outlined text-[17px]">photo_camera</span>
-              <span className="btn-text">Masuk Bilik</span>
-            </button>
-          )}
-
           {/* Audio Mute Toggle */}
           <button
             className="btn-header"

@@ -56,7 +56,7 @@ export async function getHandLandmarker(onStatusUpdate) {
         numHands: 2
       });
       console.log("MediaPipe HandLandmarker ready on GPU!");
-      if (onStatusUpdate) onStatusUpdate("ready", "AI Sensor Aktif 🌸");
+      if (onStatusUpdate) onStatusUpdate("ready", "AI Sensor Aktif");
     } catch (gpuErr) {
       console.warn("GPU delegate fallback to CPU:", gpuErr);
       landmarkerInstance = await HandLandmarker.createFromOptions(resolver, {
@@ -68,7 +68,7 @@ export async function getHandLandmarker(onStatusUpdate) {
         numHands: 2
       });
       console.log("MediaPipe HandLandmarker ready on CPU!");
-      if (onStatusUpdate) onStatusUpdate("ready", "AI Sensor Aktif 🌸");
+      if (onStatusUpdate) onStatusUpdate("ready", "AI Sensor Aktif");
     }
   } catch (err) {
     console.error("Failed to load HandLandmarker:", err);
@@ -345,7 +345,7 @@ export function drawKawaiiHandSkeleton(ctx, mirroredHands, canvasWidth, canvasHe
       ctx.font = "bold 13px sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText(isPinchingHand ? "🤏" : "🌸", cx, cy);
+      ctx.fillText(isPinchingHand ? "🤏" : "✦", cx, cy);
       ctx.restore();
     }
   });
