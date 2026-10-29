@@ -152,28 +152,31 @@ export default function Lobby({
 
             <div className="contact-links-grid">
               <a
-                href="https://www.instagram.com/devitaizhal_?igsh=MWs4Y2pnejQ0M3E3Yg=="
+                href="https://www.instagram.com/rafinurajiz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-pill-btn btn-instagram"
+                title="Instagram @rafinurajiz"
               >
                 <span className="material-symbols-outlined text-sm">alternate_email</span>
                 <span className="contact-text">{t.contact.instagram}</span>
               </a>
 
               <a
-                href="mailto:hello@purikurastudio.com"
+                href="mailto:rafinurajiz19@gmail.com"
                 className="contact-pill-btn btn-email"
+                title="Email rafinurajiz19@gmail.com"
               >
                 <span className="material-symbols-outlined text-sm">mail</span>
                 <span className="contact-text">{t.contact.email}</span>
               </a>
 
               <a
-                href="https://github.com/Shafira0605/puzzle_cam.git"
+                href="https://github.com/ranjiz19/purikura_cam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-pill-btn btn-github"
+                title="GitHub ranjiz19/purikura_cam"
               >
                 <span className="material-symbols-outlined text-sm">code</span>
                 <span className="contact-text">{t.contact.github}</span>

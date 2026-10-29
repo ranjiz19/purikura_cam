@@ -164,11 +164,11 @@ export const translations = {
       ]
     },
     contact: {
-      badge: 'GET IN TOUCH • HUBUNGI KAMI',
-      title: 'Terhubung dengan Kami 🌸',
-      desc: 'Punya pertanyaan seputar sensor AI gestur, ide stiker baru, masukan, atau ingin berkolaborasi untuk Purikura Studio? Kami sangat senang mendengar dari Anda!',
-      instagram: 'Instagram',
-      email: 'Email Kami',
+      badge: 'KONTAK & KREATOR',
+      title: 'Terhubung dengan Kami ✉️',
+      desc: 'Punya pertanyaan seputar sensor AI gestur, ide stiker baru, masukan, atau ingin berkolaborasi untuk Purikura Studio? Jangan ragu untuk menyapa kami!',
+      instagram: '@rafinurajiz',
+      email: 'rafinurajiz19@gmail.com',
       github: 'GitHub Repo'
     },
     footer: {
@@ -330,8 +330,8 @@ export const translations = {
       badge: 'GET IN TOUCH • お問い合わせ',
       title: 'お問い合わせ・メッセージ 🌸',
       desc: 'AIセンサーの機能要望、新しいスタンプのアイデア、ご意見など、いつでもお気軽にお知らせください！',
-      instagram: 'Instagram',
-      email: 'メール',
+      instagram: '@rafinurajiz',
+      email: 'rafinurajiz19@gmail.com',
       github: 'GitHub リポジトリ'
     },
     footer: {
@@ -493,8 +493,8 @@ export const translations = {
       badge: 'GET IN TOUCH',
       title: 'Get in Touch 🌸',
       desc: 'Have questions, feedback, or sticker suggestions for Purikura Studio? We would love to hear from you!',
-      instagram: 'Instagram',
-      email: 'Email Us',
+      instagram: '@rafinurajiz',
+      email: 'rafinurajiz19@gmail.com',
       github: 'GitHub Repo'
     },
     footer: {
