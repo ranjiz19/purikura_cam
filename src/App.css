@@ -173,19 +173,25 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #162846 0%, #1E3A5F 100%);
-  border: 1px solid #2563EB;
+  overflow: hidden;
+  border: 1.5px solid #2563EB;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
-  font-size: 20px;
-  box-shadow: 0 2px 8px rgba(22, 40, 70, 0.3);
+  box-shadow: 0 2px 8px rgba(22, 40, 70, 0.25);
   transition: transform 0.3s ease;
+  background: #FFFFFF;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .brand-logo-link:hover .brand-logo-icon {
-  transform: rotate(15deg) scale(1.05);
+  transform: rotate(8deg) scale(1.05);
 }
 
 .brand-texts {
@@ -610,6 +616,13 @@
 .polaroid-purikura-right {
   background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%) !important;
   border: 1.5px solid #CBD5E1;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .polaroid-placeholder-icon {
@@ -1304,6 +1317,16 @@
   color: var(--primary);
   display: inline-flex;
   align-items: center;
+}
+
+.footer-logo-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+  border: 1px solid #CBD5E1;
+  display: inline-block;
 }
 
 .footer-tagline {

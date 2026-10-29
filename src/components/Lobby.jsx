@@ -40,8 +40,12 @@ export default function Lobby({
 
           <div className="floating-polaroid polaroid-right">
             <div className="polaroid-photo polaroid-purikura-right">
+              <img
+                src="/gedung.jpeg"
+                alt="Air Puzzle 3x3 Preview"
+                className="polaroid-img"
+              />
               <div className="purikura-sample-badge">Air Puzzle 3x3</div>
-              <span className="material-symbols-outlined polaroid-placeholder-icon">extension</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidRight}</span>
           </div>
@@ -191,7 +195,7 @@ export default function Lobby({
         <div className="footer-content">
           <div className="footer-brand">
             <span className="footer-logo">
-              <span className="material-symbols-outlined align-middle mr-1 text-sm">auto_awesome</span>
+              <img src="/Logo.jpeg" alt="PUZORA Logo" className="footer-logo-img" />
               PUZORA
             </span>
             <p className="footer-tagline">

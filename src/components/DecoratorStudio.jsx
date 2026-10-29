@@ -11,6 +11,12 @@ const BRUSH_COLORS = [
   { id: 'crest_gold', color: '#F59E0B', name: 'Crest Gold' }
 ];
 
+// Preloaded PUZORA Logo for Frame Corner Ornaments & Badges
+const puzoraLogoImg = typeof window !== 'undefined' ? new Image() : null;
+if (puzoraLogoImg) {
+  puzoraLogoImg.src = '/Logo.jpeg';
+}
+
 export default function DecoratorStudio({
   layout,
   photos,
@@ -40,6 +46,14 @@ export default function DecoratorStudio({
   useEffect(() => {
     buildCompositeStrip();
   }, [layout, photos, frameStyle, filter]);
+
+  useEffect(() => {
+    if (puzoraLogoImg && !puzoraLogoImg.complete) {
+      puzoraLogoImg.onload = () => {
+        buildCompositeStrip();
+      };
+    }
+  }, []);
 
   function buildCompositeStrip() {
     const canvas = canvasRef.current;
@@ -111,10 +125,55 @@ export default function DecoratorStudio({
     ctx.fillStyle = currentFrame.accent || '#94A3B8';
     ctx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
     ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText(dateStr, totalW / 2, totalH - 24);
+
+    const dateW = ctx.measureText(dateStr).width;
+    drawSmallLogoOrnament(ctx, totalW / 2 - dateW / 2 - 14, totalH - 24, 7, currentFrame.accent);
+    drawSmallLogoOrnament(ctx, totalW / 2 + dateW / 2 + 14, totalH - 24, 7, currentFrame.accent);
 
     studioStateRef.current.baseCanvas = base;
     renderStudioCanvas();
+  }
+
+  // ================= SMALL PUZORA LOGO ORNAMENT BADGE =================
+  function drawSmallLogoOrnament(ctx, x, y, radius = 10, borderColor = '#F59E0B') {
+    ctx.save();
+
+    // Subtle drop shadow
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.35)';
+    ctx.shadowBlur = 4;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 1;
+
+    // Outer border ring
+    ctx.beginPath();
+    ctx.arc(x, y, radius + 1.5, 0, Math.PI * 2);
+    ctx.fillStyle = borderColor || '#F59E0B';
+    ctx.fill();
+
+    // Reset shadow for clipping
+    ctx.shadowColor = 'transparent';
+    ctx.shadowBlur = 0;
+
+    // Clip to circle
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.clip();
+
+    if (puzoraLogoImg && puzoraLogoImg.complete && puzoraLogoImg.naturalWidth > 0) {
+      ctx.drawImage(puzoraLogoImg, x - radius, y - radius, radius * 2, radius * 2);
+    } else {
+      ctx.fillStyle = '#162846';
+      ctx.fill();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = `bold ${Math.round(radius * 1.1)}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('P', x, y + 0.5);
+    }
+
+    ctx.restore();
   }
 
   // ================= THEMED AESTHETIC FRAME GRAPHICS =================
@@ -135,11 +194,11 @@ export default function DecoratorStudio({
       // Red Ribbon knot at top
       drawSailorBow(ctx, w / 2, 26, '#DC2626', '#F59E0B');
 
-      // Golden Button in 4 corners
-      drawGoldSchoolButton(ctx, 24, 24);
-      drawGoldSchoolButton(ctx, w - 24, 24);
-      drawGoldSchoolButton(ctx, 24, h - 24);
-      drawGoldSchoolButton(ctx, w - 24, h - 24);
+      // Small Logo Ornaments in 4 corners
+      drawSmallLogoOrnament(ctx, 24, 24, 11, '#FFFFFF');
+      drawSmallLogoOrnament(ctx, w - 24, 24, 11, '#FFFFFF');
+      drawSmallLogoOrnament(ctx, 24, h - 24, 11, '#FFFFFF');
+      drawSmallLogoOrnament(ctx, w - 24, h - 24, 11, '#FFFFFF');
 
       drawHeaderBadge(ctx, w, 'PUZORA • CLASSIC NAVY', '#FFFFFF');
     } else if (frame.id === 'gakuran_blazer') {
@@ -152,11 +211,11 @@ export default function DecoratorStudio({
       ctx.lineWidth = 1.5;
       ctx.strokeRect(14, 14, w - 28, h - 28);
 
-      // Golden Shields in corners
-      drawAcademyShield(ctx, 24, 24);
-      drawAcademyShield(ctx, w - 24, 24);
-      drawAcademyShield(ctx, 24, h - 24);
-      drawAcademyShield(ctx, w - 24, h - 24);
+      // Small Logo Ornaments in 4 corners
+      drawSmallLogoOrnament(ctx, 24, 24, 11, '#F59E0B');
+      drawSmallLogoOrnament(ctx, w - 24, 24, 11, '#F59E0B');
+      drawSmallLogoOrnament(ctx, 24, h - 24, 11, '#F59E0B');
+      drawSmallLogoOrnament(ctx, w - 24, h - 24, 11, '#F59E0B');
 
       drawHeaderBadge(ctx, w, 'PUZORA • ROYAL GOLD', '#F59E0B');
     } else if (frame.id === 'blackboard_chalk') {
@@ -172,11 +231,11 @@ export default function DecoratorStudio({
       ctx.strokeRect(14, 14, w - 28, h - 28);
       ctx.setLineDash([]);
 
-      // Chalk petals in corners
-      drawChalkSakura(ctx, 26, 26);
-      drawChalkSakura(ctx, w - 26, 26);
-      drawChalkStar(ctx, 26, h - 26);
-      drawChalkStar(ctx, w - 26, h - 26);
+      // Small Logo Ornaments in 4 corners
+      drawSmallLogoOrnament(ctx, 24, 24, 11, '#CBD5E1');
+      drawSmallLogoOrnament(ctx, w - 24, 24, 11, '#CBD5E1');
+      drawSmallLogoOrnament(ctx, 24, h - 24, 11, '#CBD5E1');
+      drawSmallLogoOrnament(ctx, w - 24, h - 24, 11, '#CBD5E1');
 
       drawHeaderBadge(ctx, w, 'PUZORA • CHALKBOARD MEMORIES', '#F8FAFC');
     } else if (frame.id === 'campus_notebook') {
@@ -195,8 +254,11 @@ export default function DecoratorStudio({
       ctx.lineTo(22, h - 10);
       ctx.stroke();
 
-      // Stamp at top-right
-      drawHanamaruStamp(ctx, w - 26, 26, 12);
+      // Small Logo Ornaments in 4 corners
+      drawSmallLogoOrnament(ctx, 24, 24, 11, '#1E3A5F');
+      drawSmallLogoOrnament(ctx, w - 24, 24, 11, '#DC2626');
+      drawSmallLogoOrnament(ctx, 24, h - 24, 11, '#1E3A5F');
+      drawSmallLogoOrnament(ctx, w - 24, h - 24, 11, '#DC2626');
 
       drawHeaderBadge(ctx, w, 'PUZORA • DIARY NOTEBOOK', '#1E3A5F');
     } else if (frame.id === 'rooftop_sky') {
@@ -212,10 +274,11 @@ export default function DecoratorStudio({
       ctx.lineWidth = 2;
       ctx.strokeRect(10, 10, w - 20, h - 20);
 
-      // Soft clouds & silhouettes
-      drawCloudPuff(ctx, 30, 24);
-      drawCloudPuff(ctx, w - 30, 24);
-      drawRooftopFence(ctx, 16, h - 34, w - 32, 14);
+      // Small Logo Ornaments in 4 corners
+      drawSmallLogoOrnament(ctx, 24, 24, 11, '#93C5FD');
+      drawSmallLogoOrnament(ctx, w - 24, 24, 11, '#93C5FD');
+      drawSmallLogoOrnament(ctx, 24, h - 24, 11, '#93C5FD');
+      drawSmallLogoOrnament(ctx, w - 24, h - 24, 11, '#93C5FD');
 
       drawHeaderBadge(ctx, w, 'PUZORA • ROOFTOP SKY', '#FFFFFF');
     } else {
@@ -228,10 +291,11 @@ export default function DecoratorStudio({
       ctx.lineWidth = 1.5;
       ctx.strokeRect(14, 14, w - 28, h - 28);
 
-      drawSilverStar(ctx, 24, 24);
-      drawSilverStar(ctx, w - 24, 24);
-      drawSilverStar(ctx, 24, h - 24);
-      drawSilverStar(ctx, w - 24, h - 24);
+      // Small Logo Ornaments in 4 corners
+      drawSmallLogoOrnament(ctx, 24, 24, 11, '#E2E8F0');
+      drawSmallLogoOrnament(ctx, w - 24, 24, 11, '#E2E8F0');
+      drawSmallLogoOrnament(ctx, 24, h - 24, 11, '#E2E8F0');
+      drawSmallLogoOrnament(ctx, w - 24, h - 24, 11, '#E2E8F0');
 
       drawHeaderBadge(ctx, w, '★ PUZORA PHOTOBOOTH STUDIO ★', '#E2E8F0');
     }
@@ -239,10 +303,18 @@ export default function DecoratorStudio({
   }
 
   function drawHeaderBadge(ctx, totalW, text, color) {
+    ctx.save();
     ctx.fillStyle = color;
     ctx.font = 'bold 12.5px "Plus Jakarta Sans", sans-serif';
     ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText(text, totalW / 2, 36);
+
+    const textW = ctx.measureText(text).width;
+    const badgeOffset = Math.round(textW / 2 + 15);
+    drawSmallLogoOrnament(ctx, totalW / 2 - badgeOffset, 36, 8, color);
+    drawSmallLogoOrnament(ctx, totalW / 2 + badgeOffset, 36, 8, color);
+    ctx.restore();
   }
 
   // Sailor Uniform Red Ribbon Knot

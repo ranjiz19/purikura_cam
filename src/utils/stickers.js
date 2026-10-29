@@ -2,6 +2,21 @@
 
 export const STICKERS = [
   {
+    id: "puzora_logo_sticker",
+    name: "PUZORA Emblem",
+    category: "badge",
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="circleClipSticker">
+          <circle cx="50" cy="50" r="44"/>
+        </clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="#162846" stroke="#2563EB" stroke-width="3"/>
+      <image href="/Logo.jpeg" x="6" y="6" width="88" height="88" clip-path="url(#circleClipSticker)" preserveAspectRatio="xMidYMid slice"/>
+      <circle cx="50" cy="50" r="44" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+    </svg>`
+  },
+  {
     id: "classic_ribbon",
     name: "Classic Ribbon",
     category: "fashion",

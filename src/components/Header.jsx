@@ -16,7 +16,7 @@ export default function Header({
         <div className="header-brand">
           <a href="#hero" className="brand-logo-link">
             <div className="brand-logo-icon">
-              <span className="material-symbols-outlined">photo_camera_front</span>
+              <img src="/Logo.jpeg" alt="PUZORA Logo" className="brand-logo-img" />
             </div>
             <div className="brand-texts">
               <div className="brand-title-wrap">
