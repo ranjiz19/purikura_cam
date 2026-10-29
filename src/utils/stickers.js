@@ -1,6 +1,63 @@
-// Kawaii Japanese Photobooth Stickers & Presets (Clean, Modern, Cute Japanese Style)
+// Japanese High School (Seishun 青春) & Kawaii Photobooth Stickers & Frames
 
 export const STICKERS = [
+  {
+    id: "sailor_tie",
+    name: "Sailor Ribbon 🎀",
+    category: "school",
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Sailor Ribbon Knot & Wings in School Red -->
+      <path d="M50 42 C30 18 10 28 22 55 C32 66 45 52 50 48 Z" fill="#DC2626" stroke="#991B1B" stroke-width="2.5"/>
+      <path d="M50 42 C70 18 90 28 78 55 C68 66 55 52 50 48 Z" fill="#DC2626" stroke="#991B1B" stroke-width="2.5"/>
+      <!-- Ribbon Tails -->
+      <path d="M44 48 L32 88 L46 82 L49 54 Z" fill="#B91C1C"/>
+      <path d="M56 48 L68 88 L54 82 L51 54 Z" fill="#B91C1C"/>
+      <!-- Center Knot with Gold Button -->
+      <circle cx="50" cy="45" r="7.5" fill="#EF4444" stroke="#991B1B" stroke-width="2"/>
+      <circle cx="50" cy="45" r="3" fill="#F59E0B"/>
+    </svg>`
+  },
+  {
+    id: "school_crest",
+    name: "School Crest 🏅",
+    category: "school",
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Shield Navy & Gold -->
+      <path d="M50 15 L78 26 C78 60 50 82 50 85 C50 82 22 60 22 26 Z" fill="#0F1E36" stroke="#F59E0B" stroke-width="3"/>
+      <!-- Inner star -->
+      <polygon points="50,30 55,42 68,43 57,51 61,64 50,56 39,64 43,51 32,43 45,42" fill="#F59E0B"/>
+      <circle cx="50" cy="47" r="4" fill="#FFFFFF"/>
+    </svg>`
+  },
+  {
+    id: "hanamaru_stamp",
+    name: "Hanamaru 💮",
+    category: "school",
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Spiral Cherry Flower 100 Score Stamp -->
+      <circle cx="50" cy="50" r="36" fill="none" stroke="#DC2626" stroke-width="3.5" stroke-dasharray="8 4"/>
+      <circle cx="50" cy="50" r="24" fill="none" stroke="#DC2626" stroke-width="3"/>
+      <circle cx="50" cy="50" r="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2.5"/>
+      <text x="50" y="55" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="14" fill="#DC2626" text-anchor="middle">たいへん</text>
+      <text x="50" y="70" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="12" fill="#DC2626" text-anchor="middle">よくできました</text>
+    </svg>`
+  },
+  {
+    id: "school_bag",
+    name: "School Bag 🎒",
+    category: "school",
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Japanese Navy School Handbag -->
+      <rect x="18" y="38" width="64" height="46" rx="8" fill="#162846" stroke="#0F172A" stroke-width="3"/>
+      <!-- Straps -->
+      <path d="M30 42 C30 20 70 20 70 42" fill="none" stroke="#64748B" stroke-width="4.5" stroke-linecap="round"/>
+      <!-- Pocket -->
+      <rect x="26" y="52" width="48" height="26" rx="4" fill="#1E3A5F" stroke="#334155" stroke-width="2"/>
+      <line x1="26" y1="56" x2="74" y2="56" stroke="#94A3B8" stroke-width="1.5"/>
+      <!-- Cute Charm -->
+      <circle cx="72" cy="46" r="4" fill="#FF5C8A"/>
+    </svg>`
+  },
   {
     id: "sakura_blossom",
     name: "Sakura 桜",
@@ -25,232 +82,159 @@ export const STICKERS = [
     </svg>`
   },
   {
-    id: "cat_paw",
-    name: "Neko Paw 肉球",
-    category: "cute",
-    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="65" rx="26" ry="20" fill="#FFAEC9" stroke="#FF7597" stroke-width="3"/>
-      <circle cx="28" cy="38" r="10" fill="#FFAEC9" stroke="#FF7597" stroke-width="3"/>
-      <circle cx="43" cy="28" r="10" fill="#FFAEC9" stroke="#FF7597" stroke-width="3"/>
-      <circle cx="58" cy="28" r="10" fill="#FFAEC9" stroke="#FF7597" stroke-width="3"/>
-      <circle cx="73" cy="38" r="10" fill="#FFAEC9" stroke="#FF7597" stroke-width="3"/>
-    </svg>`
-  },
-  {
-    id: "cute_onigiri",
-    name: "Onigiri おにぎり",
-    category: "food",
-    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 15 C68 15 85 65 78 80 C70 90 30 90 22 80 C15 65 32 15 50 15 Z" fill="#FFFFFF" stroke="#3D3534" stroke-width="4"/>
-      <!-- Nori seaweed -->
-      <rect x="36" y="55" width="28" height="28" rx="6" fill="#2C3531"/>
-      <!-- Cute blush face -->
-      <circle cx="42" cy="48" r="2.5" fill="#3D3534"/>
-      <circle cx="58" cy="48" r="2.5" fill="#3D3534"/>
-      <ellipse cx="38" cy="52" rx="4" ry="2.5" fill="#FFB6C1"/>
-      <ellipse cx="62" cy="52" rx="4" ry="2.5" fill="#FFB6C1"/>
-      <path d="M47 51 Q50 54 53 51" stroke="#3D3534" stroke-width="2" fill="none"/>
-    </svg>`
-  },
-  {
-    id: "cute_dango",
-    name: "Dango だんご",
-    category: "food",
-    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Stick -->
-      <line x1="20" y1="85" x2="80" y2="25" stroke="#C89D7C" stroke-width="6" stroke-linecap="round"/>
-      <!-- Green Dango (Matcha) -->
-      <circle cx="35" cy="70" r="14" fill="#A8D5BA" stroke="#7EBD75" stroke-width="2.5"/>
-      <circle cx="32" cy="67" r="1.5" fill="#3D3534"/>
-      <circle cx="38" cy="67" r="1.5" fill="#3D3534"/>
-      <!-- White Dango -->
-      <circle cx="50" cy="55" r="14" fill="#FFFFFF" stroke="#E0D6C8" stroke-width="2.5"/>
-      <circle cx="47" cy="52" r="1.5" fill="#3D3534"/>
-      <circle cx="53" cy="52" r="1.5" fill="#3D3534"/>
-      <!-- Pink Dango (Sakura) -->
-      <circle cx="65" cy="40" r="14" fill="#FFB7C5" stroke="#FF7597" stroke-width="2.5"/>
-      <circle cx="62" cy="37" r="1.5" fill="#3D3534"/>
-      <circle cx="68" cy="37" r="1.5" fill="#3D3534"/>
-    </svg>`
-  },
-  {
-    id: "cute_bow",
-    name: "Ribbon 🎀",
-    category: "cute",
-    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Left loop -->
-      <path d="M50 48 C30 25 10 35 20 60 C30 70 45 55 50 52 Z" fill="#FF7597" stroke="#FF4D79" stroke-width="3"/>
-      <!-- Right loop -->
-      <path d="M50 48 C70 25 90 35 80 60 C70 70 55 55 50 52 Z" fill="#FF7597" stroke="#FF4D79" stroke-width="3"/>
-      <!-- Ribbon Tails -->
-      <path d="M45 54 L30 85 L44 80 L48 60 Z" fill="#FF4D79"/>
-      <path d="M55 54 L70 85 L56 80 L52 60 Z" fill="#FF4D79"/>
-      <!-- Center Knot -->
-      <circle cx="50" cy="50" r="8" fill="#FFE4E8" stroke="#FF4D79" stroke-width="3"/>
-    </svg>`
-  },
-  {
     id: "sparkle_star",
     name: "Kira Kira ✨",
     category: "sparkle",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 10 Q50 50 90 50 Q50 50 50 90 Q50 50 10 50 Q50 50 50 10 Z" fill="#FFD166" stroke="#FFAA00" stroke-width="2.5"/>
+      <path d="M50 10 Q50 50 90 50 Q50 50 50 90 Q50 50 10 50 Q50 50 50 10 Z" fill="#F59E0B" stroke="#D97706" stroke-width="2.5"/>
       <circle cx="50" cy="50" r="6" fill="#FFF"/>
-      <circle cx="78" cy="22" r="4" fill="#FFD166"/>
-      <circle cx="22" cy="78" r="3" fill="#FFD166"/>
+      <circle cx="78" cy="22" r="4" fill="#F59E0B"/>
+      <circle cx="22" cy="78" r="3" fill="#F59E0B"/>
     </svg>`
   },
   {
-    id: "bunny_ears",
-    name: "Usagi 🐰",
-    category: "cute",
+    id: "cute_onigiri",
+    name: "Bento Onigiri 🍙",
+    category: "food",
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="38" cy="40" rx="12" ry="32" fill="#FFFFFF" stroke="#FFAEC9" stroke-width="3"/>
-      <ellipse cx="38" cy="42" rx="6" ry="20" fill="#FFAEC9"/>
-      <ellipse cx="62" cy="40" rx="12" ry="32" fill="#FFFFFF" stroke="#FFAEC9" stroke-width="3"/>
-      <ellipse cx="62" cy="42" rx="6" ry="20" fill="#FFAEC9"/>
-      <!-- Bow in middle -->
-      <circle cx="50" cy="72" r="5" fill="#FF7597"/>
-      <ellipse cx="43" cy="72" rx="5" ry="3" fill="#FFB7C5"/>
-      <ellipse cx="57" cy="72" rx="5" ry="3" fill="#FFB7C5"/>
+      <path d="M50 15 C68 15 85 65 78 80 C70 90 30 90 22 80 C15 65 32 15 50 15 Z" fill="#FFFFFF" stroke="#1E293B" stroke-width="3.5"/>
+      <rect x="36" y="55" width="28" height="28" rx="6" fill="#0F172A"/>
+      <circle cx="42" cy="48" r="2.5" fill="#1E293B"/>
+      <circle cx="58" cy="48" r="2.5" fill="#1E293B"/>
+      <ellipse cx="38" cy="52" rx="4" ry="2.5" fill="#FFB6C1"/>
+      <ellipse cx="62" cy="52" rx="4" ry="2.5" fill="#FFB6C1"/>
+      <path d="M47 51 Q50 54 53 51" stroke="#1E293B" stroke-width="2" fill="none"/>
     </svg>`
   },
   {
-    id: "speech_daisuki",
-    name: "だいすき♡",
+    id: "speech_seishun",
+    name: "青春 (Seishun)",
     category: "speech",
     svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="5" width="130" height="46" rx="23" fill="#FFF0F5" stroke="#FF7597" stroke-width="3"/>
-      <text x="70" y="36" font-family="'Zen Maru Gothic', 'Nunito', sans-serif" font-weight="900" font-size="18" fill="#FF4D79" text-anchor="middle">だいすき♡</text>
+      <rect x="5" y="5" width="130" height="46" rx="23" fill="#EFF6FF" stroke="#1E3A5F" stroke-width="3"/>
+      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="18" fill="#1E3A5F" text-anchor="middle">★ 青春 ★</text>
     </svg>`
   },
   {
-    id: "speech_kawaii",
-    name: "カワイイ！",
+    id: "speech_houkago",
+    name: "放課後 (Pulang)",
     category: "speech",
     svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="5" width="130" height="46" rx="23" fill="#E8F5E9" stroke="#7EBD75" stroke-width="3"/>
-      <text x="70" y="36" font-family="'Zen Maru Gothic', 'Nunito', sans-serif" font-weight="900" font-size="17" fill="#4B8B42" text-anchor="middle">カワイイ！✨</text>
+      <rect x="5" y="5" width="130" height="46" rx="23" fill="#F1F5F9" stroke="#475569" stroke-width="3"/>
+      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="17" fill="#1E293B" text-anchor="middle">放課後ピース✌️</text>
     </svg>`
   },
   {
-    id: "speech_purikura",
-    name: "プリクラ",
+    id: "speech_jk",
+    name: "JK ✧ 高校生",
     category: "speech",
     svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="5" width="130" height="46" rx="23" fill="#FFF9E6" stroke="#FFD166" stroke-width="3"/>
-      <text x="70" y="36" font-family="'Zen Maru Gothic', 'Nunito', sans-serif" font-weight="900" font-size="18" fill="#D48B00" text-anchor="middle">★ プリクラ ★</text>
+      <rect x="5" y="5" width="130" height="46" rx="23" fill="#0F1E36" stroke="#94A3B8" stroke-width="2.5"/>
+      <text x="70" y="36" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="16" fill="#FFFFFF" text-anchor="middle">✧ JK高校生 ✧</text>
     </svg>`
   }
 ];
 
-// Rich Themed Photobooth Frames (Decorates the actual outer strip/card)
+// Japanese High School (Seishun / Gakko) Themed Frames (Navy & Grey Dominant)
 export const FRAME_STYLES = [
   {
-    id: "sakura_blossom",
-    name: "Sakura Blossom 🌸",
-    icon: "🌸",
-    bg: "#FFF0F5",
-    border: "#FF7597",
-    accent: "#FF4D79",
-    tag: "POPULER",
-    sub: "Bunga sakura & rona pink manis"
+    id: "sailor_navy",
+    name: "Sailor Seifuku 🏫",
+    icon: "🏫",
+    bg: "#0F1E36",
+    border: "#E2E8F0",
+    accent: "#DC2626",
+    tag: "SEIFUKU",
+    sub: "Kerah sailor navy bergaris putih ganda & dasi merah"
   },
   {
-    id: "kawaii_ribbon",
-    name: "Sweet Ribbon 🎀",
-    icon: "🎀",
-    bg: "#FFF5F8",
-    border: "#FF69B4",
-    accent: "#FF1493",
-    tag: "KAWAII",
-    sub: "Pita stroberi & ornamen hati"
+    id: "gakuran_blazer",
+    name: "Academy Blazer 🎓",
+    icon: "🎓",
+    bg: "#162846",
+    border: "#F59E0B",
+    accent: "#94A3B8",
+    tag: "BLAZER",
+    sub: "Blazer navy sekolah prestisius & lambang lencana emas"
   },
   {
-    id: "neko_paw",
-    name: "Neko Cafe 🐾",
-    icon: "🐾",
-    bg: "#FFFDF5",
-    border: "#E0A96D",
-    accent: "#8B5A2B",
-    tag: "LUCU",
-    sub: "Telinga kucing & jejak telapak"
+    id: "blackboard_chalk",
+    name: "Kokuban Classroom 📝",
+    icon: "📝",
+    bg: "#152336",
+    border: "#CBD5E1",
+    accent: "#FDE047",
+    tag: "KOKUBAN",
+    sub: "Papan tulis slate-navy & ornamen kapur kelulusan"
   },
   {
-    id: "kyoto_matcha",
-    name: "Kyoto Tea 🍵",
-    icon: "🍵",
-    bg: "#F1F8F3",
-    border: "#7EBD75",
-    accent: "#387032",
-    tag: "ZEN",
-    sub: "Estetika teh hijau tradisional"
+    id: "campus_notebook",
+    name: "Campus Notebook ✏️",
+    icon: "✏️",
+    bg: "#F8FAFC",
+    border: "#1E3A5F",
+    accent: "#DC2626",
+    tag: "NOTEBOOK",
+    sub: "Kertas bergaris sekolah abu-abu & cap hanamaru 💮"
   },
   {
-    id: "y2k_sparkle",
-    name: "Y2K Sparkle ✨",
-    icon: "✨",
-    bg: "#F7F3FF",
-    border: "#B39DDB",
-    accent: "#7E57C2",
-    tag: "RETRO",
-    sub: "Bintang lavender & kilauan retro"
+    id: "rooftop_sky",
+    name: "Rooftop Seishun 🌤️",
+    icon: "🌤️",
+    bg: "#1A365D",
+    border: "#60A5FA",
+    accent: "#93C5FD",
+    tag: "SEISHUN",
+    sub: "Biru langit atap sekolah SMA & awan masa muda"
   },
   {
-    id: "minimal_white",
-    name: "Clean Minimal 🤍",
-    icon: "🤍",
-    bg: "#FFFFFF",
-    border: "#D6D6D6",
-    accent: "#5C5251",
-    tag: "MODERN",
-    sub: "Polaroid putih elegan bergaris"
+    id: "silver_navy_minimal",
+    name: "Navy & Silver 🥈",
+    icon: "🥈",
+    bg: "#0B132B",
+    border: "#94A3B8",
+    accent: "#F8FAFC",
+    tag: "CLASSIC",
+    sub: "Nuansa navy pekat & aksen perak elegan"
   }
 ];
 
-// Real Japanese Purikura Color Filters (Applied to the camera/photo)
+// Color Filters (Clean & Authentic Japanese Lighting)
 export const FILTERS = [
   {
-    id: "sakura_blush",
-    name: "Sakura Blush 🌸",
-    icon: "🌸",
-    sub: "Pinkish glow, cerah & merona",
-    css: "brightness(1.1) contrast(1.06) saturate(1.3) hue-rotate(-8deg)"
+    id: "pure_natural",
+    name: "Natural Classroom ✨",
+    icon: "✨",
+    sub: "Warna natural jernih ruang kelas",
+    css: "none"
+  },
+  {
+    id: "seishun_blue",
+    name: "Seishun Blue 💙",
+    icon: "🌊",
+    sub: "Tone biru sejuk khas film sekolah Jepang",
+    css: "brightness(1.08) contrast(1.1) saturate(1.15) hue-rotate(6deg)"
   },
   {
     id: "bihaku_porcelain",
-    name: "Bihaku White 🥛",
+    name: "Bihaku Uniform 🥛",
     icon: "🥛",
-    sub: "Efek pemutih kulit khas Jepang",
-    css: "brightness(1.2) contrast(1.08) saturate(0.92)"
+    sub: "Efek kulit bersih cerah seragam",
+    css: "brightness(1.18) contrast(1.06) saturate(0.94)"
   },
   {
-    id: "kyoto_film",
-    name: "Kyoto Film 🍵",
-    icon: "🍵",
-    sub: "Tone vintage kehijauan estetik",
-    css: "contrast(1.14) brightness(1.04) saturate(1.22) hue-rotate(22deg) sepia(0.12)"
+    id: "afterschool_film",
+    name: "Afterschool Warm 🌇",
+    icon: "🌇",
+    sub: "Nuansa senja hangat pulang sekolah",
+    css: "sepia(0.28) contrast(1.12) brightness(1.06) saturate(1.28)"
   },
   {
     id: "tokyo_bw",
-    name: "Tokyo B&W 🖤",
+    name: "Graduation B&W 🖤",
     icon: "🎞️",
-    sub: "Monokrom klasik kontras tajam",
-    css: "grayscale(1) contrast(1.28) brightness(1.08)"
-  },
-  {
-    id: "shibuya_sunset",
-    name: "Golden Sunset 🌅",
-    icon: "🌅",
-    sub: "Nuansa senja hangat keemasan",
-    css: "sepia(0.38) contrast(1.14) brightness(1.08) saturate(1.35)"
-  },
-  {
-    id: "pure_natural",
-    name: "Natural Glow ✨",
-    icon: "✨",
-    sub: "Warna asli tanpa perubahan",
-    css: "none"
+    sub: "Monokrom klasik buku tahunan sekolah",
+    css: "grayscale(1) contrast(1.24) brightness(1.06)"
   }
 ];
 

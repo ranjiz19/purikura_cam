@@ -20,16 +20,16 @@ export default function Lobby({
         <div className="hero-floating-decor">
           <div className="floating-polaroid polaroid-left">
             <div className="polaroid-photo polaroid-purikura-left">
-              <div className="purikura-sample-badge">プリクラ ★</div>
-              <span className="material-symbols-outlined polaroid-placeholder-icon">local_florist</span>
+              <div className="purikura-sample-badge">セーラー服 🏫</div>
+              <span className="material-symbols-outlined polaroid-placeholder-icon">school</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidLeft}</span>
           </div>
 
           <div className="floating-polaroid polaroid-right">
             <div className="polaroid-photo polaroid-purikura-right">
-              <div className="purikura-sample-badge">3x3 パズル</div>
-              <span className="material-symbols-outlined polaroid-placeholder-icon">extension</span>
+              <div className="purikura-sample-badge">放課後 3x3 🎓</div>
+              <span className="material-symbols-outlined polaroid-placeholder-icon">menu_book</span>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidRight}</span>
           </div>
@@ -38,7 +38,7 @@ export default function Lobby({
         {/* Central Paper Card with Japanese Kawaii Flare */}
         <div className="hero-paper-card">
           <div className="hero-tagline-badge">
-            <span className="material-symbols-outlined text-[15px]">local_florist</span>
+            <span className="material-symbols-outlined text-[15px]">school</span>
             <span>{t.hero.badge}</span>
           </div>
 

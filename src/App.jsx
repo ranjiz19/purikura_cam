@@ -16,7 +16,7 @@ export default function App() {
   const [screen, setScreen] = useState('lobby'); // lobby | booth | minigame | studio | drive | finish
   const [layout, setLayout] = useState('strip_3');
   const [filter, setFilter] = useState('pure_natural');
-  const [frameStyle, setFrameStyle] = useState('sakura_blossom');
+  const [frameStyle, setFrameStyle] = useState('sailor_navy');
   const [minigameMode, setMinigameMode] = useState('puzzle'); // puzzle | skip
   const [lang, setLang] = useState(detectLanguage); // id | jp | en (auto-detect)
 

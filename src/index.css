@@ -1,10 +1,11 @@
 /* ====================================================================
-   PURIKURA STUDIO ★ CLEAN MODERN TOKYO PHOTOBOOTH DESIGN SYSTEM
+   PURIKURA STUDIO ★ JAPANESE HIGH SCHOOL THEME (SEISHUN 青春)
+   DOMINANT NAVY & SLATE GREY DESIGN SYSTEM
    ==================================================================== */
 
 :root {
-  /* Ultra-Clean Modern Palette */
-  --background: #F8FAFC;
+  /* ================= JAPANESE HIGH SCHOOL PALETTE ================= */
+  --background: #F1F5F9; /* School Uniform Slate Grey */
   --surface: #FFFFFF;
   --surface-container-low: #F8FAFC;
   --surface-container: #F1F5F9;
@@ -12,27 +13,45 @@
   --surface-dim: #CBD5E1;
 
   /* Glassmorphism Surfaces */
-  --glass-surface: rgba(255, 255, 255, 0.88);
-  --glass-border: rgba(226, 232, 240, 0.8);
+  --glass-surface: rgba(255, 255, 255, 0.94);
+  --glass-border: rgba(203, 213, 225, 0.85);
   --cream-soft: #F8FAFC;
 
-  /* Primary Brand: Tokyo Sakura Rose & Coral */
-  --primary: #FF5C8A;
-  --primary-hover: #E11D48;
-  --primary-light: #FFF0F4;
-  --primary-border: #FFCCD8;
-  --primary-container: #FFE4EC;
-  --primary-deep: #BE185D;
+  /* Primary Brand: Sailor Navy & Academy Indigo (DOMINANT NAVY) */
+  --primary: #162846;
+  --primary-hover: #0F1E36;
+  --primary-light: #EFF6FF;
+  --primary-border: #BFDBFE;
+  --primary-container: #DBEAFE;
+  --primary-deep: #0B132B;
 
-  /* Sakura Aliases for Full Backward/Forward Compatibility */
-  --sakura-pink: #FF5C8A;
-  --sakura-border: #FFCCD8;
-  --sakura-deep: #BE185D;
-  --sakura-light: #FFF0F4;
+  /* Navy Palette Variants */
+  --navy-dark: #0B132B;
+  --navy-main: #162846;
+  --navy-mid: #1E3A5F;
+  --navy-light: #2563EB;
+  --navy-glow: rgba(22, 40, 70, 0.4);
 
-  /* Secondary Brand: Modern Tokyo Indigo & Slate */
-  --secondary: #3B82F6;
-  --secondary-hover: #2563EB;
+  /* Grey Palette Variants (SUPPORTING GREY) */
+  --grey-light: #F8FAFC;
+  --grey-uniform: #F1F5F9;
+  --grey-border: #CBD5E1;
+  --grey-text: #64748B;
+  --grey-dark: #334155;
+
+  /* Japanese School Highlights */
+  --accent-gold: #F59E0B;      /* Academy Crest Emblem */
+  --accent-crimson: #DC2626;   /* Sailor Scarf / Tie Ribbon */
+
+  /* Aliases for Full Backward Compatibility */
+  --sakura-pink: #1E3A5F;
+  --sakura-border: #BFDBFE;
+  --sakura-deep: #0F1E36;
+  --sakura-light: #EFF6FF;
+
+  /* Secondary Brand: Tokyo Cobalt & Indigo */
+  --secondary: #2563EB;
+  --secondary-hover: #1D4ED8;
   --secondary-light: #EFF6FF;
   --secondary-container: #DBEAFE;
 
@@ -40,8 +59,8 @@
   --tertiary: #10B981;
   --tertiary-light: #ECFDF5;
   --matcha-light: #ECFDF5;
-  --lavender: #8B5CF6;
-  --lavender-light: #F5F3FF;
+  --lavender: #6366F1;
+  --lavender-light: #EEF2FF;
 
   /* Crisp Typography Stacks */
   --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -49,8 +68,8 @@
   --font-ui: 'Plus Jakarta Sans', 'Nunito Sans', system-ui, sans-serif;
   --font-jp: 'Zen Maru Gothic', sans-serif;
 
-  /* High Contrast Modern Text & Outlines */
-  --text-main: #0F172A;
+  /* High Contrast Text & Outlines */
+  --text-main: #0B132B;
   --text-sub: #475569;
   --text-muted: #94A3B8;
   --outline: #CBD5E1;
@@ -65,13 +84,13 @@
   --radius-2xl: 32px;
   --radius-pill: 9999px;
 
-  /* Multi-Layered Modern Elevation Shadows */
-  --shadow-subtle: 0 2px 6px rgba(15, 23, 42, 0.04);
-  --shadow-soft: 0 8px 24px -4px rgba(15, 23, 42, 0.06);
-  --shadow-card: 0 10px 30px -4px rgba(15, 23, 42, 0.06), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
-  --shadow-paper: 0 10px 30px -4px rgba(15, 23, 42, 0.06), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
-  --shadow-hover: 0 20px 40px -8px rgba(255, 92, 138, 0.16), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
-  --shadow-glow: 0 10px 28px -4px rgba(255, 92, 138, 0.42);
+  /* Multi-Layered Elevation Shadows */
+  --shadow-subtle: 0 2px 6px rgba(15, 30, 54, 0.05);
+  --shadow-soft: 0 8px 24px -4px rgba(15, 30, 54, 0.08);
+  --shadow-card: 0 10px 30px -4px rgba(15, 30, 54, 0.08), 0 2px 8px -2px rgba(15, 30, 54, 0.03);
+  --shadow-paper: 0 10px 30px -4px rgba(15, 30, 54, 0.08), 0 2px 8px -2px rgba(15, 30, 54, 0.03);
+  --shadow-hover: 0 20px 40px -8px rgba(22, 40, 70, 0.2), 0 4px 12px -2px rgba(15, 30, 54, 0.06);
+  --shadow-glow: 0 10px 28px -4px rgba(22, 40, 70, 0.45);
 }
 
 .material-symbols-outlined {
@@ -92,9 +111,12 @@ body {
   font-family: var(--font-ui);
   background-color: var(--background);
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(255, 92, 138, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 85% 25%, rgba(59, 130, 246, 0.06) 0%, transparent 45%),
-    radial-gradient(circle at 50% 85%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 15% 15%, rgba(22, 40, 70, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(37, 99, 235, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(100, 116, 139, 0.08) 0%, transparent 55%),
+    linear-gradient(rgba(203, 213, 225, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(203, 213, 225, 0.22) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.5;
@@ -102,7 +124,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Background floating decorative elements */
+/* Background floating decorative elements (School Sakura & Origami Petals) */
 .app-bg-decor {
   position: fixed;
   inset: 0;
@@ -113,24 +135,24 @@ body {
 
 .petal {
   position: absolute;
-  background: radial-gradient(circle, #FFD4E2 0%, #FFB6C6 100%);
+  background: radial-gradient(circle, #E2E8F0 0%, #94A3B8 50%, #1E3A5F 100%);
   border-radius: 50% 0 50% 50%;
-  opacity: 0.35;
+  opacity: 0.25;
   filter: blur(0.5px);
   animation: floatPetal 16s infinite linear;
 }
 
 @keyframes floatPetal {
   0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
-  15% { opacity: 0.4; }
-  85% { opacity: 0.4; }
+  15% { opacity: 0.3; }
+  85% { opacity: 0.3; }
   100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
 }
 
 /* Modern Clean Glass & Solid Cards */
 .paper-card {
   background: var(--surface);
-  border: 1px solid rgba(226, 232, 240, 0.85);
+  border: 1px solid rgba(203, 213, 225, 0.85);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
@@ -138,17 +160,17 @@ body {
 }
 
 .paper-card:hover {
-  border-color: rgba(255, 92, 138, 0.3);
+  border-color: rgba(30, 58, 95, 0.35);
   box-shadow: var(--shadow-hover);
 }
 
-/* Modern Pill Buttons */
+/* Modern Navy Pill Buttons */
 .btn-primary-gradient, .stitched-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(135deg, #FF5C8A 0%, #FF7597 100%);
+  background: linear-gradient(135deg, #162846 0%, #1E3A5F 55%, #2563EB 100%);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-pill);
@@ -165,8 +187,8 @@ body {
 
 .btn-primary-gradient:hover, .stitched-btn:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #E11D48 0%, #FF5C8A 100%);
-  box-shadow: 0 14px 34px -4px rgba(255, 92, 138, 0.5);
+  background: linear-gradient(135deg, #0B132B 0%, #162846 60%, #1E3A5F 100%);
+  box-shadow: 0 14px 34px -4px rgba(15, 30, 54, 0.55);
 }
 
 .btn-primary-gradient:active, .stitched-btn:active {
@@ -182,9 +204,9 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #94A3B8;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #1E3A5F;
 }

@@ -23,7 +23,7 @@
 }
 
 .kawaii-card:hover, .paper-card:hover {
-  border-color: rgba(255, 92, 138, 0.25);
+  border-color: rgba(30, 58, 95, 0.35);
   box-shadow: var(--shadow-hover);
 }
 
@@ -39,10 +39,10 @@
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
-  background: var(--sakura-light);
-  color: var(--sakura-deep);
-  border: 1px solid var(--sakura-border);
-  box-shadow: 0 1px 3px rgba(255, 92, 138, 0.08);
+  background: #EFF6FF;
+  color: #162846;
+  border: 1px solid #BFDBFE;
+  box-shadow: 0 1px 3px rgba(22, 40, 70, 0.08);
 }
 
 /* Clean Modern Buttons */
@@ -64,16 +64,16 @@
 }
 
 .btn-kawaii.btn-primary {
-  background: linear-gradient(135deg, #FF5C8A 0%, #FF7597 100%);
+  background: linear-gradient(135deg, #162846 0%, #1E3A5F 55%, #2563EB 100%);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 16px rgba(255, 92, 138, 0.32);
+  box-shadow: 0 4px 16px rgba(22, 40, 70, 0.35);
 }
 
 .btn-kawaii.btn-primary:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #E11D48 0%, #FF5C8A 100%);
-  box-shadow: 0 8px 24px rgba(255, 92, 138, 0.45);
+  background: linear-gradient(135deg, #0B132B 0%, #162846 60%, #1E3A5F 100%);
+  box-shadow: 0 8px 24px rgba(15, 30, 54, 0.5);
 }
 
 .btn-kawaii.btn-primary:active {
@@ -138,8 +138,8 @@
 
 .kawaii-header:hover {
   background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(255, 92, 138, 0.25);
-  box-shadow: 0 14px 36px -4px rgba(255, 92, 138, 0.1);
+  border-color: rgba(30, 58, 95, 0.35);
+  box-shadow: 0 14px 36px -4px rgba(22, 40, 70, 0.15);
 }
 
 .header-brand {
@@ -166,14 +166,14 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FFF0F4 0%, #FFE4EC 100%);
-  border: 1px solid var(--sakura-border);
+  background: linear-gradient(135deg, #162846 0%, #1E3A5F 100%);
+  border: 1px solid #2563EB;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  color: #FFFFFF;
   font-size: 20px;
-  box-shadow: 0 2px 8px rgba(255, 92, 138, 0.15);
+  box-shadow: 0 2px 8px rgba(22, 40, 70, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -457,7 +457,7 @@
   background: var(--primary);
   color: #FFFFFF;
   border-color: var(--primary);
-  box-shadow: 0 4px 14px rgba(255, 92, 138, 0.3);
+  box-shadow: 0 4px 14px rgba(22, 40, 70, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -528,7 +528,7 @@
   padding: 12px 12px 18px 12px;
   border-radius: var(--radius-md);
   box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.12);
-  border: 1px solid rgba(226, 232, 240, 0.85);
+  border: 1px solid rgba(203, 213, 225, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -573,18 +573,18 @@
 }
 
 .polaroid-purikura-left {
-  background: linear-gradient(135deg, #FFF0F4 0%, #FFE4EC 100%);
-  border: 1px solid var(--primary-border);
+  background: linear-gradient(135deg, #0F1E36 0%, #1E3A5F 100%) !important;
+  border: 2px solid #CBD5E1;
 }
 
 .polaroid-purikura-right {
-  background: linear-gradient(135deg, #ECFDF5 0%, #E0F2FE 100%);
-  border: 1px solid #A7F3D0;
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%) !important;
+  border: 1.5px solid #CBD5E1;
 }
 
 .polaroid-placeholder-icon {
   font-size: 52px !important;
-  color: rgba(255, 92, 138, 0.3);
+  color: #94A3B8;
 }
 
 .polaroid-caption {
@@ -824,15 +824,15 @@
 .option-chip:hover {
   border-color: var(--primary);
   transform: translateY(-2px);
-  background: var(--primary-light);
-  box-shadow: 0 6px 18px -4px rgba(255, 92, 138, 0.18);
+  background: #EFF6FF;
+  box-shadow: 0 6px 18px -4px rgba(22, 40, 70, 0.2);
 }
 
 .option-chip.active {
   background: #FFFFFF;
-  border-color: var(--primary);
+  border-color: #162846;
   border-width: 2px;
-  box-shadow: 0 0 0 3px rgba(255, 92, 138, 0.16), 0 8px 20px -4px rgba(255, 92, 138, 0.2);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2), 0 8px 20px -4px rgba(22, 40, 70, 0.25);
 }
 
 .chip-icon-box {
@@ -840,8 +840,8 @@
   height: 42px;
   border-radius: 12px;
   background: var(--cream-soft);
-  color: var(--primary);
-  border: 1px solid #E2E8F0;
+  color: #1E3A5F;
+  border: 1px solid #CBD5E1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -851,10 +851,10 @@
 }
 
 .option-chip.active .chip-icon-box {
-  background: linear-gradient(135deg, #FF5C8A 0%, #FF7597 100%);
+  background: linear-gradient(135deg, #162846 0%, #1E3A5F 50%, #2563EB 100%);
   color: #FFFFFF;
-  border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(255, 92, 138, 0.3);
+  border-color: #162846;
+  box-shadow: 0 4px 12px rgba(22, 40, 70, 0.4);
 }
 
 .chip-texts {
@@ -944,7 +944,7 @@
   transform: translateX(4px);
   background: #FFFFFF;
   border-color: var(--primary);
-  box-shadow: 0 4px 14px rgba(255, 92, 138, 0.1);
+  box-shadow: 0 4px 14px rgba(22, 40, 70, 0.1);
 }
 
 .feature-icon-box {
@@ -1120,14 +1120,14 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: var(--sakura-light);
-  border: 1px solid var(--sakura-border);
-  color: var(--primary);
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #162846;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  box-shadow: 0 4px 12px rgba(255, 92, 138, 0.1);
+  box-shadow: 0 4px 12px rgba(22, 40, 70, 0.15);
 }
 
 .feature-card-title {
@@ -1206,13 +1206,13 @@
 }
 
 .btn-instagram {
-  background: linear-gradient(135deg, #FF5C8A 0%, #FF7597 100%);
+  background: linear-gradient(135deg, #162846 0%, #1E3A5F 55%, #2563EB 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(255, 92, 138, 0.3);
+  box-shadow: 0 4px 14px rgba(22, 40, 70, 0.35);
 }
 .btn-instagram:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 92, 138, 0.45);
+  box-shadow: 0 8px 20px rgba(15, 30, 54, 0.5);
 }
 
 .btn-email {
@@ -1367,7 +1367,7 @@
   font-size: 15px;
   padding: 14px 26px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 92, 138, 0.4);
+  border: 1px solid rgba(59, 130, 246, 0.4);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   z-index: 25;
 }
@@ -1406,8 +1406,8 @@
   height: 140px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95);
-  border: 4px solid var(--primary);
-  box-shadow: 0 10px 40px rgba(255, 92, 138, 0.45);
+  border: 4px solid #2563EB;
+  box-shadow: 0 10px 40px rgba(37, 99, 235, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1504,7 +1504,8 @@
 .btn-snap {
   font-size: 15px;
   padding: 16px 36px;
-  box-shadow: 0 8px 30px rgba(255, 92, 138, 0.5);
+  background: linear-gradient(135deg, #162846 0%, #1E3A5F 55%, #2563EB 100%) !important;
+  box-shadow: 0 8px 30px rgba(22, 40, 70, 0.55) !important;
 }
 
 .camera-error-banner {
@@ -1581,9 +1582,9 @@
 }
 
 .floating-film-slot.slot-current {
-  border-color: var(--primary);
+  border-color: #2563EB;
   border-width: 2px;
-  box-shadow: 0 0 12px rgba(255, 92, 138, 0.5);
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.55);
 }
 
 .floating-film-slot.slot-filled {
@@ -1649,7 +1650,7 @@
   border: 2px solid var(--primary);
   border-radius: var(--radius-md);
   padding: 6px;
-  box-shadow: 0 8px 24px rgba(255, 92, 138, 0.25);
+  box-shadow: 0 8px 24px rgba(22, 40, 70, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1684,7 +1685,7 @@
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.96);
   border: 2px solid var(--primary);
-  box-shadow: 0 10px 30px rgba(255, 92, 138, 0.35);
+  box-shadow: 0 10px 30px rgba(22, 40, 70, 0.3);
   border-radius: var(--radius-lg);
   padding: 12px 24px;
   display: flex;
@@ -1710,7 +1711,7 @@
 
 .charge-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #FF5C8A 0%, #F59E0B 100%);
+  background: linear-gradient(90deg, #162846 0%, #2563EB 60%, #F59E0B 100%);
   transition: width 0.05s linear;
 }
 
@@ -2200,8 +2201,8 @@
 
 .gesture-card.highlighted {
   border-color: var(--primary);
-  background: linear-gradient(135deg, #FFF0F4 0%, #FFF8FA 100%);
-  box-shadow: 0 4px 14px rgba(255, 92, 138, 0.1);
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  box-shadow: 0 4px 14px rgba(22, 40, 70, 0.12);
 }
 
 .gesture-icon-wrap {
@@ -2403,7 +2404,7 @@
 
 .drive-progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #FF5C8A 0%, #3B82F6 100%);
+  background: linear-gradient(90deg, #162846 0%, #2563EB 100%);
   border-radius: 9999px;
   transition: width 0.3s ease;
 }

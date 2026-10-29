@@ -293,7 +293,7 @@ export default function Minigame({
     ctx.stroke();
 
     // Little round number badge
-    ctx.fillStyle = tile.currentIdx === tile.originIdx ? '#7EBD75' : '#FF7597';
+    ctx.fillStyle = tile.currentIdx === tile.originIdx ? '#10B981' : '#3B82F6';
     ctx.beginPath();
     ctx.arc(drawX + 16, drawY + 16, 11, 0, Math.PI * 2);
     ctx.fill();

@@ -3,12 +3,12 @@ import { sfx } from '../utils/audio';
 import { STICKERS, FRAME_STYLES, FILTERS, getStickerDataUrl } from '../utils/stickers';
 
 const BRUSH_COLORS = [
-  { id: 'sakura', color: '#FF7597', name: 'Sakura Pink' },
-  { id: 'sky', color: '#70C1B3', name: 'Sky Mint' },
-  { id: 'matcha', color: '#7EBD75', name: 'Matcha Green' },
-  { id: 'butter', color: '#FFD166', name: 'Butter Yellow' },
-  { id: 'lavender', color: '#B39DDB', name: 'Lavender' },
-  { id: 'charcoal', color: '#3D3534', name: 'Charcoal' }
+  { id: 'navy', color: '#162846', name: 'Sailor Navy' },
+  { id: 'cobalt', color: '#2563EB', name: 'Cobalt Blue' },
+  { id: 'chalk_white', color: '#FFFFFF', name: 'Chalk White' },
+  { id: 'uniform_grey', color: '#64748B', name: 'Uniform Grey' },
+  { id: 'ribbon_red', color: '#DC2626', name: 'Ribbon Red' },
+  { id: 'crest_gold', color: '#F59E0B', name: 'Crest Gold' }
 ];
 
 export default function DecoratorStudio({
@@ -22,7 +22,7 @@ export default function DecoratorStudio({
 }) {
   const canvasRef = useRef(null);
   const [activeTab, setActiveTab] = useState('stickers'); // stickers | pen | frames | filters
-  const [brushColor, setBrushColor] = useState('#FF7597');
+  const [brushColor, setBrushColor] = useState('#2563EB');
   const [brushSize, setBrushSize] = useState(6);
   const [customText, setCustomText] = useState('');
 
@@ -107,8 +107,8 @@ export default function DecoratorStudio({
 
     // 3. Footer date & watermark
     const now = new Date();
-    const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}   kawaii memories ♡`;
-    ctx.fillStyle = currentFrame.accent || '#A89D9B';
+    const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}   SEISHUN HIGH SCHOOL • 青春の思い出`;
+    ctx.fillStyle = currentFrame.accent || '#94A3B8';
     ctx.font = 'bold 12px "Zen Maru Gothic", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(dateStr, totalW / 2, totalH - 24);
@@ -117,168 +117,319 @@ export default function DecoratorStudio({
     renderStudioCanvas();
   }
 
-  // ================= THEMED FRAME GRAPHICS =================
+  // ================= THEMED JAPANESE SCHOOL FRAME GRAPHICS =================
   function drawThemedFrame(ctx, frame, w, h) {
     ctx.save();
-    // Solid / Pastel Background
-    ctx.fillStyle = frame.bg || '#FFF0F5';
+    // 1. Background Fill
+    ctx.fillStyle = frame.bg || '#0F1E36';
     ctx.fillRect(0, 0, w, h);
 
-    // Outer double border
-    ctx.strokeStyle = frame.border || '#FF7597';
-    ctx.lineWidth = 4;
-    ctx.strokeRect(8, 8, w - 16, h - 16);
+    // 2. Specific School Theme Renderers
+    if (frame.id === 'sailor_navy') {
+      // Sailor Seifuku: Iconic double white collar stripes (二本線)
+      ctx.strokeStyle = '#FFFFFF';
+      ctx.lineWidth = 2.5;
+      ctx.strokeRect(9, 9, w - 18, h - 18);
+      ctx.strokeRect(15, 15, w - 30, h - 30);
 
-    ctx.strokeStyle = frame.accent || '#FF4D79';
-    ctx.lineWidth = 1.5;
-    ctx.strokeRect(13, 13, w - 26, h - 26);
+      // Red Sailor Ribbon knot at top
+      drawSailorBow(ctx, w / 2, 26, '#DC2626', '#F59E0B');
 
-    // Themed Header and Corner Accents
-    if (frame.id === 'sakura_blossom') {
-      drawHeaderBadge(ctx, w, '🌸 桜の思い出 • SAKURA PURIKURA 🌸', '#FF4D79');
-      // Corner cherry blossoms
-      drawSakuraFlower(ctx, 24, 24, 10);
-      drawSakuraFlower(ctx, w - 24, 24, 10);
-      drawSakuraFlower(ctx, 24, h - 24, 10);
-      drawSakuraFlower(ctx, w - 24, h - 24, 10);
-    } else if (frame.id === 'kawaii_ribbon') {
-      drawHeaderBadge(ctx, w, '🎀 SWEET MEMORIES • だいすき 🎀', '#FF1493');
-      // Corner bow ties
-      drawMiniBow(ctx, 24, 24);
-      drawMiniBow(ctx, w - 24, 24);
-      drawMiniHeart(ctx, 24, h - 24);
-      drawMiniHeart(ctx, w - 24, h - 24);
-    } else if (frame.id === 'neko_paw') {
-      drawHeaderBadge(ctx, w, '🐾 NEKO CAFE • にゃんこ 🐾', '#8B5A2B');
-      // Cat ears at top center
-      drawCatEars(ctx, w / 2, 14);
-      // Paw prints in corners
-      drawMiniPaw(ctx, 24, h - 24);
-      drawMiniPaw(ctx, w - 24, h - 24);
-    } else if (frame.id === 'kyoto_matcha') {
-      drawHeaderBadge(ctx, w, '🍵 京都 • 記念写真 • KYOTO TEA 🍵', '#387032');
-      // Bamboo corner brackets
-      drawCornerBrackets(ctx, w, h, '#7EBD75');
-    } else if (frame.id === 'y2k_sparkle') {
-      drawHeaderBadge(ctx, w, '✨ ✧ PURIKURA 2026 ✧ ✨', '#7E57C2');
-      drawSparkle(ctx, 24, 24);
-      drawSparkle(ctx, w - 24, 24);
-      drawSparkle(ctx, 24, h - 24);
-      drawSparkle(ctx, w - 24, h - 24);
+      // Golden School Button in 4 corners
+      drawGoldSchoolButton(ctx, 24, 24);
+      drawGoldSchoolButton(ctx, w - 24, 24);
+      drawGoldSchoolButton(ctx, 24, h - 24);
+      drawGoldSchoolButton(ctx, w - 24, h - 24);
+
+      drawHeaderBadge(ctx, w, '🏫 青春セーラー • SEISHUN HIGH SCHOOL • 青藍高校', '#FFFFFF');
+    } else if (frame.id === 'gakuran_blazer') {
+      // School Blazer: Gold & Silver Academy Borders
+      ctx.strokeStyle = '#F59E0B';
+      ctx.lineWidth = 3.5;
+      ctx.strokeRect(8, 8, w - 16, h - 16);
+
+      ctx.strokeStyle = '#CBD5E1';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(14, 14, w - 28, h - 28);
+
+      // Golden Academy Crests in corners
+      drawAcademyShield(ctx, 24, 24);
+      drawAcademyShield(ctx, w - 24, 24);
+      drawAcademyShield(ctx, 24, h - 24);
+      drawAcademyShield(ctx, w - 24, h - 24);
+
+      drawHeaderBadge(ctx, w, '🎓 私立青藍学園 • TOKYO ACADEMY 2026 🎓', '#F59E0B');
+    } else if (frame.id === 'blackboard_chalk') {
+      // Kokuban Classroom: Slate wooden frame & chalk lines
+      ctx.strokeStyle = '#64748B';
+      ctx.lineWidth = 5;
+      ctx.strokeRect(6, 6, w - 12, h - 12);
+
+      // Dashed chalk line
+      ctx.strokeStyle = '#CBD5E1';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([8, 6]);
+      ctx.strokeRect(14, 14, w - 28, h - 28);
+      ctx.setLineDash([]);
+
+      // Chalk sakura petals in corners
+      drawChalkSakura(ctx, 26, 26);
+      drawChalkSakura(ctx, w - 26, 26);
+      drawChalkStar(ctx, 26, h - 26);
+      drawChalkStar(ctx, w - 26, h - 26);
+
+      drawHeaderBadge(ctx, w, '🌸 卒業記念 • CLASS OF 2026 • 放課後メモリー 🌸', '#F8FAFC');
+    } else if (frame.id === 'campus_notebook') {
+      // Campus Notebook: Subtle graph grid with red margin rule
+      drawNotebookGridBackground(ctx, w, h);
+
+      ctx.strokeStyle = '#1E3A5F';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(8, 8, w - 16, h - 16);
+
+      // Red vertical margin rule
+      ctx.strokeStyle = '#DC2626';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(22, 10);
+      ctx.lineTo(22, h - 10);
+      ctx.stroke();
+
+      // Hanamaru Teacher Stamp (💮) at top-right
+      drawHanamaruStamp(ctx, w - 26, 26, 12);
+
+      drawHeaderBadge(ctx, w, '✏️ 放課後ノート • AFTER SCHOOL DIARY • 1年A組 ✏️', '#1E3A5F');
+    } else if (frame.id === 'rooftop_sky') {
+      // Rooftop Blue Sky Gradient & Clouds
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, h);
+      skyGrad.addColorStop(0, '#132B4F');
+      skyGrad.addColorStop(0.4, '#1E3A5F');
+      skyGrad.addColorStop(1, '#2563EB');
+      ctx.fillStyle = skyGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.strokeStyle = '#93C5FD';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(10, 10, w - 20, h - 20);
+
+      // Soft clouds & fence silhouettes
+      drawCloudPuff(ctx, 30, 24);
+      drawCloudPuff(ctx, w - 30, 24);
+      drawRooftopFence(ctx, 16, h - 34, w - 32, 14);
+
+      drawHeaderBadge(ctx, w, '🌤️ 青空と放課後 • ROOFTOP SEISHUN MEMORIES 🌤️', '#FFFFFF');
     } else {
-      // Minimal White
-      drawHeaderBadge(ctx, w, '★ プリクラ • PURIKURA STUDIO ★', '#5C5251');
+      // Silver Navy Minimal
+      ctx.strokeStyle = '#E2E8F0';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(8, 8, w - 16, h - 16);
+
+      ctx.strokeStyle = '#94A3B8';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(14, 14, w - 28, h - 28);
+
+      drawSilverStar(ctx, 24, 24);
+      drawSilverStar(ctx, w - 24, 24);
+      drawSilverStar(ctx, 24, h - 24);
+      drawSilverStar(ctx, w - 24, h - 24);
+
+      drawHeaderBadge(ctx, w, '★ 青春PHOTO • SEISHUN SCHOOL PHOTOBOOTH ★', '#E2E8F0');
     }
     ctx.restore();
   }
 
   function drawHeaderBadge(ctx, totalW, text, color) {
     ctx.fillStyle = color;
-    ctx.font = 'bold 13px "Zen Maru Gothic", sans-serif';
+    ctx.font = 'bold 12.5px "Zen Maru Gothic", sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(text, totalW / 2, 34);
+    ctx.fillText(text, totalW / 2, 36);
   }
 
-  function drawSakuraFlower(ctx, cx, cy, r) {
+  // Sailor Uniform Red Ribbon Knot
+  function drawSailorBow(ctx, x, y, ribbonCol, knotCol) {
     ctx.save();
-    ctx.fillStyle = '#FFB6C1';
-    for (let i = 0; i < 5; i++) {
-      const angle = (i * 2 * Math.PI) / 5;
-      const px = cx + Math.cos(angle) * r;
-      const py = cy + Math.sin(angle) * r;
-      ctx.beginPath();
-      ctx.arc(px, py, r * 0.7, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.fillStyle = '#FF4D79';
+    ctx.fillStyle = ribbonCol;
+    // Left wing
     ctx.beginPath();
-    ctx.arc(cx, cy, r * 0.4, 0, Math.PI * 2);
+    ctx.ellipse(x - 8, y, 9, 5, -0.25, 0, Math.PI * 2);
     ctx.fill();
-    ctx.restore();
-  }
-
-  function drawMiniBow(ctx, x, y) {
-    ctx.save();
-    ctx.fillStyle = '#FF69B4';
+    // Right wing
     ctx.beginPath();
-    ctx.ellipse(x - 6, y, 7, 4, -0.2, 0, Math.PI * 2);
-    ctx.ellipse(x + 6, y, 7, 4, 0.2, 0, Math.PI * 2);
+    ctx.ellipse(x + 8, y, 9, 5, 0.25, 0, Math.PI * 2);
     ctx.fill();
-    ctx.fillStyle = '#FF1493';
+    // Tails
+    ctx.beginPath();
+    ctx.moveTo(x - 4, y + 2);
+    ctx.lineTo(x - 9, y + 14);
+    ctx.lineTo(x - 2, y + 11);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(x + 4, y + 2);
+    ctx.lineTo(x + 9, y + 14);
+    ctx.lineTo(x + 2, y + 11);
+    ctx.closePath();
+    ctx.fill();
+    // Center Gold Knot
+    ctx.fillStyle = knotCol;
     ctx.beginPath();
     ctx.arc(x, y, 3.5, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
   }
 
-  function drawMiniHeart(ctx, x, y) {
+  // Golden School Uniform Button
+  function drawGoldSchoolButton(ctx, x, y) {
     ctx.save();
-    ctx.fillStyle = '#FF69B4';
+    ctx.fillStyle = '#F59E0B';
+    ctx.beginPath();
+    ctx.arc(x, y, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#FEF3C7';
+    ctx.beginPath();
+    ctx.arc(x - 1.2, y - 1.2, 1.8, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // Golden Academy Shield Crest
+  function drawAcademyShield(ctx, x, y) {
+    ctx.save();
+    ctx.fillStyle = '#F59E0B';
+    ctx.strokeStyle = '#D97706';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x, y - 7);
+    ctx.lineTo(x + 6, y - 3);
+    ctx.lineTo(x + 6, y + 4);
+    ctx.lineTo(x, y + 8);
+    ctx.lineTo(x - 6, y + 4);
+    ctx.lineTo(x - 6, y - 3);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Inner star
+    ctx.fillStyle = '#FFFFFF';
+    ctx.beginPath();
+    ctx.arc(x, y, 2, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // Chalk-style Sakura Petal
+  function drawChalkSakura(ctx, cx, cy) {
+    ctx.save();
+    ctx.fillStyle = '#CBD5E1';
+    for (let i = 0; i < 5; i++) {
+      const angle = (i * 2 * Math.PI) / 5;
+      const px = cx + Math.cos(angle) * 7;
+      const py = cy + Math.sin(angle) * 7;
+      ctx.beginPath();
+      ctx.arc(px, py, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.fillStyle = '#FDE047';
+    ctx.beginPath();
+    ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // Chalk Doodle Star
+  function drawChalkStar(ctx, x, y) {
+    ctx.save();
+    ctx.fillStyle = '#FDE047';
     ctx.font = '14px sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('♡', x, y);
+    ctx.fillText('✦', x, y);
     ctx.restore();
   }
 
-  function drawMiniPaw(ctx, x, y) {
+  // Notebook Graph Grid
+  function drawNotebookGridBackground(ctx, w, h) {
     ctx.save();
-    ctx.fillStyle = '#E0A96D';
-    ctx.beginPath();
-    ctx.ellipse(x, y + 2, 7, 5, 0, 0, Math.PI * 2);
-    ctx.fill();
-    [-5, -2, 2, 5].forEach(dx => {
+    ctx.fillStyle = '#F8FAFC';
+    ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(203, 213, 225, 0.45)';
+    ctx.lineWidth = 0.8;
+    const step = 20;
+    for (let x = 12; x < w - 12; x += step) {
       ctx.beginPath();
-      ctx.arc(x + dx, y - 5, 2, 0, Math.PI * 2);
-      ctx.fill();
-    });
-    ctx.restore();
-  }
-
-  function drawCatEars(ctx, cx, cy) {
-    ctx.save();
-    ctx.fillStyle = '#E0A96D';
-    ctx.strokeStyle = '#8B5A2B';
-    ctx.lineWidth = 1.5;
-    // Left ear
-    ctx.beginPath();
-    ctx.moveTo(cx - 35, cy + 10);
-    ctx.lineTo(cx - 24, cy - 6);
-    ctx.lineTo(cx - 13, cy + 10);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-    // Right ear
-    ctx.beginPath();
-    ctx.moveTo(cx + 13, cy + 10);
-    ctx.lineTo(cx + 24, cy - 6);
-    ctx.lineTo(cx + 35, cy + 10);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-    ctx.restore();
-  }
-
-  function drawCornerBrackets(ctx, w, h, col) {
-    ctx.save();
-    ctx.strokeStyle = col;
-    ctx.lineWidth = 2.5;
-    const len = 14;
-    // 4 brackets
-    [[18, 18, 1, 1], [w - 18, 18, -1, 1], [18, h - 18, 1, -1], [w - 18, h - 18, -1, -1]].forEach(([x, y, sx, sy]) => {
-      ctx.beginPath();
-      ctx.moveTo(x + len * sx, y);
-      ctx.lineTo(x, y);
-      ctx.lineTo(x, y + len * sy);
+      ctx.moveTo(x, 12);
+      ctx.lineTo(x, h - 12);
       ctx.stroke();
-    });
+    }
+    for (let y = 12; y < h - 12; y += step) {
+      ctx.beginPath();
+      ctx.moveTo(12, y);
+      ctx.lineTo(w - 12, y);
+      ctx.stroke();
+    }
     ctx.restore();
   }
 
-  function drawSparkle(ctx, x, y) {
+  // Japanese Teacher Hanamaru 💮 Stamp
+  function drawHanamaruStamp(ctx, cx, cy, r) {
     ctx.save();
-    ctx.fillStyle = '#B39DDB';
-    ctx.font = '14px sans-serif';
+    ctx.strokeStyle = '#DC2626';
+    ctx.lineWidth = 2;
+    for (let i = 0; i < 5; i++) {
+      const angle = (i * 2 * Math.PI) / 5;
+      const px = cx + Math.cos(angle) * (r * 0.7);
+      const py = cy + Math.sin(angle) * (r * 0.7);
+      ctx.beginPath();
+      ctx.arc(px, py, r * 0.5, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.beginPath();
+    ctx.arc(cx, cy, r * 0.4, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // Cloud Silhouette Puff
+  function drawCloudPuff(ctx, x, y) {
+    ctx.save();
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.beginPath();
+    ctx.arc(x, y, 7, 0, Math.PI * 2);
+    ctx.arc(x + 6, y - 2, 9, 0, Math.PI * 2);
+    ctx.arc(x + 14, y, 7, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // Rooftop Cross-Hatch Wire Fence
+  function drawRooftopFence(ctx, x, y, w, h) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+    ctx.lineWidth = 1;
+    // Top & bottom horizontal bars
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + w, y);
+    ctx.moveTo(x, y + h);
+    ctx.lineTo(x + w, y + h);
+    ctx.stroke();
+    // Diagonal wire mesh
+    const step = 8;
+    for (let px = x; px < x + w; px += step) {
+      ctx.beginPath();
+      ctx.moveTo(px, y);
+      ctx.lineTo(px + step, y + h);
+      ctx.moveTo(px + step, y);
+      ctx.lineTo(px, y + h);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  // Silver Star
+  function drawSilverStar(ctx, x, y) {
+    ctx.save();
+    ctx.fillStyle = '#CBD5E1';
+    ctx.font = '13px sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText('✦', x, y);
@@ -503,8 +654,9 @@ export default function DecoratorStudio({
     const txt = customText.trim();
 
     const svg = `<svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="4" width="152" height="42" rx="21" fill="#FFF0F5" stroke="#FF7597" stroke-width="3"/>
-      <text x="80" y="32" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="16" fill="#FF4D79" text-anchor="middle">♡ ${txt} ♡</text>
+      <rect x="4" y="4" width="152" height="42" rx="10" fill="#162846" stroke="#CBD5E1" stroke-width="2.5"/>
+      <rect x="8" y="8" width="144" height="34" rx="7" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="80" y="31" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="16" fill="#F8FAFC" text-anchor="middle">★ ${txt} ★</text>
     </svg>`;
 
     const img = new Image();

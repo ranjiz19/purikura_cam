@@ -334,9 +334,9 @@ export function drawKawaiiHandSkeleton(ctx, mirroredHands, canvasWidth, canvasHe
       const cy = tip.y * canvasHeight;
 
       ctx.save();
-      ctx.shadowColor = "rgba(255, 117, 151, 0.8)";
+      ctx.shadowColor = "rgba(37, 99, 235, 0.7)";
       ctx.shadowBlur = 12;
-      ctx.fillStyle = isPinchingHand ? "#FF1493" : "#FF7597";
+      ctx.fillStyle = isPinchingHand ? "#162846" : "#2563EB";
       ctx.beginPath();
       ctx.arc(cx, cy, 14, 0, Math.PI * 2);
       ctx.fill();

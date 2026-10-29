@@ -158,14 +158,14 @@ export default function Booth({
         const bh = fb.height * ch;
 
         ctx.save();
-        ctx.strokeStyle = '#FF7597';
+        ctx.strokeStyle = '#3B82F6';
         ctx.lineWidth = 4;
         ctx.setLineDash([14, 8]);
         ctx.strokeRect(bx, by, bw, bh);
 
         // Corner accents
         const cLen = 22;
-        ctx.strokeStyle = '#FF1493';
+        ctx.strokeStyle = '#1E3A5F';
         ctx.lineWidth = 6;
         ctx.setLineDash([]);
         // Top-left

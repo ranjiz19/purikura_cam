@@ -23,7 +23,7 @@ export default function Header({
             <div className="brand-texts">
               <div className="brand-title-wrap">
                 <h1 className="brand-title">Purikura Studio</h1>
-                <span className="brand-kanji-pill">プリクラ</span>
+                <span className="brand-kanji-pill">青春高校</span>
               </div>
               <span className="brand-tagline">{t.header.tagline}</span>
             </div>

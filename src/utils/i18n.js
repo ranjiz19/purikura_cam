@@ -25,34 +25,34 @@ export const translations = {
       contact: 'Kontak'
     },
     header: {
-      tagline: 'AI Japanese Photobooth プリクラ',
+      tagline: 'Japanese High School Edition 青春の思い出',
       soundOn: 'Suara',
       soundMuted: 'Bisu',
       guide: 'Panduan',
       langSelect: 'Bahasa'
     },
     hero: {
-      badge: '🌸 プリクラ — JAPANESE KAWAII PHOTOBOOTH & AIR PUZZLE',
+      badge: '🏫 青春プリクラ — JAPANESE HIGH SCHOOL SEISHUN PHOTOBOOTH',
       title: 'Purikura Studio',
-      titleJp: 'プリクラスタジオ',
-      subtitle: 'Tangkap momen kawaii, susun puzzle di udara, dan hias strip foto khas Harajuku ✨',
+      titleJp: '青春フォトスタジオ (高校エディション)',
+      subtitle: 'Abadikan momen masa muda sekolah Jepang (Seishun 青春) bertema seragam navy & abu-abu, bingkai seifuku, serta sensor gestur AI ✨',
       cta: 'MASUK BILIK FOTO',
       chips: [
-        'Pure Vision AI (MediaPipe)',
-        'Edisi Jepang 2026',
-        '3x3 Gesture Puzzle'
+        'Tema Sekolah Jepang (Navy & Grey)',
+        'Seragam Seifuku & Blazer',
+        '3x3 Air Puzzle AI'
       ],
-      polaroidLeft: 'Kenangan Manis 🌸',
-      polaroidRight: 'Gesture 3x3 Puzzle 🧩'
+      polaroidLeft: 'Memori Sekolah 🏫',
+      polaroidRight: 'Sepulang Sekolah ✌️'
     },
     setup: {
       stepBadge: 'STEP 1 • PENGATURAN AWAL',
-      title: 'Setup Bilik Foto 🌸',
+      title: 'Setup Bilik Foto Sekolah 🏫',
       desc: 'Pilih format cetak strip foto dan alur minigame sebelum mulai sesi jepret foto.',
       layoutLabel: '1. Format Strip Foto Khas Jepang',
       minigameLabel: '2. Pilihan Alur Foto (Minigame)',
       calloutTitle: 'Pemilihan Bingkai & Filter Realtime:',
-      calloutDesc: 'Tema bingkai khas Jepang (Sakura Blossom, Sweet Ribbon, Neko Cafe, Kyoto Tea, Y2K) dan filter warna bisa bebas kamu ganti di Studio Dekorasi!',
+      calloutDesc: 'Tema bingkai sekolah Jepang (Sailor Seifuku, Academy Blazer, Kokuban Chalkboard, Campus Notebook, Rooftop Sky) dan filter seragam bisa kamu pilih di Studio Dekorasi!',
       startBtn: 'MASUK BILIK FOTO (START BOOTH)'
     },
     layouts: [
